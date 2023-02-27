@@ -15,7 +15,7 @@ export default function Home() {
       </main>
 
       <footer>
-        <p>&copy; 2022 - Ride or die</p>
+        <p>&copy; 2023 - Ride or die</p>
       </footer>
     </div>
   );
