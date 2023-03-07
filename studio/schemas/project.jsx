@@ -2,6 +2,7 @@ export default {
   type: 'document',
   name: 'project',
   title: 'Projects',
+  icon: () => <span style={{fontSize: '1rem'}}>✨</span>,
   groups: [
     {name: 'main', title: 'Main', default: true},
     {name: 'seo', title: 'SEO'},
