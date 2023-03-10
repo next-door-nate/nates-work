@@ -4,17 +4,23 @@ import cta from './cta'
 import meta from './meta'
 import globalConfig from './globalConfig'
 import theme from './theme'
+import episode from './episode'
+import richText from './richText'
 
 export const schemaTypes = [
   // document types
   page,
   project,
+  episode,
 
   // settings types
   globalConfig,
   theme,
 
-  // non-doc types
+  // util types
   meta,
   cta,
+  richText,
+
+  // non-doc types
 ]
