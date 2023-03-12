@@ -6,6 +6,8 @@ import globalConfig from './globalConfig'
 import theme from './theme'
 import episode from './episode'
 import richText from './richText'
+import pageContent from './pageContent'
+import bannerHome from './bannerHome'
 
 export const schemaTypes = [
   // document types
@@ -22,5 +24,9 @@ export const schemaTypes = [
   cta,
   richText,
 
-  // non-doc types
+  // page builders
+  pageContent,
+
+  // block types
+  bannerHome,
 ]
