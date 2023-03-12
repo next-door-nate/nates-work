@@ -1,9 +1,9 @@
-import client from "../../utils/client";
+import client from "../utils/client";
 
-const Project = ({ project }) => {
+const Page = ({ page }) => {
   return (
     <article>
-      <h1>{project.title}</h1>
+      <h1>{page.title}</h1>
     </article>
   );
 };
@@ -20,18 +20,18 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params;
-  const project = await client.fetch(
+  const page = await client.fetch(
     `
-    *[_type == "project" && slug.current == $slug][0]
+    *[_type == "page" && slug.current == $slug][0]
   `,
     { slug }
   );
 
   return {
     props: {
-      project,
+      page,
     },
   };
 }
 
-export default Project;
+export default Page;
