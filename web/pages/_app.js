@@ -1,5 +1,7 @@
 import Head from "next/head";
 import "../styles/remedy.css";
+import "../styles/variables.scss";
+import "../styles/typography.scss";
 
 function MyApp({ Component, pageProps }) {
   return (

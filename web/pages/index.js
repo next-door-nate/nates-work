@@ -1,16 +1,24 @@
 import Head from "next/head";
 import client from "../utils/client";
+import Layout from "../components/Layout";
+import { pageQuery } from "../utils/queries";
+import Blocks from "../components/blocks";
 
 const Home = ({ page }) => {
+  console.log(page);
+
   return (
-    <article>
+    <Layout header={1} footer={1}>
       <Head>
         <title>Nate van der Vis | Design 🤝 Engineering</title>
         <meta name="description" content="Serving up a tastier web." />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <h1>{page.title}</h1>
-    </article>
+
+      <article>
+        <Blocks blocks={page.blocks} />
+      </article>
+    </Layout>
   );
 };
 
@@ -19,7 +27,7 @@ export async function getStaticProps(context) {
   const page = await client.fetch(
     `
     *[_type == "page" && slug.current == "home"][0]{
-      title,
+      ${pageQuery}
     }
   `
   );

@@ -1,12 +1,18 @@
+export const blocksQuery = `
+_type,
+_key,
+
+_type == "banner_home" => {
+  title,
+  subtitle,
+},
+
+`;
+
 export const pageQuery = `
   title,
   slug,
-`;
-
-export const blocksQuery = `
-
-_type == "home_banner" => {
-  title,
-},
-
+  "blocks": blocks[]{
+    ${blocksQuery}
+  }
 `;

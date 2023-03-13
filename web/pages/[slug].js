@@ -1,10 +1,13 @@
 import client from "../utils/client";
+import Layout from "../components/Layout";
 
 const Page = ({ page }) => {
   return (
-    <article>
-      <h1>{page.title}</h1>
-    </article>
+    <Layout header={1} footer={1}>
+      <article>
+        <h1>{page.title}</h1>
+      </article>
+    </Layout>
   );
 };
 

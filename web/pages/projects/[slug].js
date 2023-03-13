@@ -1,10 +1,13 @@
 import client from "../../utils/client";
+import Layout from "../../components/Layout";
 
 const Project = ({ project }) => {
   return (
-    <article>
-      <h1>{project.title}</h1>
-    </article>
+    <Layout header={1} footer={1}>
+      <article>
+        <h1>{project.title}</h1>
+      </article>
+    </Layout>
   );
 };
 
