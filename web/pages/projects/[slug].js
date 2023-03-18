@@ -3,10 +3,8 @@ import Layout from "../../components/Layout";
 
 const Project = ({ project }) => {
   return (
-    <Layout header={1} footer={1}>
-      <article>
-        <h1>{project.title}</h1>
-      </article>
+    <Layout header={true} footer={true}>
+      <article>{project.title && <h1>{project.title}</h1>}</article>
     </Layout>
   );
 };
@@ -25,9 +23,7 @@ export async function getStaticProps(context) {
   const { slug = "" } = context.params;
   const project = await client.fetch(
     `
-    *[_type == "project" && slug.current == $slug][0]{
-      ...
-    }
+    *[_type == "project" && slug.current == $slug][0]
   `,
     { slug }
   );
