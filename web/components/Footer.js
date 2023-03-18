@@ -6,7 +6,7 @@ export default function Footer({ footer }) {
   return (
     <footer className={styles.footer}>
       <Container>
-        <h1>Nate's Footer</h1>
+        <h1>Nates Footer</h1>
       </Container>
     </footer>
   );

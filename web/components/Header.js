@@ -6,7 +6,7 @@ export default function Header({ header }) {
   return (
     <header className={styles.header} data-element="header">
       <Container>
-        <h1>Nate's Work</h1>
+        <h1>Nates Work</h1>
       </Container>
     </header>
   );
