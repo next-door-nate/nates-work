@@ -4,13 +4,15 @@ import Layout from "../components/Layout";
 const Page = ({ page }) => {
   return (
     <Layout header={1} footer={1}>
-      <article>{page.title && <h1>{page.title}</h1>}</article>
+      <article>
+        <h1>Page</h1>
+      </article>
     </Layout>
   );
 };
 
 export async function getStaticPaths() {
-  const paths = await client.fetch(`*[_type == "project" && defined(slug.current)][].slug.current`);
+  const paths = await client.fetch(`*[_type == "page" && defined(slug.current)][].slug.current`);
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
