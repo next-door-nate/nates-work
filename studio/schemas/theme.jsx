@@ -17,24 +17,24 @@ export default {
       to: [{type: 'page'}],
       validation: (Rule) => Rule.required(),
     },
-    // {
-    //   name: 'headerMenu',
-    //   title: 'Header Menu',
-    //   description:
-    //     'Build complex menus from the menu area, assign them here to update the menu everywhere',
-    //   type: 'reference',
-    //   to: {type: 'header'},
-    //   validation: (Rule) => Rule.required(),
-    // },
-    // {
-    //   name: 'footerMenu',
-    //   title: 'Footer Menu',
-    //   description:
-    //     'Build complex menus from the module area, assign them here to update the menu everywhere',
-    //   type: 'reference',
-    //   to: {type: 'footer'},
-    //   validation: (Rule) => Rule.required(),
-    // },
+    {
+      name: 'header_menu',
+      title: 'Header',
+      description:
+        'Build complex menus from the menu area, assign them here to update the menu everywhere',
+      type: 'reference',
+      to: {type: 'header'},
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'foote_menu',
+      title: 'Footer',
+      description:
+        'Build complex menus from the module area, assign them here to update the menu everywhere',
+      type: 'reference',
+      to: {type: 'footer'},
+      validation: (Rule) => Rule.required(),
+    },
   ],
   preview: {
     select: {

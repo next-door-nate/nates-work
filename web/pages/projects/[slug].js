@@ -1,10 +1,11 @@
 import client from "../../utils/client";
+import Layout from "../../components/Layout";
 
 const Project = ({ project }) => {
   return (
-    <article>
-      <h1>{project.title}</h1>
-    </article>
+    <Layout header={true} footer={true}>
+      <article>{project.title && <h1>{project.title}</h1>}</article>
+    </Layout>
   );
 };
 
@@ -13,7 +14,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
 

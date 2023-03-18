@@ -8,21 +8,25 @@ import episode from './episode'
 import richText from './richText'
 import pageContent from './pageContent'
 import bannerHome from './bannerHome'
+import navItem from './navItem'
+import header from './header'
+import footer from './footer'
 
 export const schemaTypes = [
   // document types
   page,
   project,
   episode,
-
-  // settings types
   globalConfig,
+  header,
+  footer,
   theme,
 
   // util types
   meta,
   cta,
   richText,
+  navItem,
 
   // page builders
   pageContent,
