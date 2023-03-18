@@ -25,7 +25,9 @@ export async function getStaticProps(context) {
   const { slug = "" } = context.params;
   const project = await client.fetch(
     `
-    *[_type == "project" && slug.current == $slug][0]
+    *[_type == "project" && slug.current == $slug][0]{
+      ...
+    }
   `,
     { slug }
   );
