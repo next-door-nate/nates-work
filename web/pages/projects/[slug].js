@@ -4,7 +4,9 @@ import Layout from "../../components/Layout";
 const Project = ({ project }) => {
   return (
     <Layout header={true} footer={true}>
-      <article>{project.title && <h1>{project.title}</h1>}</article>
+      <article>
+        <h1>Project</h1>
+      </article>
     </Layout>
   );
 };
