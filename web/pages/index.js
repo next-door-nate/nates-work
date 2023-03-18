@@ -2,7 +2,7 @@ import Head from "next/head";
 import client from "../utils/client";
 import Layout from "../components/Layout";
 import { pageQuery } from "../utils/queries";
-import Blocks from "../components/blocks";
+import Blocks from "../components/Blocks";
 
 const Home = ({ page }) => {
   console.log(page);
