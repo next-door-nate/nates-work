@@ -15,8 +15,6 @@ function MyApp({ Component, pageProps }) {
         {process.env.NODE_ENV == "production" && (
           <script defer data-domain="nates.work" src="https://plausible.io/js/script.js"></script>
         )}
-
-        <script defer data-domain="nates.work" src="https://plausible.io/js/script.js"></script>
       </Head>
 
       <Component {...pageProps} />
