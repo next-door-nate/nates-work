@@ -25,7 +25,9 @@
     "three": "^0.150.1"
   },
   "devDependencies": {
+    "@types/node": "20.1.0",
     "next-transpile-modules": "^10.0.0",
-    "turbo": "^1.6.3"
+    "turbo": "^1.6.3",
+    "typescript": "5.0.4"
   }
 }

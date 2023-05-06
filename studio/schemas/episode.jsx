@@ -64,9 +64,9 @@ export default {
       return {
         title: title,
         subtitle: formattedDate.toLocaleDateString('en-ca', {
-          weekday: 'long',
+          timeZone: 'UTC',
           year: 'numeric',
-          month: 'long',
+          month: 'short',
           day: 'numeric',
         }),
       }

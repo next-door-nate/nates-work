@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Head from "next/head";
 import client from "../utils/client";
 import Layout from "../components/Layout";

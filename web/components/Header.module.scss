@@ -3,4 +3,26 @@
   top: 0;
   left: 0;
   z-index: 2;
+  padding: 0.8rem 0;
+  width: 100%;
+  // border-bottom: 0.1rem solid rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  font-size: 3.2rem;
+  line-height: 1;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -1rem;
+
+  span:first-of-type {
+    color: #000;
+    position: relative;
+    z-index: 2;
+  }
+  span:last-of-type {
+    color: #666;
+    position: relative;
+    z-index: 1;
+  }
 }

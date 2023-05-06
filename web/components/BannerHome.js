@@ -21,7 +21,7 @@ export default function BannerHome({ block }) {
         <RichTextRenderer blocks={block.subtitle} />
       </Container>
       <div className={styles.canvas}>
-        <Canvas
+        {/* <Canvas
           shadows
           gl={{ antialias: false }}
           camera={{ position: [-30, 35, -15], near: 30, far: 155, fov: 30 }}
@@ -64,12 +64,12 @@ export default function BannerHome({ block }) {
           <Stage
             intensity={0.5}
             environment="city"
-            shadows={{ type: "accumulative", bias: -0.001 }}
+            shadows={{ type: "accumulative", bias: 1.001 }}
             adjustCamera={false}
           >
             <mesh>
               <boxGeometry args={[15, 15, 15]} />
-              <meshBasicMaterial color={"#e1f789"} wireframe />
+              <meshBasicMaterial color={"#e1f789"} />
             </mesh>
           </Stage>
 
@@ -77,7 +77,7 @@ export default function BannerHome({ block }) {
             <DepthOfField target={[0, 0, 0]} focusRange={1} bokehScale={0} />
           </EffectComposer>
           <OrbitControls enableZoom={false} autoRotate />
-        </Canvas>
+        </Canvas> */}
       </div>
     </section>
   );
