@@ -54,6 +54,7 @@ export default {
       group: 'seo',
     },
   ],
+
   preview: {
     select: {
       title: 'title',

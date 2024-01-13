@@ -2,13 +2,286 @@
   background: var(--color-green);
   display: grid;
   place-items: end start;
-  height: 80vh;
+  height: 60vh;
   min-height: 64rem;
-  // padding: 4rem;
+  padding: 4rem;
   position: relative;
+  border-radius: 1.6rem;
+  overflow: clip;
+  margin-top: 2.4rem;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 1.6rem;
+  }
 
   h1 {
     font-size: 6.4rem;
+    color: var(--color-white);
+    margin-bottom: 0;
+    mix-blend-mode: difference;
+
+    @media screen and (max-width: 768px) {
+      font-size: 2.8rem;
+    }
+  }
+
+  p {
+    color: var(--color-white);
+    max-width: 40rem;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.gradient {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: #111;
+}
+
+.target {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  //animation: rotate 120s linear infinite reverse;
+
+  &1 {
+    width: 50rem;
+    height: 50rem;
+    background-color: #92f5a8;
+    background-color: #b2e6bd;
+    border-radius: 40rem;
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    filter: blur(6rem);
+    z-index: 3;
+
+    animation: color1 30s ease-in-out infinite;
+
+    @media screen and (max-width: 768px) {
+      animation-play-state: paused;
+    }
+  }
+
+  &2 {
+    position: absolute;
+    bottom: 20%;
+    left: 0%;
+    filter: blur(6rem);
+    z-index: 2;
+    animation: color2 40s ease-in-out infinite;
+
+    @media screen and (max-width: 768px) {
+      animation-play-state: paused;
+    }
+  }
+
+  &3 {
+    filter: blur(3.4rem);
+    position: absolute;
+    bottom: 2%;
+    right: 5%;
+    z-index: 3;
+    animation: flare 60s ease-in-out infinite;
+
+    @media screen and (max-width: 768px) {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes color1 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1) skew(0, 0);
+  }
+
+  50% {
+    transform: translate(-30rem, 10rem) scale(1.3) skew(5rem, 6rem);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1) skew(0, 0);
+  }
+}
+
+@keyframes color2 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: translate(-10rem, -20rem) rotate(15deg) scale(1.3);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes flare {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-30rem, 0) rotate(65deg) scale(0.8);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
+
+.color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  mix-blend-mode: overlay;
+  display: block;
+  animation: rotate 40s linear infinite;
+  filter: blur(20px);
+  opacity: 0.8;
+
+  @media screen and (max-width: 768px) {
+    animation-play-state: paused;
+  }
+
+  &1 {
+    background: #ac52cc;
+    width: 8rem;
+    height: 24rem;
+    border-radius: 50%;
+    filter: blur(6rem);
+    display: block;
+    transform: rotate3d(1, 1, 1, 45deg);
+    position: absolute;
+    bottom: 10%;
+    right: 15%;
+  }
+
+  &2 {
+    background: #d35c5c;
+    width: 10rem;
+    height: 24rem;
+    border-radius: 50%;
+    filter: blur(6rem);
+    display: block;
+    transform: rotate(75deg);
+    position: absolute;
+    bottom: -5%;
+    right: 25%;
+  }
+  &3 {
+    background: #f4b0ff;
+    width: 60rem;
+    height: 40rem;
+    filter: blur(10rem);
+    display: block;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+  }
+
+  &4 {
+    background: #fdcf59;
+    width: 52rem;
+    height: 55rem;
+    border-radius: 50%;
+    filter: blur(10rem);
+    display: block;
+    // transform: rotate(75deg);
+    position: absolute;
+    top: 25%;
+    left: 5%;
+  }
+
+  &5 {
+    background: #fdcf59;
+    width: 52rem;
+    height: 55rem;
+    border-radius: 50%;
+    filter: blur(10rem);
+    display: block;
+    // transform: rotate(75deg);
+    position: absolute;
+    top: 5%;
+    left: 15%;
+  }
+
+  &6 {
+    background: #ff8787;
+    width: 60rem;
+    height: 40rem;
+    filter: blur(10rem);
+    display: block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+  }
+}
+
+.blowout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  mix-blend-mode: overlay;
+  display: block;
+  animation: rotate 60s linear infinite reverse;
+  // filter: blur(10px);
+  opacity: 0.8;
+
+  @media screen and (max-width: 768px) {
+    animation-play-state: paused;
+  }
+
+  &1 {
+    background: #fdcf59;
+    width: 40rem;
+    height: 40rem;
+    filter: blur(10rem);
+    display: block;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+  }
+
+  &2 {
+    background: #f4b0ff;
+    width: 40rem;
+    height: 40rem;
+    filter: blur(10rem);
+    display: block;
+    position: absolute;
+    top: 60%;
+    right: 90%;
+  }
+
+  &3 {
+    background: #ff8787;
+    width: 20rem;
+    height: 20rem;
+    filter: blur(10rem);
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 20%;
+    right: 50%;
   }
 }
 
@@ -18,4 +291,28 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  50% {
+    transform: rotate(0.5turn) scale(1.5);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  background-color: var(--color-black);
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
 }
