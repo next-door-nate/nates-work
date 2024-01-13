@@ -1,11 +1,36 @@
 .header {
-  position: fixed;
+  // position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
-  padding: 0.8rem 0;
+  z-index: 3;
+  padding: 2.4rem 2.4rem;
   width: 100%;
+  margin-top: 2.4rem;
   // border-bottom: 0.1rem solid rgba(0, 0, 0, 0.08);
+
+  @media screen and (max-width: 768px) {
+    margin-top: 1.6rem;
+  }
+
+  nav {
+    text-align: right;
+    margin-right: 4rem;
+
+    @media screen and (max-width: 768px) {
+      margin-right: 0rem;
+    }
+
+    a {
+      color: var(--color-white);
+      display: inline-block;
+      margin-bottom: 0.4rem;
+
+      &:hover {
+        color: var(--color-orange);
+      }
+    }
+  }
 }
 
 .logo {
@@ -14,15 +39,39 @@
   font-weight: 800;
   font-style: italic;
   letter-spacing: -1rem;
+  width: 4.2rem;
+  display: block;
+  margin-left: 4rem;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0rem;
+  }
+
+  span {
+    transition: var(--transition);
+  }
 
   span:first-of-type {
-    color: #000;
+    color: #fff;
     position: relative;
     z-index: 2;
   }
   span:last-of-type {
-    color: #666;
+    color: rgba(255, 255, 255, 0.5);
     position: relative;
     z-index: 1;
+    mix-blend-mode: color;
   }
+
+  &:hover {
+    span {
+      color: var(--color-orange);
+    }
+  }
+}
+
+.wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }

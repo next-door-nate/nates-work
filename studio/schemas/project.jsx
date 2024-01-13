@@ -31,6 +31,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      type: 'page_content',
+      title: 'Content',
+      name: 'content',
+      ground: 'main',
+    },
+    {
       type: 'meta',
       name: 'meta',
       group: 'seo',

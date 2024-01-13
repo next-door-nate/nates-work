@@ -4,10 +4,10 @@ import styles from "./Footer.module.scss";
 
 export default function Footer({ footer }) {
   return (
-    <footer className={styles.footer}>
-      <Container>
-        <h1>Nates Footer</h1>
-      </Container>
-    </footer>
+    <Container>
+      <footer className={styles.footer} data-noise="true">
+        <h3>Nates Work</h3>
+      </footer>
+    </Container>
   );
 }

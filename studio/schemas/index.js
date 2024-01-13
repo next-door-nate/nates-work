@@ -11,6 +11,7 @@ import bannerHome from './bannerHome'
 import navItem from './navItem'
 import header from './header'
 import footer from './footer'
+import blocks from './blocks'
 
 export const schemaTypes = [
   // document types
@@ -30,6 +31,7 @@ export const schemaTypes = [
 
   // page builders
   pageContent,
+  blocks,
 
   // block types
   bannerHome,
