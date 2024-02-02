@@ -5,7 +5,6 @@ import styles from "./Header.module.scss";
 import linkResolver from "../utils/linkResolver";
 
 export default function Header({ header }) {
-  console.log(header);
   return (
     <header className={styles.header} data-element="header">
       <Container>
