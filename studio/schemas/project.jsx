@@ -31,10 +31,10 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      type: 'page_content',
+      type: 'blocks',
       title: 'Content',
       name: 'content',
-      ground: 'main',
+      group: 'main',
     },
     {
       type: 'meta',
