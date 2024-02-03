@@ -4,6 +4,8 @@ import "../styles/remedy.css";
 import "../styles/variables.scss";
 import "../styles/typography.scss";
 import "../styles/main.scss";
+
+
 function MyApp({ Component, pageProps }) {
   return (
     <Suspense fallback={<h2>🌀 Loading</h2>}>
