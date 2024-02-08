@@ -1,14 +1,15 @@
 .banner {
   background: var(--color-green);
+  background: var(--color-teal-light);
   display: grid;
   place-items: end start;
   height: 60vh;
-  min-height: 64rem;
+  min-height: 72rem;
   padding: 4rem;
   position: relative;
-  border-radius: 1.6rem;
+  // border-radius: 1.6rem;
   overflow: clip;
-  margin-top: 2.4rem;
+  // margin-top: 2.4rem;
 
   @media screen and (max-width: 768px) {
     margin-top: 1.6rem;
@@ -17,6 +18,7 @@
   h1 {
     font-size: 6.4rem;
     color: var(--color-white);
+    color: var(--color-teal-dark);
     margin-bottom: 0;
     mix-blend-mode: difference;
 
@@ -27,6 +29,7 @@
 
   p {
     color: var(--color-white);
+    color: var(--color-teal-dark);
     max-width: 40rem;
   }
 }
@@ -310,7 +313,7 @@
   position: absolute !important;
   top: 0;
   left: 0;
-  background-color: var(--color-black);
+  // background-color: var(--color-black);
   width: 100%;
   height: 100%;
   display: block;

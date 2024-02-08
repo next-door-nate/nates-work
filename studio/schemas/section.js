@@ -17,8 +17,10 @@ export default {
       title: 'Theme',
       options: {
         list: [
+          {title: 'White', value: 'white'},
           {title: 'Light', value: 'light'},
           {title: 'Dark', value: 'dark'},
+          {title: 'Black', value: 'black'},
         ],
       },
     },

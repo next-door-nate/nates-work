@@ -8,10 +8,10 @@ export default function Footer({ footer }) {
   }
 
   return (
-    <Container>
-      <footer className={styles.footer} data-noise="true">
+    <footer className={styles.footer} data-noise="true">
+      <Container>
         <h3>Nates Work</h3>
-      </footer>
-    </Container>
+      </Container>
+    </footer>
   );
 }

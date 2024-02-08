@@ -27,15 +27,15 @@ function ShaderPlane() {
 
 export default function BannerHome({ block }) {
   return (
-    <Container>
-      <section className={styles.banner + ` noise`}>
+    <section className={styles.banner + ` noise`}>
+      <Container>
         <div className={styles.content}>
           <h1>{block.title}</h1>
           <RichTextRenderer blocks={block.subtitle} />
         </div>
 
         <Canvas id="canvas" className={styles.canvas}>
-          <ShaderPlane />
+          {/* <ShaderPlane /> */}
         </Canvas>
 
         {/* <div className={styles.gradient}>
@@ -87,7 +87,7 @@ export default function BannerHome({ block }) {
             </div>
           </div>
         </div> */}
-      </section>
-    </Container>
+      </Container>
+    </section>
   );
 }

@@ -6,8 +6,6 @@ import { globalConfigQuery, headerQuery, pageQuery } from "../utils/queries";
 import Blocks from "../components/Blocks";
 
 const Home = ({ page, globalConfig }) => {
-  console.log(page, globalConfig);
-
   return (
     <Layout header={globalConfig.header} footer={globalConfig.footer}>
       <Head>

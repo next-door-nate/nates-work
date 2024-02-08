@@ -7,6 +7,10 @@
   --color-red-light: #88413d;
   --color-red-dark: #3e0502;
 
+  --color-teal: #0d7275;
+  --color-teal-light: #aeeeeb;
+  --color-teal-dark: #044744;
+
   --color-orange: #ed4510;
 
   --color-grey: #e0e0d4;
@@ -17,4 +21,32 @@
   --color-white: #f2f4f6;
 
   --transition: all 0.3s ease-in-out;
+
+  --section-background: white;
+  --section-title: var(--color-dark);
+}
+
+[data-section-theme="white"] {
+  --section-background: white;
+  --section-title: var(--color-black);
+}
+
+[data-section-theme="light"] {
+  --section-background: var(--color-light);
+  --section-title: var(--color-black);
+}
+
+[data-section-theme="dark"] {
+  --section-background: var(--color-dark);
+  --section-title: var(--color-light);
+}
+
+[data-section-theme="black"] {
+  --section-background: var(--color-black);
+  --section-title: var(--color-light);
+}
+
+[data-section-theme="teal"] {
+  --section-background: var(--color-teal-light);
+  --section-title: var(--color-teal-dark);
 }

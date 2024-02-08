@@ -1,15 +1,14 @@
 import client from "../../utils/client";
 import Layout from "../../components/Layout";
 import Blocks from "../../components/Blocks";
+import Container from "../../components/Container";
 
 const Project = ({ project }) => {
   return (
     <Layout header={true} footer={true}>
       <article>
-        {project.title && <h1>{project.title}</h1>}
-        {project.blocks && 
-          <Blocks blocks={project.blocks} />
-        }
+        <Container>{project.title && <h1>{project.title}</h1>}</Container>
+        {project.blocks && <Blocks blocks={project.blocks} />}
       </article>
     </Layout>
   );

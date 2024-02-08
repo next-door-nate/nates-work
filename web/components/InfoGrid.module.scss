@@ -1,4 +1,31 @@
-.infogrid{
-    background: rgb(242, 231, 224);
-    padding: 8rem 0; 
+.infogrid {
+  // padding: 8rem 0;
+}
+
+.grid {
+  display: flex;
+  gap: 3.2rem;
+  // margin: 0 1.6rem;
+}
+
+.item {
+  flex: 1 1 25%;
+  min-width: 0;
+
+  p {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+  }
+}
+
+.item img {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+[data-section-theme="black"],
+[data-section-theme="dark"] {
+  .item img {
+    filter: invert(1);
+  }
 }

@@ -44,12 +44,46 @@ _type == "banner_home" => {
   subtitle,
 },
 
+_type == "two_up" => {
+  title,
+  text,
+  eyebrow,
+  image,
+  reverse,
+},
+
+_type == "grid" => {
+  title,
+  eyebrow,
+  text,
+  items[]{
+    _key,
+    title,
+    icon,
+    image,
+    eyebrow,
+    rich_text,
+  },
+}
+
+`;
+
+export const sectionQuery = `
+
+_type=="section" => {
+  theme,
+  "blocks": blocks[]{
+    ${blocksQuery}
+  }
+}
+
 `;
 
 export const pageQuery = `
   title,
   slug,
   "blocks": blocks[]{
-    ${blocksQuery}
+    ${blocksQuery},
+    ${sectionQuery}
   }
 `;
