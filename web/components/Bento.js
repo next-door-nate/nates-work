@@ -11,7 +11,7 @@ export default function Bento({ bento }) {
         {bento.box &&
           bento.box.map((item) => {
             return (
-              <div className={styles.box}>
+              <div className={styles.box} key={item._key}>
                 <figure className={styles.graphic}>
                   <div>graphic</div>
                 </figure>
