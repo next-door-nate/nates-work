@@ -1,6 +1,6 @@
 html {
   font-size: 62.5%;
-  font-family: "Pathway Extreme", sans-serif;
+  font-family: "Instrument Sans", sans-serif;
 }
 
 body {
@@ -36,4 +36,10 @@ p {
 a {
   text-decoration: none;
   transition: var(--transition);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
 }

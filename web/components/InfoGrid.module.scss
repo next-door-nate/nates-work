@@ -3,14 +3,20 @@
 }
 
 .grid {
+  --gap: 3.2rem;
   display: flex;
-  gap: 3.2rem;
+  gap: var(--gap);
   // margin: 0 1.6rem;
+  flex-wrap: wrap;
 }
 
 .item {
-  flex: 1 1 25%;
+  flex: 0 1 calc(25% - ((var(--gap) * 3) / 4));
   min-width: 0;
+
+  @media screen and (max-width: 768px) {
+    flex: 0 1 calc(50% - ((var(--gap) * 1) / 2));
+  }
 
   p {
     font-size: 1.4rem;

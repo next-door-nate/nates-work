@@ -10,7 +10,9 @@ export const serializers = {
     ),
     link_main: ({ children, mark }) => (
       <Link href={linkResolver(mark.link)} passHref>
-        <a title={children}>{children}</a>
+        <a title={children} target={mark.new_tab ? "_blank" : "_self"}>
+          {children}
+        </a>
       </Link>
     ),
     anchor: ({ children, mark }) => <span id={mark.anchor_name}>{children}</span>,

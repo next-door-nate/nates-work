@@ -14,5 +14,5 @@ export default function OptimizedImage({ image, layout, width = "", height = "" 
     image.alt = "Placeholder";
   }
 
-  return <Image {...imageProps} alt={image.alt} layout={layout} />;
+  return <Image {...imageProps} alt={image.alt} layout={layout} quality={100} />;
 }

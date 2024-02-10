@@ -4,6 +4,7 @@ import InfoGrid from "./InfoGrid";
 import Bento from "./Bento";
 import Section from "./Section";
 import TwoUp from "./TwoUp";
+import RichTextBlock from "./RichTextBlock";
 
 export default function Blocks({ blocks }) {
   return (
@@ -23,6 +24,8 @@ export default function Blocks({ blocks }) {
               return <Section blocks={block} key={block._key} />;
             case "two_up":
               return <TwoUp two_up={block} key={block._key} />;
+            case "rich_text_block":
+              return <RichTextBlock block={block} key={block._key} />;
           }
 
           return <p key={`noblockfound-` + i}>{block._type}</p>;

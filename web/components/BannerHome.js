@@ -5,6 +5,7 @@ import RichTextRenderer from "./RichTextRenderer";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { WaveMaterial } from "../shaders/bannerShader.js";
 import { easing } from "maath";
+import { motion } from "framer-motion";
 
 function ShaderPlane() {
   const ref = useRef();
@@ -27,16 +28,32 @@ function ShaderPlane() {
 
 export default function BannerHome({ block }) {
   return (
-    <section className={styles.banner + ` noise`}>
+    <section className={styles.banner}>
       <Container>
         <div className={styles.content}>
           <h1>{block.title}</h1>
           <RichTextRenderer blocks={block.subtitle} />
         </div>
 
-        <Canvas id="canvas" className={styles.canvas}>
-          {/* <ShaderPlane /> */}
-        </Canvas>
+        <div className={styles.name}>
+          <span>N</span>
+          <span>A</span>
+          <span>T</span>
+          <span>E</span>
+          <span>V</span>
+          <span>A</span>
+          <span>N</span>
+          <span>D</span>
+          <span>E</span>
+          <span>R</span>
+          <span>V</span>
+          <span>I</span>
+          <span>S</span>
+        </div>
+
+        {/* <Canvas id="canvas" className={styles.canvas}>
+          <ShaderPlane />
+        </Canvas> */}
 
         {/* <div className={styles.gradient}>
           <div className={styles.blowout}>

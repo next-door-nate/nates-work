@@ -64,6 +64,12 @@ _type == "grid" => {
     eyebrow,
     rich_text,
   },
+},
+
+_type == "rich_text_block" => {
+  title,
+  rich_text,
+  eyebrow,
 }
 
 `;

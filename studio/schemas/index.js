@@ -14,6 +14,8 @@ import blocks from './blocks/blocks'
 import section from './section'
 import twoUp from './blocks/twoUp'
 import grid from './blocks/grid'
+import richTextBlock from './blocks/richTextBlock'
+import imageBlock from './blocks/imageBlock'
 
 export const schemaTypes = [
   // document types
@@ -39,4 +41,6 @@ export const schemaTypes = [
   bannerHome,
   twoUp,
   grid,
+  richTextBlock,
+  imageBlock,
 ]
