@@ -1,3 +1,5 @@
+import {allDocumentTypes} from '../utils/linkHelper'
+
 export default {
   name: 'nav_item',
   title: 'Nav Item',
@@ -12,7 +14,7 @@ export default {
       name: 'page',
       title: 'Link',
       type: 'reference',
-      to: [{type: 'page'}, {type: 'project'}, {type: 'episode'}],
+      to: allDocumentTypes,
     },
     {
       name: 'external_link',
@@ -40,7 +42,7 @@ export default {
               name: 'page',
               title: 'Link',
               type: 'reference',
-              to: [{type: 'page'}, {type: 'project'}, {type: 'episode'}],
+              to: allDocumentTypes,
             },
             {
               name: 'external_link',

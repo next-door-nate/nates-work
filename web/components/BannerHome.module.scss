@@ -330,7 +330,7 @@
   place-items: center;
   font-family: "Pathway Extreme", sans-serif;
   font-weight: 800;
-  font-size: 8rem;
+  font-size: 6.4rem;
   perspective: 100rem;
   color: var(--color-teal);
   pointer-events: none;
@@ -338,7 +338,11 @@
   z-index: 1;
   opacity: 0.65;
   transform: scale(1.05) rotate3d(1, 1, 1, 0deg);
-  transform-origin: center left;
+  transform-origin: top left;
+
+  @media screen and (max-width: 768px) {
+    transform: scale(1.25) rotate3d(1, 1, 1, 0deg);
+  }
 
   --layer-1-blur: 0.2rem;
   --layer-1-text-shadow: 0 0 0 transparent;
@@ -361,6 +365,7 @@
   // N
   span:nth-child(1) {
     top: 5%;
+    // top: 75%;
     left: 12%;
     transform: translate(0, 0) scale(var(--layer-3-scale)) rotate3d(1, 1, 0.25, 55deg);
     filter: blur(var(--layer-3-blur));
@@ -374,6 +379,10 @@
     transform: translate(0, 0) scale(var(--layer-2-scale)) rotate3d(0, 0, 0.15, 35deg);
     filter: blur(var(--layer-2-blur));
     text-shadow: var(--layer-2-text-shadow);
+
+    @media screen and (max-width: 768px) {
+      // left: 22%;
+    }
   }
 
   // T
@@ -418,9 +427,9 @@
   span:nth-child(7) {
     top: 52%;
     left: 39%;
-    transform: translate(0, 0) scale(var(--layer-3-scale)) rotate3d(1, 0, 1, 22deg);
-    filter: blur(var(--layer-3-blur));
-    text-shadow: var(--layer-3-text-shadow);
+    transform: translate(0, 0) scale(var(--layer-2-scale)) rotate3d(1, 0, 1, 22deg);
+    filter: blur(var(--layer-2-blur));
+    text-shadow: var(--layer-2-text-shadow);
   }
 
   // D

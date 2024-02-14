@@ -13,6 +13,7 @@
     "@react-three/fiber": "^8.15.13",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^5",
+    "@sanity/image-url": "^1.0.2",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
     "framer-motion": "^11.0.3",

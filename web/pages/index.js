@@ -1,8 +1,7 @@
-import { Suspense } from "react";
 import Head from "next/head";
 import client from "../utils/client";
 import Layout from "../components/Layout";
-import { globalConfigQuery, headerQuery, pageQuery } from "../utils/queries";
+import { globalConfigQuery, pageQuery } from "../utils/queries";
 import Blocks from "../components/Blocks";
 
 const Home = ({ page, globalConfig }) => {

@@ -5,7 +5,11 @@ import RichTextRenderer from "./RichTextRenderer";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { WaveMaterial } from "../shaders/bannerShader.js";
 import { easing } from "maath";
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform, MotionValue } from "framer-motion";
+
+function useParallax(value, distance) {
+  return useTransform(value, [0, 1], [0, distance]);
+}
 
 function ShaderPlane() {
   const ref = useRef();
@@ -27,29 +31,69 @@ function ShaderPlane() {
 }
 
 export default function BannerHome({ block }) {
+  const ref = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, 200);
+  const y2 = useParallax(scrollYProgress, 400);
+  const y3 = useParallax(scrollYProgress, 600);
+
   return (
-    <section className={styles.banner}>
+    <section className={styles.banner} ref={ref}>
       <Container>
         <div className={styles.content}>
           <h1>{block.title}</h1>
           <RichTextRenderer blocks={block.subtitle} />
         </div>
 
-        <div className={styles.name}>
-          <span>N</span>
+        <motion.div style={{ y }} className={styles.name}>
+          <span hidden>N</span>
           <span>A</span>
-          <span>T</span>
+          <span hidden>T</span>
           <span>E</span>
-          <span>V</span>
-          <span>A</span>
-          <span>N</span>
+          <span hidden>V</span>
+          <span hidden>A</span>
+          <span hidden>N</span>
           <span>D</span>
           <span>E</span>
-          <span>R</span>
-          <span>V</span>
+          <span hidden>R</span>
+          <span hidden>V</span>
           <span>I</span>
+          <span hidden>S</span>
+        </motion.div>
+
+        <motion.div style={{ y2 }} ref={ref2} className={styles.name}>
+          <span hidden>N</span>
+          <span hidden>A</span>
+          <span hidden>T</span>
+          <span hidden>E</span>
+          <span>V</span>
+          <span hidden>A</span>
+          <span>N</span>
+          <span hidden>D</span>
+          <span hidden>E</span>
+          <span hidden>R</span>
+          <span>V</span>
+          <span hidden>I</span>
+          <span hidden>S</span>
+        </motion.div>
+
+        <motion.div style={{ y3 }} ref={ref3} className={styles.name}>
+          <span>N</span>
+          <span hidden>A</span>
+          <span>T</span>
+          <span hidden>E</span>
+          <span>V</span>
+          <span>A</span>
+          <span hidden>N</span>
+          <span hidden>D</span>
+          <span hidden>E</span>
+          <span>R</span>
+          <span hidden>V</span>
+          <span hidden>I</span>
           <span>S</span>
-        </div>
+        </motion.div>
 
         {/* <Canvas id="canvas" className={styles.canvas}>
           <ShaderPlane />

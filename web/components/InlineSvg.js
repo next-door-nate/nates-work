@@ -11,6 +11,8 @@ class InlineSVG extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props.url);
+
     this.mounted = true;
     fetch(this.props.url)
       .then((response) => response.text())

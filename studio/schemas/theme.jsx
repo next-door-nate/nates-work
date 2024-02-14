@@ -27,7 +27,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'foote_menu',
+      name: 'footer_menu',
       title: 'Footer',
       description:
         'Build complex menus from the module area, assign them here to update the menu everywhere',

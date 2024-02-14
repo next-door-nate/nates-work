@@ -19,7 +19,26 @@ export const headerQuery = `
 export const footerQuery = `
   nav[]{
     _key,
-  }
+    'link':{
+      title,
+      "_type": page->_type,
+      "slug": page->slug,
+      external_link,
+      linklist[]{
+        _key,
+        "link": {
+          'title': subLink.title,
+        }
+      }
+    },
+  },
+  social[]{
+    _key,
+    name,
+    link,
+    'icon': icon.asset->url,
+  },
+  copyright,
 `;
 
 export const globalConfigQuery = `
@@ -28,7 +47,9 @@ export const globalConfigQuery = `
   'header': theme->header_menu-> {
     ${headerQuery}
   },
-  'footer': ${footerQuery},
+  'footer': theme->footer_menu-> {
+    ${footerQuery}
+  },
   theme->{
     ...
   },

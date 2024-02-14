@@ -29,24 +29,34 @@
 [data-section-theme="white"] {
   --section-background: white;
   --section-title: var(--color-black);
+  --section-text: rgba(0, 0, 0, 0.7);
+  --section-eyebrow: var(--color-orange);
 }
 
 [data-section-theme="light"] {
   --section-background: var(--color-light);
   --section-title: var(--color-black);
+  --section-text: rgba(0, 0, 0, 0.7);
+  --section-eyebrow: var(--color-orange);
 }
 
 [data-section-theme="dark"] {
   --section-background: var(--color-dark);
   --section-title: var(--color-light);
+  --section-text: rgba(0, 0, 0, 0.7);
+  --section-eyebrow: var(--color-orange);
 }
 
 [data-section-theme="black"] {
   --section-background: var(--color-black);
   --section-title: var(--color-light);
+  --section-text: rgba(0, 0, 0, 0.7);
+  --section-eyebrow: var(--color-orange);
 }
 
 [data-section-theme="teal"] {
   --section-background: var(--color-teal-light);
   --section-title: var(--color-teal-dark);
+  --section-text: rgba(0, 0, 0, 0.7);
+  --section-eyebrow: var(--color-orange);
 }
