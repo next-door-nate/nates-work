@@ -1,12 +1,14 @@
 import client from "../utils/client";
 import Layout from "../components/Layout";
 import { globalConfigQuery } from "../utils/queries";
+import Container from "../components/Container";
 
 const Page = ({ page, globalConfig }) => {
-  console.log(globalConfig);
   return (
-    <Layout header={1} footer={1}>
-      <article>{page.title && <h1>{page.title}</h1>}</article>
+    <Layout header={globalConfig.header} footer={globalConfig.footer}>
+      <Container>
+        <article>{page.title && <h1>{page.title}</h1>}</article>
+      </Container>
     </Layout>
   );
 };

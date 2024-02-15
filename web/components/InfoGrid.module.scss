@@ -1,0 +1,37 @@
+.infogrid {
+  // padding: 8rem 0;
+}
+
+.grid {
+  --gap: 3.2rem;
+  display: flex;
+  gap: var(--gap);
+  // margin: 0 1.6rem;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex: 0 1 calc(25% - ((var(--gap) * 3) / 4));
+  min-width: 0;
+
+  @media screen and (max-width: 768px) {
+    flex: 0 1 calc(50% - ((var(--gap) * 1) / 2));
+  }
+
+  p {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+  }
+}
+
+.item img {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+[data-section-theme="black"],
+[data-section-theme="dark"] {
+  .item img {
+    filter: invert(1);
+  }
+}

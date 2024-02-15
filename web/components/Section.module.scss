@@ -1,0 +1,12 @@
+.section {
+  padding: 8rem 0;
+  background: var(--section-background);
+  color: var(--section-title);
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+
+  // [data-block]:not(:last-of-type) {
+  //   margin-bottom: 8rem;
+  // }
+}

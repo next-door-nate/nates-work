@@ -31,7 +31,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      type: 'page_content',
+      type: 'blocks',
       name: 'blocks',
       title: 'Page Content',
       group: 'main',

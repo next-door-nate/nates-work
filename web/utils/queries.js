@@ -19,7 +19,26 @@ export const headerQuery = `
 export const footerQuery = `
   nav[]{
     _key,
-  }
+    'link':{
+      title,
+      "_type": page->_type,
+      "slug": page->slug,
+      external_link,
+      linklist[]{
+        _key,
+        "link": {
+          'title': subLink.title,
+        }
+      }
+    },
+  },
+  social[]{
+    _key,
+    name,
+    link,
+    'icon': icon.asset->url,
+  },
+  copyright,
 `;
 
 export const globalConfigQuery = `
@@ -28,7 +47,9 @@ export const globalConfigQuery = `
   'header': theme->header_menu-> {
     ${headerQuery}
   },
-  'footer': ${footerQuery},
+  'footer': theme->footer_menu-> {
+    ${footerQuery}
+  },
   theme->{
     ...
   },
@@ -44,12 +65,52 @@ _type == "banner_home" => {
   subtitle,
 },
 
+_type == "two_up" => {
+  title,
+  text,
+  eyebrow,
+  image,
+  reverse,
+},
+
+_type == "grid" => {
+  title,
+  eyebrow,
+  text,
+  items[]{
+    _key,
+    title,
+    icon,
+    image,
+    eyebrow,
+    rich_text,
+  },
+},
+
+_type == "rich_text_block" => {
+  title,
+  rich_text,
+  eyebrow,
+}
+
+`;
+
+export const sectionQuery = `
+
+_type=="section" => {
+  theme,
+  "blocks": blocks[]{
+    ${blocksQuery}
+  }
+}
+
 `;
 
 export const pageQuery = `
   title,
   slug,
   "blocks": blocks[]{
-    ${blocksQuery}
+    ${blocksQuery},
+    ${sectionQuery}
   }
 `;

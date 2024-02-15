@@ -1,18 +1,62 @@
 :root {
-  --color-green: #efffaf;
-  --color-green-light: #e3ff75;
-  --color-green-dark: #e1f789;
+  --color-green: #cdf13d;
+  --color-green-light: #f1febe;
+  --color-green-dark: #afd223;
 
   --color-red: #5c1c19;
   --color-red-light: #88413d;
   --color-red-dark: #3e0502;
 
+  --color-teal: #0d7275;
+  --color-teal-light: #aeeeeb;
+  --color-teal-dark: #01302e;
+
   --color-orange: #ed4510;
 
   --color-grey: #e0e0d4;
 
-  --color-black: #272724;
+  --color-black: #111110;
+  --color-dark: #1e2211;
+  --color-light: #f2f1ec;
   --color-white: #f2f4f6;
 
   --transition: all 0.3s ease-in-out;
+
+  --section-background: white;
+  --section-title: var(--color-dark);
+}
+
+[data-section-theme="white"] {
+  --section-background: white;
+  --section-title: var(--color-black);
+  --section-text: rgba(0, 0, 0, 0.7);
+  --section-eyebrow: var(--color-orange);
+}
+
+[data-section-theme="light"] {
+  --section-background: var(--color-light);
+  --section-title: var(--color-black);
+  --section-text: rgba(0, 0, 0, 0.7);
+  --section-eyebrow: var(--color-orange);
+}
+
+[data-section-theme="dark"] {
+  --section-background: var(--color-dark);
+  --section-title: var(--color-light);
+  --section-text: rgba(0, 0, 0, 0.7);
+  --section-eyebrow: var(--color-orange);
+}
+
+[data-section-theme="black"] {
+  --section-background: var(--color-black);
+  --section-title: var(--color-light);
+  --section-text: rgba(0, 0, 0, 0.7);
+  --section-eyebrow: var(--color-orange);
+}
+
+[data-section-theme="teal"] {
+  --section-background: var(--color-teal-light);
+  --section-title: var(--color-teal-dark);
+  --section-text: rgba(0, 0, 0, 0.7);
+  --section-eyebrow: var(--color-orange);
 }

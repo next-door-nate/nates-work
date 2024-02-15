@@ -6,12 +6,16 @@ import globalConfig from './globalConfig'
 import theme from './theme'
 import episode from './episode'
 import richText from './richText'
-import pageContent from './pageContent'
-import bannerHome from './bannerHome'
+import bannerHome from './blocks/bannerHome'
 import navItem from './navItem'
 import header from './header'
 import footer from './footer'
-import blocks from './blocks'
+import blocks from './blocks/blocks'
+import section from './section'
+import twoUp from './blocks/twoUp'
+import grid from './blocks/grid'
+import richTextBlock from './blocks/richTextBlock'
+import imageBlock from './blocks/imageBlock'
 
 export const schemaTypes = [
   // document types
@@ -30,9 +34,13 @@ export const schemaTypes = [
   navItem,
 
   // page builders
-  pageContent,
   blocks,
+  section,
 
   // block types
   bannerHome,
+  twoUp,
+  grid,
+  richTextBlock,
+  imageBlock,
 ]

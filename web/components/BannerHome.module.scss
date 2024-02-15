@@ -1,22 +1,23 @@
 .banner {
   background: var(--color-green);
+  background: var(--color-teal-light);
   display: grid;
   place-items: end start;
-  height: 60vh;
-  min-height: 64rem;
-  padding: 4rem;
+  height: 70vh;
+  min-height: 72rem;
   position: relative;
-  border-radius: 1.6rem;
+  // border-radius: 1.6rem;
   overflow: clip;
-  margin-top: 2.4rem;
+  // margin-top: 2.4rem;
 
   @media screen and (max-width: 768px) {
-    margin-top: 1.6rem;
+    // margin-top: 1.6rem;
   }
 
   h1 {
     font-size: 6.4rem;
     color: var(--color-white);
+    color: var(--color-teal-dark);
     margin-bottom: 0;
     mix-blend-mode: difference;
 
@@ -27,6 +28,7 @@
 
   p {
     color: var(--color-white);
+    color: var(--color-teal-dark);
     max-width: 40rem;
   }
 }
@@ -34,6 +36,7 @@
 .content {
   position: relative;
   z-index: 2;
+  margin-bottom: 8rem;
 }
 
 .gradient {
@@ -310,9 +313,177 @@
   position: absolute !important;
   top: 0;
   left: 0;
-  background-color: var(--color-black);
+  // background-color: var(--color-black);
   width: 100%;
   height: 100%;
   display: block;
   z-index: 1;
+}
+
+.name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-family: "Pathway Extreme", sans-serif;
+  font-weight: 800;
+  font-size: 6.4rem;
+  perspective: 100rem;
+  color: var(--color-teal);
+  pointer-events: none;
+  color: #92d3d6;
+  z-index: 1;
+  opacity: 0.65;
+  transform: scale(1.05) rotate3d(1, 1, 1, 0deg);
+  transform-origin: top left;
+
+  @media screen and (max-width: 768px) {
+    transform: scale(1.25) rotate3d(1, 1, 1, 0deg);
+  }
+
+  --layer-1-blur: 0.2rem;
+  --layer-1-text-shadow: 0 0 0 transparent;
+  --layer-1-scale: 1;
+
+  --layer-2-blur: 0.4rem;
+  --layer-2-text-shadow: 0 2.4rem 1.4rem rgba(148, 212, 214, 0.25);
+  --layer-2-scale: 1.25;
+
+  --layer-3-blur: 0.6rem;
+  --layer-3-text-shadow: 0 8rem 2.4rem rgba(148, 212, 214, 0.5);
+  --layer-3-scale: 2;
+
+  * {
+    pointer-events: none !important;
+    transition: 0.5s ease-in-out;
+    position: absolute;
+  }
+
+  // N
+  span:nth-child(1) {
+    top: 5%;
+    // top: 75%;
+    left: 12%;
+    transform: translate(0, 0) scale(var(--layer-3-scale)) rotate3d(1, 1, 0.25, 55deg);
+    filter: blur(var(--layer-3-blur));
+    text-shadow: var(--layer-3-text-shadow);
+  }
+
+  // A
+  span:nth-child(2) {
+    top: 35%;
+    left: 18%;
+    transform: translate(0, 0) scale(var(--layer-2-scale)) rotate3d(0, 0, 0.15, 35deg);
+    filter: blur(var(--layer-2-blur));
+    text-shadow: var(--layer-2-text-shadow);
+
+    @media screen and (max-width: 768px) {
+      // left: 22%;
+    }
+  }
+
+  // T
+  span:nth-child(3) {
+    top: 57%;
+    left: 3%;
+    transform: translate(0, 0) scale(var(--layer-3-scale)) rotate3d(1, 0, 1, -35deg);
+    filter: blur(var(--layer-3-blur));
+    text-shadow: var(--layer-3-text-shadow);
+  }
+
+  // E
+  span:nth-child(4) {
+    top: 83%;
+    left: 28%;
+    transform: translate(0, 0) scale(var(--layer-1-scale)) rotate3d(1, 0, 1, -57deg);
+    filter: blur(var(--layer-1-blur));
+    text-shadow: var(--layer-1-text-shadow);
+    z-index: -1;
+  }
+
+  // V
+  span:nth-child(5) {
+    top: -5%;
+    left: 24%;
+    transform: translate(0, 0) scale(var(--layer-2-scale)) rotate3d(0, 0, 1, -27deg);
+    filter: blur(var(--layer-2-blur));
+    text-shadow: var(--layer-2-text-shadow);
+    z-index: -1;
+  }
+
+  // A
+  span:nth-child(6) {
+    top: 18%;
+    left: 31%;
+    transform: translate(0, 0) scale(var(--layer-3-scale)) rotate3d(1, 0, 1, -57deg);
+    filter: blur(var(--layer-3-blur));
+    text-shadow: var(--layer-3-text-shadow);
+  }
+
+  // N
+  span:nth-child(7) {
+    top: 52%;
+    left: 39%;
+    transform: translate(0, 0) scale(var(--layer-2-scale)) rotate3d(1, 0, 1, 22deg);
+    filter: blur(var(--layer-2-blur));
+    text-shadow: var(--layer-2-text-shadow);
+  }
+
+  // D
+  span:nth-child(8) {
+    top: 6%;
+    left: 50%;
+    transform: translate(0, 0) scale(var(--layer-1-scale)) rotate3d(1, 0, 1, 22deg);
+    filter: blur(var(--layer-1-blur));
+    text-shadow: var(--layer-1-text-shadow);
+  }
+
+  // E
+  span:nth-child(9) {
+    top: 38%;
+    left: 56%;
+    transform: translate(0, 0) scale(var(--layer-1-scale)) rotate3d(1, 1, 1, -52deg);
+    filter: blur(var(--layer-1-blur));
+    text-shadow: var(--layer-1-text-shadow);
+  }
+
+  // R
+  span:nth-child(10) {
+    top: 75%;
+    left: 58%;
+    transform: translate(0, 0) scale(var(--layer-3-scale)) rotate3d(1, 1, 1, 52deg);
+    filter: blur(var(--layer-3-blur));
+    text-shadow: var(--layer-3-text-shadow);
+  }
+
+  // V
+  span:nth-child(11) {
+    top: 5%;
+    left: 68%;
+    transform: translate(0, 0) scale(var(--layer-2-scale)) rotate3d(0.5, 0.5, 1, 45deg);
+    filter: blur(var(--layer-2-blur));
+    text-shadow: var(--layer-2-text-shadow);
+  }
+
+  // I
+  span:nth-child(12) {
+    top: 35%;
+    left: 78%;
+    transform: translate(0, 0) scale(var(--layer-1-scale)) rotate3d(-0.5, -0.5, 1, -45deg);
+    filter: blur(var(--layer-1-blur));
+    text-shadow: var(--layer-1-text-shadow);
+  }
+
+  // S
+  span:nth-child(13) {
+    top: 65%;
+    left: 87%;
+    transform: translate(0, 0) scale(var(--layer-3-scale)) rotate3d(-0.5, -0.5, 1, -45deg);
+    transform: translate(0, 0) scale(var(--layer-3-scale)) rotate3d(0.2, -1, 0.25, -45deg);
+    filter: blur(var(--layer-3-blur));
+    text-shadow: var(--layer-3-text-shadow);
+  }
 }
