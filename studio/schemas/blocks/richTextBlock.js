@@ -18,5 +18,22 @@ export default {
       name: 'rich_text',
       title: 'Rich Text',
     },
+    {
+      type: 'boolean',
+      name: 'center',
+      title: 'Center?',
+    },
+    {
+      type: 'string',
+      name: 'width',
+      title: 'Width',
+      options: {
+        list: [
+          {title: 'Full', value: 'full'},
+          {title: 'Medium', value: 'medium'},
+          {title: 'Small', value: 'small'},
+        ],
+      },
+    },
   ],
 }

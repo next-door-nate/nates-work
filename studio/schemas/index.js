@@ -16,12 +16,15 @@ import twoUp from './blocks/twoUp'
 import grid from './blocks/grid'
 import richTextBlock from './blocks/richTextBlock'
 import imageBlock from './blocks/imageBlock'
+import company from './company'
+import logoGarden from './blocks/logoGarden'
 
 export const schemaTypes = [
   // document types
   page,
   project,
   episode,
+  company,
   globalConfig,
   header,
   footer,
@@ -43,4 +46,5 @@ export const schemaTypes = [
   grid,
   richTextBlock,
   imageBlock,
+  logoGarden,
 ]

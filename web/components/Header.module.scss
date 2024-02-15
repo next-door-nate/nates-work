@@ -3,7 +3,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 10;
   // padding: 2.4rem 2.4rem;
   width: 100%;
   margin-top: 2.4rem;
@@ -25,7 +25,7 @@
       color: var(--color-white);
       color: var(--color-teal-dark);
       display: inline-block;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.6rem;
       font-weight: 520;
 
       &:hover {

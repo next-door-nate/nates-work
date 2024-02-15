@@ -31,6 +31,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      type: 'reference',
+      name: 'company',
+      title: 'Company',
+      to: [{type: 'company'}],
+    },
+    {
       type: 'blocks',
       title: 'Content',
       name: 'content',
