@@ -2,13 +2,14 @@ import client from "../utils/client";
 import Layout from "../components/Layout";
 import { globalConfigQuery } from "../utils/queries";
 import Container from "../components/Container";
+import Blocks from "../components/Blocks";
 
 const Page = ({ page, globalConfig }) => {
   return (
     <Layout header={globalConfig.header} footer={globalConfig.footer}>
-      <Container>
-        <article>{page.title && <h1>{page.title}</h1>}</article>
-      </Container>
+      <article>
+        <Blocks blocks={page.blocks} />
+      </article>
     </Layout>
   );
 };

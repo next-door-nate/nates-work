@@ -10,7 +10,7 @@ export default function OptimizedImage({ image, layout, width = "", height = "" 
     delete imageProps.height;
   }
 
-  if (image.alt == null) {
+  if (image.alt == null || !image.alt) {
     image.alt = "Placeholder";
   }
 

@@ -91,6 +91,16 @@ _type == "rich_text_block" => {
   title,
   rich_text,
   eyebrow,
+},
+
+_type == "logo_garden" => {
+  title,
+  logos[]{
+    _key,
+    "name": @->name,
+    "logo": @->logo,
+  },
+  "logos2": logos[],
 }
 
 `;

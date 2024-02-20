@@ -12,7 +12,7 @@ export default {
     {
       type: 'image',
       name: 'logo',
-      title: 'Image',
+      title: 'Logo',
       fields: [
         {
           type: 'string',
