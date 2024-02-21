@@ -65,6 +65,7 @@
     position: relative;
     z-index: 1;
     mix-blend-mode: color;
+    transition-delay: 0.1s;
   }
 
   &:hover {

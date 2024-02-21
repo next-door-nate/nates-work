@@ -42,4 +42,15 @@ export default {
   initialValue: {
     reverse: false,
   },
+  preview: {
+    select: {
+      title: 'title',
+    },
+    prepare({title}) {
+      return {
+        title: `Two Up`,
+        subtitle: title,
+      }
+    },
+  },
 }

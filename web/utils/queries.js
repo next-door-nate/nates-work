@@ -93,6 +93,12 @@ _type == "rich_text_block" => {
   eyebrow,
 },
 
+
+_type == "image_block" => {
+  image,
+  layout,
+},
+
 _type == "logo_garden" => {
   title,
   logos[]{
@@ -100,8 +106,8 @@ _type == "logo_garden" => {
     "name": @->name,
     "logo": @->logo,
   },
-  "logos2": logos[],
 }
+
 
 `;
 
@@ -111,7 +117,9 @@ _type=="section" => {
   theme,
   "blocks": blocks[]{
     ${blocksQuery}
-  }
+  },
+  pad_top,
+  pad_bottom,
 }
 
 `;

@@ -29,8 +29,31 @@ export default {
       name: 'blocks',
       of: allBlockTypes,
     },
+    {
+      type: 'boolean',
+      name: 'pad_top',
+      title: 'Pad Top?',
+    },
+    {
+      type: 'boolean',
+      name: 'pad_bottom',
+      title: 'Pad Bottom?',
+    },
   ],
   initialValue: {
     theme: 'light',
+    pad_top: true,
+    pad_bottom: true,
+  },
+  preview: {
+    select: {
+      title: 'title',
+    },
+    prepare({title}) {
+      return {
+        title: `Section`,
+        subtitle: title,
+      }
+    },
   },
 }

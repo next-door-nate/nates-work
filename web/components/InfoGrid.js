@@ -7,7 +7,7 @@ export default function InfoGrid({ infogrid }) {
   return (
     <section className={styles.infogrid} data-block="info-grid">
       <Container>
-        <h2>{infogrid.title}</h2>
+        {infogrid.title && <h2>{infogrid.title}</h2>}
         {infogrid.text && <RichTextRenderer blocks={infogrid.text} />}
 
         {infogrid.items && (

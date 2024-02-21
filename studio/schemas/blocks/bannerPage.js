@@ -1,7 +1,7 @@
 export default {
   type: 'object',
-  name: 'banner_home',
-  title: 'Banner Home',
+  name: 'banner_page',
+  title: 'Banner Page',
   fields: [
     {
       type: 'string',
@@ -10,8 +10,8 @@ export default {
     },
     {
       type: 'rich_text',
-      name: 'subtitle',
-      title: 'Subtitle',
+      name: 'text',
+      title: 'Text',
     },
   ],
   preview: {
@@ -20,7 +20,7 @@ export default {
     },
     prepare({title}) {
       return {
-        title: `Banner Home`,
+        title: `Banner Page`,
         subtitle: title,
       }
     },

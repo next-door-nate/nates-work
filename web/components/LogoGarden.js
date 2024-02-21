@@ -3,7 +3,6 @@ import Container from "./Container";
 import OptimizedImage from "./OptimizedImage";
 
 export default function LogoGarden({ garden }) {
-  console.log(garden);
   return (
     <section className={styles.garden} data-block={garden._type}>
       <Container container="normal">
@@ -12,7 +11,7 @@ export default function LogoGarden({ garden }) {
           <div className={styles.logos}>
             {garden.logos.map((company) => {
               return (
-                <div className={styles.logo} data-company={company.name}>
+                <div key={company._key} className={styles.logo} data-company={company.name}>
                   <OptimizedImage image={company.logo} />
                 </div>
               );

@@ -21,10 +21,23 @@ export default {
       title: 'Layout',
       options: {
         list: [
-          {title: 'Full', value: 'full'},
+          {title: 'Full (has margin)', value: 'full'},
+          {title: 'Bleed (no margin)', value: 'bleed'},
+          {title: 'Normal', value: 'normal'},
           {title: 'Inset', value: 'inset'},
         ],
       },
     },
   ],
+  preview: {
+    select: {
+      layout: 'layout',
+    },
+    prepare({layout}) {
+      return {
+        title: 'Image Block',
+        subtitle: layout.charAt(0).toUpperCase() + layout.slice(1),
+      }
+    },
+  },
 }

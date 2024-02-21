@@ -64,9 +64,13 @@ export default {
     },
   ],
   preview: {
-    prepare() {
+    select: {
+      count: 'column_count',
+    },
+    prepare({title, count}) {
       return {
         title: `Grid`,
+        subtitle: title ? title : `No Title` + ` | ` + count + ` Columns`,
       }
     },
   },

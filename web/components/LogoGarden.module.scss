@@ -79,8 +79,12 @@
   }
 }
 
-[data-section-theme="black"] {
+[data-section-theme="black"],
+[data-section-theme="dark"] {
   .logo {
-    filter: invert(1);
+    //https://stackoverflow.com/questions/42966641/how-to-transform-black-into-any-given-color-using-only-css-filters/43960991#43960991
+    filter: invert(100%) sepia() saturate(100000%) hue-rotate(200deg) brightness(0.75);
+    filter: invert(88%) sepia(12%) saturate(1516%) hue-rotate(68deg) brightness(89%) contrast(87%);
+    filter: invert(100%);
   }
 }

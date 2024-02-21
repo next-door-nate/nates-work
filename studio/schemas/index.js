@@ -18,6 +18,7 @@ import richTextBlock from './blocks/richTextBlock'
 import imageBlock from './blocks/imageBlock'
 import company from './company'
 import logoGarden from './blocks/logoGarden'
+import bannerPage from './blocks/bannerPage'
 
 export const schemaTypes = [
   // document types
@@ -42,6 +43,7 @@ export const schemaTypes = [
 
   // block types
   bannerHome,
+  bannerPage,
   twoUp,
   grid,
   richTextBlock,

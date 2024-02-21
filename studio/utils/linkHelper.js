@@ -6,6 +6,7 @@ export const allBlockTypes = [
   {type: 'rich_text_block'},
   {type: 'image_block'},
   {type: 'logo_garden'},
+  {type: 'banner_page'},
 ]
 
 export const allDocumentTypes = [{type: 'page'}, {type: 'project'}, {type: 'episode'}]
