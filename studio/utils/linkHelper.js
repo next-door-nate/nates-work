@@ -7,6 +7,7 @@ export const allBlockTypes = [
   {type: 'image_block'},
   {type: 'logo_garden'},
   {type: 'banner_page'},
+  {type: 'project_list'},
 ]
 
 export const allDocumentTypes = [{type: 'page'}, {type: 'project'}, {type: 'episode'}]

@@ -1,3 +1,7 @@
+body {
+  position: relative;
+}
+
 // Utilities
 
 .noise,
@@ -58,4 +62,75 @@
   @media screen and (min-width: 768px) {
     flex-direction: row-reverse;
   }
+}
+
+.dots {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: radial-gradient(hsla(0, 0%, 100%, 0.1) 1px, transparent 0);
+  background-size: 6px 6px;
+  background-position: -3px -3px;
+  -webkit-mask-image: linear-gradient(-30deg, #000 20%, transparent 60%);
+  mask-image: linear-gradient(-30deg, #000 20%, transparent 60%);
+  pointer-events: none;
+  z-index: 2;
+
+  &[data-dot-size="small"] {
+    background-image: radial-gradient(hsla(0, 0%, 100%, 0.51) 1px, transparent 0);
+    background-size: 3px 3px;
+    background-position: -1px -1px;
+  }
+}
+
+* {
+  pointer-events: all;
+}
+
+.cursor-tile {
+  --tile-size: 40px;
+  background-color: white;
+  position: fixed;
+  top: var(--y);
+  left: var(--x);
+  // filter: url(#filter);
+  z-index: 100;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: 0.2s linear tail;
+  // mix-blend-mode: difference;
+}
+
+@keyframes tail {
+  0% {
+    width: calc(var(--tile-size) / 1.5);
+    height: calc(var(--tile-size) / 1.5);
+  }
+  15% {
+    width: var(--tile-size);
+    height: var(--tile-size);
+  }
+
+  // 20% {
+  //   width: var(--tile-size);
+  //   height: var(--tile-size);
+  // }
+  100% {
+    width: 0px;
+    height: 0px;
+  }
+}
+
+.svg-filter {
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 }

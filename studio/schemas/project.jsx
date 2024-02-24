@@ -34,7 +34,14 @@ export default {
       type: 'reference',
       name: 'company',
       title: 'Company',
+      group: 'main',
       to: [{type: 'company'}],
+    },
+    {
+      type: 'string',
+      name: 'color',
+      title: 'Color',
+      description: 'basically any hex, rgba, hsl, oklab color can be used here',
     },
     {
       type: 'blocks',

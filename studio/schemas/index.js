@@ -19,6 +19,7 @@ import imageBlock from './blocks/imageBlock'
 import company from './company'
 import logoGarden from './blocks/logoGarden'
 import bannerPage from './blocks/bannerPage'
+import projectList from './blocks/projectList'
 
 export const schemaTypes = [
   // document types
@@ -49,4 +50,5 @@ export const schemaTypes = [
   richTextBlock,
   imageBlock,
   logoGarden,
+  projectList,
 ]

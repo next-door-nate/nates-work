@@ -109,6 +109,10 @@
     font-size: 18vw;
   }
 
+  * {
+    pointer-events: none !important;
+  }
+
   sup {
     font-size: 3.2vw;
     transform: translateY(-2.4rem);

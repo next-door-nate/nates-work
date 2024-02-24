@@ -16,7 +16,7 @@ export default function Blocks({ blocks }) {
           switch (block._type) {
             case "banner_home":
               return <BannerHome block={block} key={block._key} />;
-            case "banner":
+            case "banner_page":
               return <Banner banner={block} key={block._key} />;
             case "grid":
               return <InfoGrid infogrid={block} key={block._key} />;
