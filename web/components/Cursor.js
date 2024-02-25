@@ -6,16 +6,16 @@ export function mouseEffect() {
   var posX = e.clientX;
   var posY = e.clientY;
 
-  // size in px
-  var gridSize = 40;
+  // Might use to make it more of a grid effect instead of slug effect
+  //
+  // var gridSize = 40;
+  // var boundsX = document.documentElement.clientWidth;
+  // var boundsY = document.documentElement.clientHeight;
 
-  var boundsX = document.documentElement.clientWidth;
-  var boundsY = document.documentElement.clientHeight;
+  // var cellsX = boundsX / gridSize;
+  // var cellsY = boundsY / gridSize;
 
-  var cellsX = boundsX / gridSize;
-  var cellsY = boundsY / gridSize;
-
-  console.error(cellsX, cellsY);
+  // console.error(cellsX, cellsY);
 
   var overlay = document.querySelector(".cursor-overlay");
   var tile = document.createElement("div");
@@ -30,8 +30,6 @@ export function mouseEffect() {
   }, 200);
 
   overlay.append(tile);
-
-  console.log(posX, posY, boundsX, boundsY);
 }
 
 export default function Cursor({}) {
