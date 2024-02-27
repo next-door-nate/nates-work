@@ -41,7 +41,21 @@ export default {
       type: 'string',
       name: 'color',
       title: 'Color',
+      group: 'main',
       description: 'basically any hex, rgba, hsl, oklab color can be used here',
+    },
+    {
+      type: 'image',
+      name: 'featured_image',
+      title: 'Featured Image',
+      group: 'main',
+      fields: [
+        {
+          type: 'string',
+          name: 'alt',
+          title: 'Alt',
+        },
+      ],
     },
     {
       type: 'blocks',
