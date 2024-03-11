@@ -15,9 +15,9 @@ export default {
       of: [
         {
           type: 'reference',
-          name: 'company',
-          title: 'Company',
-          to: [{type: 'company'}],
+          name: 'project',
+          title: 'Project',
+          to: [{type: 'project'}],
         },
       ],
     },
