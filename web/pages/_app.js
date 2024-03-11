@@ -19,9 +19,10 @@ function MyApp({ Component, pageProps }) {
             <script defer data-domain="nates.work" src="https://plausible.io/js/script.js"></script>
           )}
         </Head>
-        <div onMouseMove={mouseEffect}>
+        {/* <div onMouseMove={mouseEffect}> */}
+        <div>
           <Component {...pageProps} />
-          <Cursor />
+          {/* <Cursor /> */}
         </div>
         <svg className="svg-filter">
           <defs>

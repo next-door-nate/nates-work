@@ -24,6 +24,7 @@
     a {
       color: var(--color-white);
       color: var(--color-teal-dark);
+      color: var(--color-black);
       display: inline-block;
       margin-bottom: 0.6rem;
       font-weight: 520;
@@ -56,7 +57,7 @@
 
   span:first-of-type {
     color: #fff;
-    color: var(--color-teal-dark);
+    color: var(--color-black);
     position: relative;
     z-index: 2;
   }

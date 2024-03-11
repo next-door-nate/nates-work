@@ -20,13 +20,17 @@ import company from './company'
 import logoGarden from './blocks/logoGarden'
 import bannerPage from './blocks/bannerPage'
 import projectList from './blocks/projectList'
+import blog from './blog'
+import skill from './skill'
 
 export const schemaTypes = [
   // document types
   page,
   project,
+  blog,
   episode,
   company,
+  skill,
   globalConfig,
   header,
   footer,

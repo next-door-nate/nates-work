@@ -7,8 +7,8 @@ export default function linkResolver(doc) {
     switch (doc._type) {
       case "project":
         return "/projects/" + slug;
-      case "post":
-        return "/blog/" + slug;
+      case "blog":
+        return "/writing/" + slug;
       case "category":
         return "/blog/category/" + slug;
     }

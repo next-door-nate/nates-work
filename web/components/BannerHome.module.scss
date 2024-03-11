@@ -358,8 +358,9 @@
 
   * {
     pointer-events: none !important;
-    transition: 0.5s ease-in-out;
+    transition: all 1s cubic-bezier(0.69, 0.28, 0.56, 1.18);
     position: absolute;
+    transform-origin: center center;
   }
 
   // N
@@ -490,9 +491,19 @@
   span:nth-child(13) {
     top: 65%;
     left: 87%;
-    transform: translate(0, 0) scale(var(--layer-3-scale)) rotate3d(-0.5, -0.5, 1, -45deg);
-    transform: translate(0, 0) scale(var(--layer-3-scale)) rotate3d(0.2, -1, 0.25, -45deg);
+    transform: translate(0, 0) scale(var(--layer-3-scale)) rotate3d(0.2, -1, 0.25, -765deg);
     filter: blur(var(--layer-3-blur));
     text-shadow: var(--layer-3-text-shadow);
+  }
+}
+
+[data-loading="true"] {
+  .name {
+    span {
+      transform: translate(-50%, -50%) rotate3d(0, 0, 0, 0deg) scale(1) !important;
+      top: 50% !important;
+      left: 50% !important;
+      opacity: 0;
+    }
   }
 }
