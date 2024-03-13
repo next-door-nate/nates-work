@@ -14,6 +14,9 @@ export default {
           title: 'Alt',
         },
       ],
+      options: {
+        hotspot: true,
+      },
     },
     {
       type: 'string',

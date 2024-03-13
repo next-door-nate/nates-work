@@ -20,6 +20,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      type: 'rich_text',
+      name: 'description',
+      title: 'Description',
+      group: 'main',
+    },
+    {
       name: 'slug',
       type: 'slug',
       title: 'Slug',
@@ -56,6 +62,12 @@ export default {
           title: 'Alt',
         },
       ],
+    },
+    {
+      type: 'url',
+      name: 'link',
+      title: 'Link',
+      ground: 'main',
     },
     {
       type: 'blocks',

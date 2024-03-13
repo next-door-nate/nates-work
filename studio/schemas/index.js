@@ -22,6 +22,7 @@ import bannerPage from './blocks/bannerPage'
 import projectList from './blocks/projectList'
 import blog from './blog'
 import skill from './skill'
+import testimonial from './testimonial'
 
 export const schemaTypes = [
   // document types
@@ -31,6 +32,7 @@ export const schemaTypes = [
   episode,
   company,
   skill,
+  testimonial,
   globalConfig,
   header,
   footer,

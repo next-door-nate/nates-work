@@ -3,9 +3,13 @@
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+  }
 
-    @media screen and (max-width: 768px) {
-      aspect-ratio: 4 / 3;
+  [data-container="bleed"]{
+    img{
+        @media screen and (max-width: 768px) {
+        aspect-ratio: 4 / 3;
+        }
     }
   }
 
