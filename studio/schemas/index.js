@@ -23,6 +23,9 @@ import projectList from './blocks/projectList'
 import blog from './blog'
 import skill from './skill'
 import testimonial from './testimonial'
+import role from './role'
+import tool from './tool'
+import imageSlideshow from './blocks/imageSlideshow'
 
 export const schemaTypes = [
   // document types
@@ -32,6 +35,8 @@ export const schemaTypes = [
   episode,
   company,
   skill,
+  role,
+  tool,
   testimonial,
   globalConfig,
   header,
@@ -55,6 +60,7 @@ export const schemaTypes = [
   grid,
   richTextBlock,
   imageBlock,
+  imageSlideshow,
   logoGarden,
   projectList,
 ]

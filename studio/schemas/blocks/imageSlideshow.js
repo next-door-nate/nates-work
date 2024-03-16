@@ -1,22 +1,12 @@
 export default {
   type: 'object',
-  name: 'image_block',
-  title: 'Image Block',
+  name: 'image_slideshow',
+  title: 'Image Slideshow',
   fields: [
     {
-      type: 'image',
-      name: 'image',
-      title: 'Image',
-      fields: [
-        {
-          type: 'string',
-          name: 'alt',
-          title: 'Alt',
-        },
-      ],
-      options: {
-        hotspot: true,
-      },
+      type: 'string',
+      name: 'title',
+      title: 'Title',
     },
     {
       type: 'string',
@@ -37,20 +27,27 @@ export default {
       title: 'Intrisic Aspect Ratio',
       description: 'If you want this to infer the intrinsic size of the image',
     },
+    {
+      type: 'array',
+      name: 'images',
+      title: 'Images',
+      of: [
+        {
+          type: 'image',
+          name: 'image',
+          title: 'Image',
+          fields: [
+            {
+              type: 'string',
+              name: 'alt',
+              title: 'Alt',
+            },
+          ],
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
+    },
   ],
-  preview: {
-    select: {
-      layout: 'layout',
-    },
-    prepare({layout}) {
-      return {
-        title: 'Image Block',
-        subtitle: layout.charAt(0).toUpperCase() + layout.slice(1),
-      }
-    },
-  },
-  initialValue: {
-    aspect_ratio: false,
-    layout: 'normal',
-  },
 }

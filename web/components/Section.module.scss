@@ -4,7 +4,7 @@
   color: var(--section-title);
   display: flex;
   flex-direction: column;
-  gap: 8rem;
+  gap: 9.6rem;
 
   &[data-pad-bottom="false"] {
     padding-bottom: 0;
@@ -17,4 +17,9 @@
   // [data-block]:not(:last-of-type) {
   //   margin-bottom: 8rem;
   // }
+
+  @media screen and (max-width: 768px) {
+    gap: 5.6rem;
+    padding: 6.4rem 0;
+  }
 }

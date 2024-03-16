@@ -25,7 +25,7 @@ export default function Header({ header }) {
                 <path
                   d="M40 0.00012207L37.1428 20H28.8046L23.6703 11.0621L25.2552 0.00012207L31.0204 8.88577H31.137L32.3906 0.00012207H40Z"
                   fill="black"
-                  fill-opacity="0.6"
+                  fillOpacity="0.6"
                 />
               </svg>
             </span>

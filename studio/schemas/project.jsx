@@ -1,3 +1,5 @@
+import company from './company'
+
 export default {
   type: 'document',
   name: 'project',
@@ -44,6 +46,34 @@ export default {
       to: [{type: 'company'}],
     },
     {
+      type: 'array',
+      name: 'roles',
+      title: 'Roles',
+      group: 'main',
+      of: [
+        {
+          type: 'reference',
+          name: 'role',
+          title: 'Role',
+          to: [{type: 'role'}],
+        },
+      ],
+    },
+    {
+      type: 'array',
+      name: 'tools',
+      title: 'Tools',
+      group: 'main',
+      of: [
+        {
+          type: 'reference',
+          name: 'tool',
+          title: 'Tool',
+          to: [{type: 'tool'}],
+        },
+      ],
+    },
+    {
       type: 'string',
       name: 'color',
       title: 'Color',
@@ -67,7 +97,7 @@ export default {
       type: 'url',
       name: 'link',
       title: 'Link',
-      ground: 'main',
+      group: 'main',
     },
     {
       type: 'blocks',
@@ -75,10 +105,17 @@ export default {
       name: 'content',
       group: 'main',
     },
-    {
-      type: 'meta',
-      name: 'meta',
-      group: 'seo',
-    },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      company: 'company.name',
+    },
+    prepare({title, company}) {
+      return {
+        title: company,
+        subtitle: title,
+      }
+    },
+  },
 }

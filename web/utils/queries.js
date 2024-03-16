@@ -97,6 +97,7 @@ _type == "rich_text_block" => {
 _type == "image_block" => {
   image,
   layout,
+  aspect_ratio,
 },
 
 _type == "logo_garden" => {
@@ -128,6 +129,20 @@ export const pageQuery = `
   title,
   slug,
   "blocks": blocks[]{
+    ${blocksQuery},
+    ${sectionQuery}
+  }
+`;
+
+export const projectQuery = `
+  slug,
+  title,
+  description,
+  featured_image,
+  link,
+  roles[]->{title},
+  tools[]->{title,link},
+  "content": content[]{
     ${blocksQuery},
     ${sectionQuery}
   }
