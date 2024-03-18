@@ -39,7 +39,7 @@ const Project = ({ project, globalConfig }) => {
                   <h5>Role{project.roles.length > 1 && `s`}:</h5>
                   {project.roles.length > 0 &&
                     project.roles.map((role) => {
-                      return <p>{role.title}</p>;
+                      return <p key={role._key}>{role.title}</p>;
                     })}
                 </div>
 
@@ -48,7 +48,7 @@ const Project = ({ project, globalConfig }) => {
                   {project.tools.length > 0 &&
                     project.tools.map((tool) => {
                       return (
-                        <p>
+                        <p key={tool._key}>
                           <Link title={tool.title} href={tool.link}>
                             {tool.title}
                           </Link>
