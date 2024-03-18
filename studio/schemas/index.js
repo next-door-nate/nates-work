@@ -16,12 +16,29 @@ import twoUp from './blocks/twoUp'
 import grid from './blocks/grid'
 import richTextBlock from './blocks/richTextBlock'
 import imageBlock from './blocks/imageBlock'
+import company from './company'
+import logoGarden from './blocks/logoGarden'
+import bannerPage from './blocks/bannerPage'
+import projectList from './blocks/projectList'
+import blog from './blog'
+import skill from './skill'
+import testimonial from './testimonial'
+import role from './role'
+import tool from './tool'
+import imageSlideshow from './blocks/imageSlideshow'
+import contactBlock from './blocks/contactBlock'
 
 export const schemaTypes = [
   // document types
   page,
   project,
+  blog,
   episode,
+  company,
+  skill,
+  role,
+  tool,
+  testimonial,
   globalConfig,
   header,
   footer,
@@ -39,8 +56,13 @@ export const schemaTypes = [
 
   // block types
   bannerHome,
+  bannerPage,
   twoUp,
   grid,
   richTextBlock,
   imageBlock,
+  imageSlideshow,
+  logoGarden,
+  projectList,
+  contactBlock,
 ]

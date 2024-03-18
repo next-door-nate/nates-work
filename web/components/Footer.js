@@ -21,7 +21,7 @@ export default function Footer({ footer }) {
         </Link>
 
         {footer.nav && (
-          <nav>
+          <nav className={styles.links}>
             {footer.nav.map((item) => {
               return (
                 <div key={item._key}>

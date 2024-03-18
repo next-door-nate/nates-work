@@ -24,6 +24,12 @@
 
   --section-background: white;
   --section-title: var(--color-dark);
+
+  // Themes
+  --color-button: var(--color-black);
+  --color-button-text: var(--color-white);
+  --color-button-hover: var(--color-orange);
+  --color-button-hover-text: var(--color-black);
 }
 
 [data-section-theme="white"] {

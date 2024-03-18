@@ -14,4 +14,15 @@ export default {
       title: 'Subtitle',
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+    },
+    prepare({title}) {
+      return {
+        title: `Banner Home`,
+        subtitle: title,
+      }
+    },
+  },
 }

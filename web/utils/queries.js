@@ -91,7 +91,30 @@ _type == "rich_text_block" => {
   title,
   rich_text,
   eyebrow,
+},
+
+
+_type == "image_block" => {
+  image,
+  layout,
+  aspect_ratio,
+},
+
+_type == "image_slideshow" => {
+  layout,
+  aspect_ratio,
+  images[],
+},
+
+_type == "logo_garden" => {
+  title,
+  logos[]{
+    _key,
+    "name": @->name,
+    "logo": @->logo,
+  },
 }
+
 
 `;
 
@@ -101,7 +124,9 @@ _type=="section" => {
   theme,
   "blocks": blocks[]{
     ${blocksQuery}
-  }
+  },
+  pad_top,
+  pad_bottom,
 }
 
 `;
@@ -110,6 +135,20 @@ export const pageQuery = `
   title,
   slug,
   "blocks": blocks[]{
+    ${blocksQuery},
+    ${sectionQuery}
+  }
+`;
+
+export const projectQuery = `
+  slug,
+  title,
+  description,
+  featured_image,
+  link,
+  roles[]->{title},
+  tools[]->{title,link},
+  "content": content[]{
     ${blocksQuery},
     ${sectionQuery}
   }

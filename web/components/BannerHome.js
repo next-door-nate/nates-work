@@ -39,8 +39,20 @@ export default function BannerHome({ block }) {
   const y2 = useParallax(scrollYProgress, 400);
   const y3 = useParallax(scrollYProgress, 600);
 
+  useEffect(() => {
+    // setTimeout(() => {
+    //   var loading = document.querySelector("[data-loading]");
+    //   loading.offsetWidth;
+    //   loading.setAttribute("data-loading", false);
+    // }, 0);
+
+    var loading = document.querySelector("[data-loading]");
+    loading.offsetWidth;
+    loading.setAttribute("data-loading", false);
+  }, []);
+
   return (
-    <section className={styles.banner} ref={ref}>
+    <section className={styles.banner} ref={ref} data-loading={true}>
       <Container>
         <div className={styles.content}>
           <h1>{block.title}</h1>

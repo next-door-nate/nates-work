@@ -14,6 +14,9 @@ export default {
           title: 'Alt',
         },
       ],
+      options: {
+        hotspot: true,
+      },
     },
     {
       type: 'string',
@@ -21,10 +24,33 @@ export default {
       title: 'Layout',
       options: {
         list: [
-          {title: 'Full', value: 'full'},
+          {title: 'Full (has margin)', value: 'full'},
+          {title: 'Bleed (no margin)', value: 'bleed'},
+          {title: 'Normal', value: 'normal'},
           {title: 'Inset', value: 'inset'},
         ],
       },
     },
+    {
+      type: 'boolean',
+      name: 'aspect_ratio',
+      title: 'Intrisic Aspect Ratio',
+      description: 'If you want this to infer the intrinsic size of the image',
+    },
   ],
+  preview: {
+    select: {
+      layout: 'layout',
+    },
+    prepare({layout}) {
+      return {
+        title: 'Image Block',
+        subtitle: layout.charAt(0).toUpperCase() + layout.slice(1),
+      }
+    },
+  },
+  initialValue: {
+    aspect_ratio: false,
+    layout: 'normal',
+  },
 }
