@@ -100,6 +100,12 @@ _type == "image_block" => {
   aspect_ratio,
 },
 
+_type == "image_slideshow" => {
+  layout,
+  aspect_ratio,
+  images[],
+},
+
 _type == "logo_garden" => {
   title,
   logos[]{

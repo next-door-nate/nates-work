@@ -26,6 +26,7 @@ import testimonial from './testimonial'
 import role from './role'
 import tool from './tool'
 import imageSlideshow from './blocks/imageSlideshow'
+import contactBlock from './blocks/contactBlock'
 
 export const schemaTypes = [
   // document types
@@ -63,4 +64,5 @@ export const schemaTypes = [
   imageSlideshow,
   logoGarden,
   projectList,
+  contactBlock,
 ]
