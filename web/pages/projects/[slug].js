@@ -77,7 +77,8 @@ const Project = ({ project, globalConfig }) => {
         </section>
         {project.content && <Blocks blocks={project.content} />}
         <FooterCta
-          title="Let's talk"
+          // prettier-ignore
+          title="Let&apos;s talk"
           subtitle="Have something in mind? Reach out and we can talk about what your project looks like."
           button="Start a project"
         />
