@@ -66,11 +66,12 @@ ul {
   border-radius: 5rem;
   background: var(--color-button);
   color: var(--color-button-text);
-  font-weight: 520;
+  font-weight: 640;
   transform: scale(1);
   transition: var(--transition);
   display: inline-block;
   border: 0.1rem solid transparent;
+  cursor: pointer;
 
   &:hover {
     background: var(--color-button-hover);
@@ -78,5 +79,10 @@ ul {
     color: var(--color-button-hover-text);
     border-color: var(--color-button-hover-text);
     transform: scale(1.05) !important;
+  }
+
+  &:active {
+    background-color: rgb(230, 230, 230);
+    transform: scale(1) !important;
   }
 }

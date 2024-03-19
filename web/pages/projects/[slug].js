@@ -18,7 +18,7 @@ const Project = ({ project, globalConfig }) => {
       <Head>
         <title>{project.title} | Nate&apos;s Work</title>
         <meta property="og:title" content={project.title + ` | Nate's Work`} key="title" />
-        <meta name="description" content={project.description} />
+        <meta name="description" key="description" content={project.description} />
       </Head>
       <article>
         <section className={styles.banner}>
