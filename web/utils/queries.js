@@ -113,8 +113,23 @@ _type == "logo_garden" => {
     "name": @->name,
     "logo": @->logo,
   },
-}
+},
 
+_type == "contact_block" => {
+  title,
+  text,
+},
+
+_type == "project_list" => {
+  title,
+  projects[]->{
+    title,
+    slug,
+    _type,
+    featured_image,
+    "company": company->,
+  }
+}
 
 `;
 
