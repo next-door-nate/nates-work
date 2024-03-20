@@ -12,7 +12,12 @@ export default function ProjectList({ block }) {
           <div className={styles.projects}>
             {block.projects.map((project) => {
               return (
-                <Link className={styles.card} href={linkResolver(project)} title={project.title}>
+                <Link
+                  key={project._key}
+                  className={styles.card}
+                  href={linkResolver(project)}
+                  title={project.title}
+                >
                   <div key={project._key}>
                     <div className={styles.background}>
                       <OptimizedImage image={project.featured_image} />
@@ -32,7 +37,7 @@ export default function ProjectList({ block }) {
                               <div>
                                 <h5>Role{project.roles.length > 1 && `s`}:</h5>
                                 {project.roles.map((role) => {
-                                  return <p>{role.title}</p>;
+                                  return <p key={role._key}>{role.title}</p>;
                                 })}
                               </div>
                             )}
@@ -41,7 +46,7 @@ export default function ProjectList({ block }) {
                               <div>
                                 <h5>Tool{project.tools.length > 1 && `s`}:</h5>
                                 {project.tools.map((tool) => {
-                                  return <p>{tool.title}</p>;
+                                  return <p key={tool._key}>{tool.title}</p>;
                                 })}
                               </div>
                             )}
