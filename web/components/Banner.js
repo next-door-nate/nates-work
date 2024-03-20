@@ -9,7 +9,12 @@ export default function Banner({ banner }) {
         <div className="dots" data-dot-size="small"></div>
         <Container>
           <h1>{banner.title}</h1>
-          {banner.text && <RichTextRenderer blocks={banner.text} />}
+
+          {banner.text && (
+            <div className={styles.content}>
+              <RichTextRenderer blocks={banner.text} />
+            </div>
+          )}
         </Container>
       </section>
     </div>

@@ -65,7 +65,7 @@ const Project = ({ project, globalConfig }) => {
                   title="View Project"
                   target="_blank"
                 >
-                  View Project
+                  {project.link_text}
                 </Link>
               )}
             </div>

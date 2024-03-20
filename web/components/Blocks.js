@@ -9,6 +9,7 @@ import LogoGarden from "./LogoGarden";
 import ImageBlock from "./ImageBlock";
 import ImageSlideshow from "./ImageSlideshow";
 import ContactBlock from "./ContactBlock";
+import ProjectList from "./ProjectList";
 
 export default function Blocks({ blocks }) {
   return (
@@ -38,6 +39,8 @@ export default function Blocks({ blocks }) {
               return <ImageSlideshow slideshow={block} key={block._key} />;
             case "contact_block":
               return <ContactBlock block={block} key={block._key} />;
+            case "project_list":
+              return <ProjectList block={block} key={block._key} />;
           }
 
           return <p key={`noblockfound-` + i}>{block._type}</p>;

@@ -65,6 +65,11 @@ _type == "banner_home" => {
   subtitle,
 },
 
+_type == "banner_page" => {
+  title,
+  text,
+},
+
 _type == "two_up" => {
   title,
   text,
@@ -92,7 +97,6 @@ _type == "rich_text_block" => {
   rich_text,
   eyebrow,
 },
-
 
 _type == "image_block" => {
   image,
@@ -125,10 +129,16 @@ _type == "project_list" => {
   projects[]->{
     title,
     slug,
-    _type,
     featured_image,
-    "company": company->,
-  }
+    _type,
+    company->,
+    tools[]->{
+      title,
+    },
+    roles[]->{
+      title,
+    },
+  },
 }
 
 `;
@@ -161,6 +171,7 @@ export const projectQuery = `
   description,
   featured_image,
   link,
+  link_text,
   roles[]->{title},
   tools[]->{title,link},
   "content": content[]{
