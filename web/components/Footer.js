@@ -10,6 +10,9 @@ export default function Footer({ footer }) {
     return null;
   }
 
+  const date = new Date();
+  const year = date.getFullYear();
+
   return (
     <footer className={styles.footer} data-noise="true">
       <Container>
@@ -59,7 +62,13 @@ export default function Footer({ footer }) {
           </div>
         )}
 
-        {footer.copyright && <p className={styles.copyright}>&copy; {footer.copyright}</p>}
+        {footer.copyright && (
+          <p className={styles.copyright}>
+            This site is built with Sanity, Next.js, and Cloudflare Pages/Workers
+            <br />
+            &copy; {year} {footer.copyright}
+          </p>
+        )}
       </Container>
 
       <div className={styles.background}>

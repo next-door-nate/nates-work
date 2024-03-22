@@ -1,0 +1,65 @@
+.form {
+  position: relative;
+}
+
+.message {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  z-index: 6;
+  width: 120%;
+  height: 120%;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  h3 {
+    text-transform: capitalize;
+    margin: 0.8rem 0;
+  }
+
+  p {
+    margin: 0;
+  }
+  &[data-message="none"] {
+  }
+
+  &[data-message="success"] {
+    .icon {
+      background-color: var(--color-green);
+    }
+
+    .check {
+      display: block;
+    }
+
+    .x {
+      display: none;
+    }
+  }
+
+  &[data-message="error"] {
+    .icon {
+      background-color: tomato !important;
+    }
+
+    .check {
+      display: none;
+    }
+
+    .x {
+      display: block;
+    }
+  }
+}
+
+.icon {
+  display: grid;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 8rem;
+  margin: 0 auto;
+  place-items: center;
+}
