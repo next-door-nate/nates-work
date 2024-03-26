@@ -1,14 +1,20 @@
-// canvas.width = document.querySelector(".BannerHome_banner__xaXBX").offsetWidth;
-// canvas.height = document.querySelector(".BannerHome_banner__xaXBX").offsetHeight;
+// canvas.width = document.querySelector(selector).offsetWidth;
+//     canvas.height = document.querySelector(selector).offsetHeight;
+// selector = ".BannerHome_banner__xaXBX",
 import React, { useRef, useEffect } from "react";
 
-const SparklingGrid = ({ gridSpacing = 50, maxIntensity = 100, flickerSpeed = 0.5 }) => {
+const SparklingGrid = ({
+  gridSpacing = 50,
+  maxIntensity = 100,
+  flickerSpeed = 0.5,
+  selector = ".BannerHome_banner__xaXBX",
+}) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    canvas.width = document.querySelector(".BannerHome_banner__xaXBX").offsetWidth;
-    canvas.height = document.querySelector(".BannerHome_banner__xaXBX").offsetHeight;
+    canvas.width = document.querySelector(selector).offsetWidth;
+    canvas.height = document.querySelector(selector).offsetHeight;
     const ctx = canvas.getContext("2d");
 
     let pixels = [];
@@ -29,8 +35,8 @@ const SparklingGrid = ({ gridSpacing = 50, maxIntensity = 100, flickerSpeed = 0.
     };
 
     const resizeCanvas = () => {
-      canvas.width = document.querySelector(".BannerHome_banner__xaXBX").offsetWidth;
-      canvas.height = document.querySelector(".BannerHome_banner__xaXBX").offsetHeight;
+      canvas.width = document.querySelector(selector).offsetWidth;
+      canvas.height = document.querySelector(selector).offsetHeight;
       createPixels();
     };
     window.addEventListener("resize", resizeCanvas);

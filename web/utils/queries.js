@@ -76,6 +76,7 @@ _type == "two_up" => {
   eyebrow,
   image,
   reverse,
+  intrinsic_height,
 },
 
 _type == "grid" => {

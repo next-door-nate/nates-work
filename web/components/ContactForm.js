@@ -60,13 +60,14 @@ function ContactForm() {
         console.log("Form submission successful");
         setFormState("success");
 
+        setFormData({
+          email: "",
+          location: "",
+          message: "",
+        });
+
         setTimeout(() => {
           setFormState(false);
-          setFormData({
-            email: "",
-            location: "",
-            message: "",
-          });
         }, 4200);
       } else {
         console.error("Form submission failed");

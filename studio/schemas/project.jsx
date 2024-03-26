@@ -100,6 +100,12 @@ export default {
       group: 'main',
     },
     {
+      type: 'string',
+      name: 'link_text',
+      title: 'Link Text',
+      group: 'main',
+    },
+    {
       type: 'blocks',
       title: 'Content',
       name: 'content',
@@ -117,5 +123,8 @@ export default {
         subtitle: title,
       }
     },
+  },
+  initialValue: {
+    link_text: 'View Project',
   },
 }

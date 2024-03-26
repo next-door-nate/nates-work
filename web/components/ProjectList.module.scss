@@ -48,7 +48,7 @@
     .background {
       &::before {
         background-color: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(2rem);
+        backdrop-filter: blur(0.4rem);
       }
 
       img {

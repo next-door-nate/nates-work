@@ -38,9 +38,15 @@ export default {
       name: 'reverse',
       title: 'Reverse layout?',
     },
+    {
+      type: 'boolean',
+      name: 'intrinsic_height',
+      title: 'Intrinsic height?',
+    },
   ],
   initialValue: {
     reverse: false,
+    intrinsic_height: false,
   },
   preview: {
     select: {

@@ -53,7 +53,12 @@ export default function BannerHome({ block }) {
   }, []);
 
   return (
-    <section className={styles.banner} ref={ref} data-loading={true}>
+    <section
+      className={styles.banner + ` noise`}
+      ref={ref}
+      data-loading={true}
+      data-block={block._type}
+    >
       <SparklingGrid gridSpacing={24} maxIntensity={50} flickerSpeed={10} />
       <Container>
         <div className={styles.content}>

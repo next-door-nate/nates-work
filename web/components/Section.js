@@ -3,7 +3,7 @@ import styles from "./Section.module.scss";
 export default function Section({ section }) {
   return (
     <section
-      className={styles.section}
+      className={styles.section + (section.theme === "white" ? `` : ` noise`)}
       data-section={true}
       data-section-theme={section.theme}
       data-block="section"

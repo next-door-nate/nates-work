@@ -10,6 +10,7 @@ import ImageBlock from "./ImageBlock";
 import ImageSlideshow from "./ImageSlideshow";
 import ContactBlock from "./ContactBlock";
 import ProjectList from "./ProjectList";
+import FooterCta from "./FooterCta";
 
 export default function Blocks({ blocks }) {
   return (
@@ -41,6 +42,15 @@ export default function Blocks({ blocks }) {
               return <ContactBlock block={block} key={block._key} />;
             case "project_list":
               return <ProjectList block={block} key={block._key} />;
+            case "footer_cta":
+              return (
+                <FooterCta
+                  // prettier-ignore
+                  title="Let&apos;s talk"
+                  subtitle="Have something in mind? Reach out and we can talk about what your project looks like."
+                  button="Start a project"
+                />
+              );
           }
 
           return <p key={`noblockfound-` + i}>{block._type}</p>;
