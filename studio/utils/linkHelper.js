@@ -10,6 +10,8 @@ export const allBlockTypes = [
   {type: 'banner_page'},
   {type: 'project_list'},
   {type: 'contact_block'},
+  {type: 'featured_quotes'},
+  {type: 'footer_cta'},
 ]
 
 export const allDocumentTypes = [{type: 'page'}, {type: 'project'}, {type: 'episode'}]

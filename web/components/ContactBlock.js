@@ -9,7 +9,7 @@ export default function ContactBlock({ block }) {
     <section className={styles.block}>
       {/* <div className={styles.beam + ` noise`}></div> */}
       <Head>
-        <title>{block.title} | Nate&apos;s Work</title>
+        <title>{block.title + ` | Nate's Work`}</title>
         <meta property="og:title" content={block.title + ` | Nate's Work`} key="title" />
         <meta
           name="description"

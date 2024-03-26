@@ -10,6 +10,9 @@ export default function Footer({ footer }) {
     return null;
   }
 
+  const date = new Date();
+  const year = date.getFullYear();
+
   return (
     <footer className={styles.footer} data-noise="true">
       <Container>
@@ -50,7 +53,7 @@ export default function Footer({ footer }) {
                       target="_blank"
                     >
                       <InlineSVG url={platform.icon} />
-                      {/* <div rclassName={styles.tooltip}>{platform.name}</div> */}
+                      {/* <div className={styles.tooltip}>{platform.name}</div> */}
                     </Link>
                   </div>
                 );
@@ -59,7 +62,14 @@ export default function Footer({ footer }) {
           </div>
         )}
 
-        {footer.copyright && <p className={styles.copyright}>&copy; {footer.copyright}</p>}
+        {footer.copyright && (
+          <p className={styles.copyright}>
+            This site is built with Sanity, Next.js, and Cloudflare Pages/Workers
+            <br />
+            <br />
+            &copy; {year} {footer.copyright}
+          </p>
+        )}
       </Container>
 
       <div className={styles.background}>

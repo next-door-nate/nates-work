@@ -27,6 +27,10 @@ import role from './role'
 import tool from './tool'
 import imageSlideshow from './blocks/imageSlideshow'
 import contactBlock from './blocks/contactBlock'
+import author from './author'
+import book from './book'
+import featuredQuotes from './blocks/featuredQuotes'
+import footerCta from './blocks/footerCta'
 
 export const schemaTypes = [
   // document types
@@ -38,6 +42,8 @@ export const schemaTypes = [
   skill,
   role,
   tool,
+  author,
+  book,
   testimonial,
   globalConfig,
   header,
@@ -65,4 +71,6 @@ export const schemaTypes = [
   logoGarden,
   projectList,
   contactBlock,
+  featuredQuotes,
+  footerCta,
 ]

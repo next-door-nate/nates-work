@@ -16,7 +16,7 @@ const Project = ({ project, globalConfig }) => {
   return (
     <Layout header={globalConfig.header} footer={globalConfig.footer}>
       <Head>
-        <title>{project.title} | Nate&apos;s Work</title>
+        <title>{project.title + ` | Nate's Work`}</title>
         <meta property="og:title" content={project.title + ` | Nate's Work`} key="title" />
         <meta name="description" key="description" content={project.description} />
       </Head>
@@ -65,7 +65,7 @@ const Project = ({ project, globalConfig }) => {
                   title="View Project"
                   target="_blank"
                 >
-                  View Project
+                  {project.link_text}
                 </Link>
               )}
             </div>

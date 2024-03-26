@@ -6,6 +6,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { WaveMaterial } from "../shaders/bannerShader.js";
 import { easing } from "maath";
 import { motion, useScroll, useSpring, useTransform, MotionValue } from "framer-motion";
+import SparklingGrid from "./SparklingGrid.js";
 
 function useParallax(value, distance) {
   return useTransform(value, [0, 1], [0, distance]);
@@ -52,7 +53,13 @@ export default function BannerHome({ block }) {
   }, []);
 
   return (
-    <section className={styles.banner} ref={ref} data-loading={true}>
+    <section
+      className={styles.banner + ` noise`}
+      ref={ref}
+      data-loading={true}
+      data-block={block._type}
+    >
+      <SparklingGrid gridSpacing={24} maxIntensity={50} flickerSpeed={10} />
       <Container>
         <div className={styles.content}>
           <h1>{block.title}</h1>

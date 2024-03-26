@@ -1,6 +1,6 @@
 import client from "../utils/client";
 import Layout from "../components/Layout";
-import { globalConfigQuery } from "../utils/queries";
+import { globalConfigQuery, pageQuery } from "../utils/queries";
 import Blocks from "../components/Blocks";
 
 const Page = ({ page, globalConfig }) => {
@@ -14,9 +14,7 @@ const Page = ({ page, globalConfig }) => {
 };
 
 export async function getStaticPaths() {
-  const paths = await client.fetch(
-    `*[_type == "page" && defined(slug.current)][].slug.current`,
-  );
+  const paths = await client.fetch(`*[_type == "page" && defined(slug.current)][].slug.current`);
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
@@ -30,9 +28,11 @@ export async function getStaticProps(context) {
   const globalConfig = await client.fetch(globalConfigQuery);
   const page = await client.fetch(
     `
-    *[_type == "page" && slug.current == $slug][0]
+    *[_type == "page" && slug.current == $slug][0]{
+      ${pageQuery}
+    }
   `,
-    { slug },
+    { slug }
   );
 
   return {

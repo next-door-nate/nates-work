@@ -1,16 +1,20 @@
 .cta {
   padding: 10rem 0;
   text-align: center;
-  background: var(--color-green-light);
+  // background: var(--color-green-light);
   color: var(--color-black);
 
   :global .button {
-    background-color: var(--color-orange);
+    background-color: var(--color-black);
 
     &:hover {
       background-color: var(--color-white);
       color: var(--color-black);
     }
+  }
+
+  * {
+    z-index: 5 !important;
   }
 
   h2 {
