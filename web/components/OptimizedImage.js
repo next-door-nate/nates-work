@@ -19,7 +19,7 @@ export default function OptimizedImage({ image, blurHash }) {
       ctx.putImageData(imageData, 0, 0);
       setPlaceholder(canvas.toDataURL());
     }
-  }, []);
+  }, [blurHash]);
 
   const imageProps = useNextSanityImage(client, image);
 
