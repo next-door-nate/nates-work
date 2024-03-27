@@ -70,7 +70,7 @@ const SparklingGrid = ({
     return () => {
       window.removeEventListener("resize", resizeCanvas);
     };
-  }, [gridSpacing, maxIntensity, flickerSpeed]);
+  }, [gridSpacing, maxIntensity, flickerSpeed, selector]);
 
   return <canvas ref={canvasRef} />;
 };

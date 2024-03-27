@@ -35,7 +35,7 @@ export default function Custom404({ globalConfig }) {
   return (
     <Layout header={globalConfig.header} footer={globalConfig.footer}>
       <Head>
-        <title>404 - Page Not Found | Nate's Work</title>
+        <title>404 - Page Not Found | Nate&apos;s Work</title>
       </Head>
       <section className={styles.error}>
         <h1 hidden>404 page not found</h1>

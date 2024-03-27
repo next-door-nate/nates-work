@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title key="title">Design 🤝 Engineering | Nate's Work</title>
+        <title key="title">Design 🤝 Engineering | Nate&apos;s Work</title>
         <meta
           name="description"
           content="The Design and Frontend Development work of Nate van der Vis"
