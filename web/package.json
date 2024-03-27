@@ -15,6 +15,7 @@
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^6.15.3",
     "@sanity/image-url": "^1.0.2",
+    "blurhash": "^2.0.5",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
     "framer-motion": "^11.0.3",

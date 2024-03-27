@@ -19,7 +19,7 @@ export default function ImageSlideshow({ slideshow }) {
               {slideshow.images.map((image, i) => {
                 return (
                   <div key={image._key} className={styles.image} data-order={i}>
-                    <OptimizedImage image={image} />
+                    <OptimizedImage image={image} blurHash={image.blurHash} />
                   </div>
                 );
               })}

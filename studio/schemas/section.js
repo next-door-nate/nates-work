@@ -41,7 +41,7 @@ export default {
     },
   ],
   initialValue: {
-    theme: 'light',
+    theme: 'white',
     pad_top: true,
     pad_bottom: true,
   },
