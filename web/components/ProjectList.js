@@ -20,7 +20,7 @@ export default function ProjectList({ block }) {
                 >
                   <div key={project._key}>
                     <div className={styles.background}>
-                      <OptimizedImage image={project.featured_image} />
+                      <OptimizedImage image={project.featured_image} blurHash={project.blurHash} />
                     </div>
                     <div className={styles.logo}>
                       <OptimizedImage image={project.company.logo} />

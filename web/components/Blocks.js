@@ -45,6 +45,7 @@ export default function Blocks({ blocks }) {
             case "footer_cta":
               return (
                 <FooterCta
+                  key={block._key}
                   // prettier-ignore
                   title="Let&apos;s talk"
                   subtitle="Have something in mind? Reach out and we can talk about what your project looks like."

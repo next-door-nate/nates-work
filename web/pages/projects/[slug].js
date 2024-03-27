@@ -76,12 +76,12 @@ const Project = ({ project, globalConfig }) => {
           <OptimizedImage image={project.featured_image} />
         </section>
         {project.content && <Blocks blocks={project.content} />}
-        <FooterCta
+        {/* <FooterCta
           // prettier-ignore
           title="Let&apos;s talk"
           subtitle="Have something in mind? Reach out and we can talk about what your project looks like."
           button="Start a project"
-        />
+        /> */}
       </article>
     </Layout>
   );

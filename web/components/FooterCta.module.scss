@@ -3,6 +3,7 @@
   text-align: center;
   // background: var(--color-green-light);
   color: var(--color-black);
+  z-index: 5 !important;
 
   :global .button {
     background-color: var(--color-black);

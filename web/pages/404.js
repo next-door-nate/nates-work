@@ -24,8 +24,10 @@ export default function Custom404({ globalConfig }) {
 
     if (window.outerWidth < 1000 && window.outerWidth > 768) {
       setInitialScale = [8, 8, 8];
+      console.log(initialScale);
     } else if (window.outerWidth < 868) {
       setInitialScale = [10, 10, 10];
+      console.log(initialScale);
     }
   }, []);
 

@@ -77,6 +77,8 @@ _type == "two_up" => {
   image,
   reverse,
   intrinsic_height,
+  "blurHash": image.asset->metadata.blurHash,
+  "lqip": image.asset->metadata.lqip,
 },
 
 _type == "grid" => {
@@ -88,6 +90,7 @@ _type == "grid" => {
     title,
     icon,
     image,
+    "blurHash": image.asset->metadata.blurHash,
     eyebrow,
     rich_text,
   },
@@ -101,6 +104,7 @@ _type == "rich_text_block" => {
 
 _type == "image_block" => {
   image,
+  "blurHash": image.asset->metadata.blurHash,
   layout,
   aspect_ratio,
 },
@@ -131,6 +135,7 @@ _type == "project_list" => {
     title,
     slug,
     featured_image,
+    "blurHash": featured_image.asset->metadata.blurHash,
     _type,
     company->,
     tools[]->{
@@ -171,6 +176,7 @@ export const projectQuery = `
   title,
   description,
   featured_image,
+  "blurHash": featured_image.asset->metadata.blurHash,
   link,
   link_text,
   roles[]->{title},

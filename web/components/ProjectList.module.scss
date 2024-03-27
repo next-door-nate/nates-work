@@ -134,6 +134,11 @@
     object-fit: cover;
     object-position: center center;
     transition: all 0.4s ease-in-out;
+    z-index: 3;
+  }
+
+  :global .blurhash {
+    z-index: -1;
   }
 }
 
