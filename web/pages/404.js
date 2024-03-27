@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { Canvas } from "@react-three/fiber";
 import { useEffect, useState } from "react";
 import {
@@ -19,20 +20,23 @@ import styles from "./404.module.scss";
 
 export default function Custom404({ globalConfig }) {
   var [initialScale, setInitialScale] = useState([7, 7, 7]);
-  useEffect(() => {
-    console.log(window.outerWidth);
+  // useEffect(() => {
+  //   console.log(window.outerWidth);
 
-    if (window.outerWidth < 1000 && window.outerWidth > 768) {
-      setInitialScale = [8, 8, 8];
-      console.log(initialScale);
-    } else if (window.outerWidth < 868) {
-      setInitialScale = [10, 10, 10];
-      console.log(initialScale);
-    }
-  }, []);
+  //   if (window.outerWidth < 1000 && window.outerWidth > 768) {
+  //     setInitialScale = [8, 8, 8];
+  //     console.log(initialScale);
+  //   } else if (window.outerWidth < 868) {
+  //     setInitialScale = [10, 10, 10];
+  //     console.log(initialScale);
+  //   }
+  // }, []);
 
   return (
     <Layout header={globalConfig.header} footer={globalConfig.footer}>
+      <Head>
+        <title>404 - Page Not Found | Nate's Work</title>
+      </Head>
       <section className={styles.error}>
         <h1 hidden>404 page not found</h1>
         <Canvas camera={{ position: initialScale, fov: 30 }}>

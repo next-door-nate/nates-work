@@ -8,11 +8,9 @@ import Head from "next/head";
 import RichTextRenderer from "../../components/RichTextRenderer";
 import Link from "next/link";
 import linkResolver from "../../utils/linkResolver";
-import FooterCta from "../../components/FooterCta";
 import OptimizedImage from "../../components/OptimizedImage";
 
 const Project = ({ project, globalConfig }) => {
-  console.log(project);
   return (
     <Layout header={globalConfig.header} footer={globalConfig.footer}>
       <Head>
@@ -73,7 +71,7 @@ const Project = ({ project, globalConfig }) => {
         </section>
 
         <section className={styles.image}>
-          <OptimizedImage image={project.featured_image} />
+          <OptimizedImage image={project.featured_image} blurHash={project.blurHash} />
         </section>
         {project.content && <Blocks blocks={project.content} />}
         {/* <FooterCta

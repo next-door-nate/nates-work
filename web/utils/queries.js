@@ -112,7 +112,10 @@ _type == "image_block" => {
 _type == "image_slideshow" => {
   layout,
   aspect_ratio,
-  images[],
+  images[]{
+    ...,
+    "blurHash": asset->metadata.blurHash,
+  },
 },
 
 _type == "logo_garden" => {
@@ -179,8 +182,8 @@ export const projectQuery = `
   "blurHash": featured_image.asset->metadata.blurHash,
   link,
   link_text,
-  roles[]->{title},
-  tools[]->{title,link},
+  roles[]->{title, _key},
+  tools[]->{title,link, _key},
   "content": content[]{
     ${blocksQuery},
     ${sectionQuery}

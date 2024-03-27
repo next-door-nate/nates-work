@@ -59,7 +59,12 @@ export default function BannerHome({ block }) {
       data-loading={true}
       data-block={block._type}
     >
-      <SparklingGrid gridSpacing={24} maxIntensity={50} flickerSpeed={10} />
+      <SparklingGrid
+        gridSpacing={24}
+        maxIntensity={50}
+        flickerSpeed={10}
+        selector=".BannerHome_banner__xaXBX"
+      />
       <Container>
         <div className={styles.content}>
           <h1>{block.title}</h1>

@@ -7,8 +7,8 @@ import { decode } from "blurhash";
 export default function OptimizedImage({ image, blurHash }) {
   const [placeholder, setPlaceholder] = useState("");
 
-  if (blurHash) {
-    useEffect(() => {
+  useEffect(() => {
+    if (blurHash) {
       const canvas = document.createElement("canvas");
       const { width, height } = decode(blurHash, 32, 32);
       canvas.width = 32;
@@ -18,8 +18,9 @@ export default function OptimizedImage({ image, blurHash }) {
       imageData.data.set(decode(blurHash, 32, 32));
       ctx.putImageData(imageData, 0, 0);
       setPlaceholder(canvas.toDataURL());
-    }, [blurHash]);
-  }
+    }
+  }, []);
+
   const imageProps = useNextSanityImage(client, image);
 
   if (image.alt == null || !image.alt) {
@@ -33,8 +34,8 @@ export default function OptimizedImage({ image, blurHash }) {
           {...imageProps}
           alt={image.alt}
           quality={90}
-          placeholder="blur"
-          blurDataURL={placeholder}
+          placeholder={blurHash ? "blur" : "none"}
+          blurDataURL={blurHash ? placeholder : null}
         />
       ) : (
         <Image {...imageProps} alt={image.alt} quality={90} />

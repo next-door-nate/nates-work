@@ -6,7 +6,7 @@ export default function ImageBlock({ block }) {
     <section className={styles.block} data-intrinsic-aspect={block.aspect_ratio}>
       <Container type={block.layout}>
         <div className={styles.image}>
-          <OptimizedImage image={block.image} />
+          <OptimizedImage image={block.image} blurHash={block.blurHash} />
         </div>
       </Container>
     </section>
