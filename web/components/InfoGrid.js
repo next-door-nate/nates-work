@@ -2,6 +2,8 @@ import styles from "./InfoGrid.module.scss";
 import Container from "./Container";
 import RichTextRenderer from "./RichTextRenderer";
 import OptimizedImage from "./OptimizedImage";
+import { motion } from "framer-motion";
+import { motionSettings } from "../utils/motionSettings";
 
 export default function InfoGrid({ infogrid }) {
   return (
@@ -11,7 +13,14 @@ export default function InfoGrid({ infogrid }) {
         {infogrid.text && <RichTextRenderer blocks={infogrid.text} />}
 
         {infogrid.items && (
-          <div className={styles.grid}>
+          <motion.div
+            initial={"hidden"}
+            whileInView={"visible"}
+            viewport={{ once: true }}
+            variants={motionSettings}
+            transition={{ duration: motionSettings.transitionDuration }}
+            className={styles.grid}
+          >
             {infogrid.items.map((item) => {
               return (
                 <div className={styles.item} key={item._key}>
@@ -21,7 +30,7 @@ export default function InfoGrid({ infogrid }) {
                 </div>
               );
             })}
-          </div>
+          </motion.div>
         )}
       </Container>
     </section>

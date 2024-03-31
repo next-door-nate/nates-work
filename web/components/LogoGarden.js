@@ -1,6 +1,8 @@
 import styles from "./LogoGarden.module.scss";
 import Container from "./Container";
 import OptimizedImage from "./OptimizedImage";
+import { motion } from "framer-motion";
+import { motionSettings } from "../utils/motionSettings";
 
 export default function LogoGarden({ garden }) {
   return (
@@ -8,7 +10,14 @@ export default function LogoGarden({ garden }) {
       <Container container="normal">
         <h5>{garden.title}</h5>
         {garden.logos && (
-          <div className={styles.logos}>
+          <motion.div
+            initial={"hidden"}
+            whileInView={"visible"}
+            viewport={{ once: true }}
+            variants={motionSettings}
+            transition={{ duration: motionSettings.transitionDuration }}
+            className={styles.logos}
+          >
             {garden.logos.map((company) => {
               return (
                 <div key={company._key} className={styles.logo} data-company={company.name}>
@@ -16,7 +25,7 @@ export default function LogoGarden({ garden }) {
                 </div>
               );
             })}
-          </div>
+          </motion.div>
         )}
       </Container>
     </section>
