@@ -7,6 +7,7 @@ import { WaveMaterial } from "../shaders/bannerShader.js";
 import { easing } from "maath";
 import { motion, useScroll, useSpring, useTransform, MotionValue } from "framer-motion";
 import SparklingGrid from "./SparklingGrid.js";
+import { motionSettings } from "../utils/motionSettings.js";
 
 function useParallax(value, distance) {
   return useTransform(value, [0, 1], [0, distance]);
@@ -66,64 +67,71 @@ export default function BannerHome({ block }) {
         selector=".BannerHome_banner__xaXBX"
       />
       <Container>
-        <div className={styles.content}>
-          <h1>{block.title}</h1>
-          <RichTextRenderer blocks={block.subtitle} />
-        </div>
+        <motion.div
+          initial={"hidden"}
+          whileInView={"visible"}
+          viewport={{ once: true }}
+          variants={motionSettings}
+          transition={{ duration: motionSettings.transitionDuration }}
+        >
+          <div className={styles.content}>
+            <h1>{block.title}</h1>
+            <RichTextRenderer blocks={block.subtitle} />
+          </div>
 
-        <motion.div style={{ y }} className={styles.name}>
-          <span hidden>N</span>
-          <span>A</span>
-          <span hidden>T</span>
-          <span>E</span>
-          <span hidden>V</span>
-          <span hidden>A</span>
-          <span hidden>N</span>
-          <span>D</span>
-          <span>E</span>
-          <span hidden>R</span>
-          <span hidden>V</span>
-          <span>I</span>
-          <span hidden>S</span>
-        </motion.div>
+          <motion.div style={{ y }} className={styles.name}>
+            <span hidden>N</span>
+            <span>A</span>
+            <span hidden>T</span>
+            <span>E</span>
+            <span hidden>V</span>
+            <span hidden>A</span>
+            <span hidden>N</span>
+            <span>D</span>
+            <span>E</span>
+            <span hidden>R</span>
+            <span hidden>V</span>
+            <span>I</span>
+            <span hidden>S</span>
+          </motion.div>
 
-        <motion.div style={{ y2 }} ref={ref2} className={styles.name}>
-          <span hidden>N</span>
-          <span hidden>A</span>
-          <span hidden>T</span>
-          <span hidden>E</span>
-          <span>V</span>
-          <span hidden>A</span>
-          <span>N</span>
-          <span hidden>D</span>
-          <span hidden>E</span>
-          <span hidden>R</span>
-          <span>V</span>
-          <span hidden>I</span>
-          <span hidden>S</span>
-        </motion.div>
+          <motion.div style={{ y2 }} ref={ref2} className={styles.name}>
+            <span hidden>N</span>
+            <span hidden>A</span>
+            <span hidden>T</span>
+            <span hidden>E</span>
+            <span>V</span>
+            <span hidden>A</span>
+            <span>N</span>
+            <span hidden>D</span>
+            <span hidden>E</span>
+            <span hidden>R</span>
+            <span>V</span>
+            <span hidden>I</span>
+            <span hidden>S</span>
+          </motion.div>
 
-        <motion.div style={{ y3 }} ref={ref3} className={styles.name}>
-          <span>N</span>
-          <span hidden>A</span>
-          <span>T</span>
-          <span hidden>E</span>
-          <span>V</span>
-          <span>A</span>
-          <span hidden>N</span>
-          <span hidden>D</span>
-          <span hidden>E</span>
-          <span>R</span>
-          <span hidden>V</span>
-          <span hidden>I</span>
-          <span>S</span>
-        </motion.div>
+          <motion.div style={{ y3 }} ref={ref3} className={styles.name}>
+            <span>N</span>
+            <span hidden>A</span>
+            <span>T</span>
+            <span hidden>E</span>
+            <span>V</span>
+            <span>A</span>
+            <span hidden>N</span>
+            <span hidden>D</span>
+            <span hidden>E</span>
+            <span>R</span>
+            <span hidden>V</span>
+            <span hidden>I</span>
+            <span>S</span>
+          </motion.div>
 
-        {/* <Canvas id="canvas" className={styles.canvas}>
+          {/* <Canvas id="canvas" className={styles.canvas}>
           <ShaderPlane />
         </Canvas> */}
 
-        {/* <div className={styles.gradient}>
+          {/* <div className={styles.gradient}>
           <div className={styles.blowout}>
             <div className={styles.blowout1}></div>
             <div className={styles.blowout2}></div>
@@ -172,6 +180,7 @@ export default function BannerHome({ block }) {
             </div>
           </div>
         </div> */}
+        </motion.div>
       </Container>
     </section>
   );
