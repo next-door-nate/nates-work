@@ -7,7 +7,7 @@ const SparklingGrid = ({
   gridSpacing = 50,
   maxIntensity = 100,
   flickerSpeed = 0.5,
-  selector = ".BannerHome_banner__xaXBX",
+  selector = "[data-block='banner_home']",
 }) => {
   const canvasRef = useRef(null);
 
