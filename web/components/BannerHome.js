@@ -60,12 +60,7 @@ export default function BannerHome({ block }) {
       data-loading={true}
       data-block={block._type}
     >
-      <SparklingGrid
-        gridSpacing={24}
-        maxIntensity={50}
-        flickerSpeed={10}
-        selector=".BannerHome_banner__xaXBX"
-      />
+      <SparklingGrid gridSpacing={24} maxIntensity={50} flickerSpeed={10} />
       <Container>
         <motion.div
           initial={"hidden"}
