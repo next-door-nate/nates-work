@@ -3,6 +3,8 @@ import Container from "./Container";
 import styles from "./ContactBlock.module.scss";
 import RichTextRenderer from "./RichTextRenderer";
 import Head from "next/head";
+import { motion } from "framer-motion";
+import { motionSettings } from "../utils/motionSettings";
 
 export default function ContactBlock({ block }) {
   return (
@@ -19,13 +21,27 @@ export default function ContactBlock({ block }) {
       </Head>
       <Container>
         <section className={styles.content}>
-          <div className={styles.copy}>
+          <motion.div
+            initial={"hidden"}
+            whileInView={"visible"}
+            viewport={{ once: true }}
+            variants={motionSettings}
+            transition={{ duration: motionSettings.transitionDuration }}
+            className={styles.copy}
+          >
             {block.title && <h1>{block.title}</h1>}
             {block.text && <RichTextRenderer blocks={block.text} />}
-          </div>
-          <div className={styles.form}>
+          </motion.div>
+          <motion.div
+            initial={"hidden"}
+            whileInView={"visible"}
+            viewport={{ once: true }}
+            variants={motionSettings}
+            transition={{ duration: motionSettings.transitionDuration, delay: 0.3 }}
+            className={styles.form}
+          >
             <ContactForm />
-          </div>
+          </motion.div>
         </section>
       </Container>
     </section>
