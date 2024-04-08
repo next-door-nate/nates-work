@@ -156,7 +156,9 @@ _type == "project_list" => {
 
 _type == "writing_list" => {
   title,
+  
   "posts": *[_type=="blog"]{
+    _id,
     _key,
     title,
     date,

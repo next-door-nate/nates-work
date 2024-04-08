@@ -9,7 +9,7 @@ export default function WritingList({ list }) {
           <section>
             {list.posts.map((post) => {
               return (
-                <article>
+                <article key={post._id}>
                   <h3>{post.title}</h3>
                   <RichTextRenderer blocks={post.description} />
                   <h5>{post.date}</h5>
