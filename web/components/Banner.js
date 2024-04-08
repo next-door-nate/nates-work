@@ -18,6 +18,8 @@ export default function Banner({ banner }) {
             variants={motionSettings}
             transition={{ duration: motionSettings.transitionDuration }}
           >
+            {banner.eyebrow && <h5 className="eyebrow">{banner.eyebrow}</h5>}
+
             <h1>{banner.title}</h1>
 
             {banner.text && (

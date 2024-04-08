@@ -68,6 +68,7 @@ _type == "banner_home" => {
 _type == "banner_page" => {
   title,
   text,
+  eyebrow,
 },
 
 _type == "two_up" => {
@@ -100,6 +101,9 @@ _type == "rich_text_block" => {
   title,
   rich_text,
   eyebrow,
+  center,
+  classic,
+  width,
 },
 
 _type == "image_block" => {
@@ -148,6 +152,20 @@ _type == "project_list" => {
       title,
     },
   },
+},
+
+_type == "writing_list" => {
+  title,
+  "posts": *[_type=="blog"]{
+    _key,
+    title,
+    date,
+    description,
+    featured_image,
+    "blurHash": featured_image.asset->metadata.blurHash,
+    content,
+    meta,
+  }
 }
 
 `;

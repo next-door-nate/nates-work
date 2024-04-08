@@ -11,6 +11,7 @@ import ImageSlideshow from "./ImageSlideshow";
 import ContactBlock from "./ContactBlock";
 import ProjectList from "./ProjectList";
 import FooterCta from "./FooterCta";
+import WritingList from "./WritingList";
 
 export default function Blocks({ blocks }) {
   return (
@@ -42,6 +43,8 @@ export default function Blocks({ blocks }) {
               return <ContactBlock block={block} key={block._key} />;
             case "project_list":
               return <ProjectList block={block} key={block._key} />;
+            case "writing_list":
+              return <WritingList list={block} key={block._key} />;
             case "footer_cta":
               return (
                 <FooterCta

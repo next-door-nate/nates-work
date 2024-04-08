@@ -31,6 +31,7 @@ import author from './author'
 import book from './book'
 import featuredQuotes from './blocks/featuredQuotes'
 import footerCta from './blocks/footerCta'
+import writingList from './blocks/writingList'
 
 export const schemaTypes = [
   // document types
@@ -73,4 +74,5 @@ export const schemaTypes = [
   contactBlock,
   featuredQuotes,
   footerCta,
+  writingList,
 ]
