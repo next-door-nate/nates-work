@@ -24,6 +24,11 @@ export default {
       title: 'Center?',
     },
     {
+      type: 'boolean',
+      name: 'classic',
+      title: 'Classic stack layout?',
+    },
+    {
       type: 'string',
       name: 'width',
       title: 'Width',

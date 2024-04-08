@@ -3,6 +3,21 @@
   display: flex;
   gap: var(--gap);
   flex-wrap: wrap;
+
+  &[data-stack="true"] {
+    flex-direction: column;
+    max-width: 80ch;
+    // justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 0;
+
+    .title {
+      h2 {
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 .title {
@@ -28,5 +43,9 @@
 
   p:first-of-type {
     margin-top: 0;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
   }
 }

@@ -13,6 +13,7 @@ export default function RichTextBlock({ block }) {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
           className={styles.rich}
+          data-stack={block.classic}
         >
           <div className={styles.title}>
             {block.eyebrow && <h5 className="eyebrow">{block.eyebrow}</h5>}

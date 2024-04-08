@@ -12,6 +12,7 @@ export const allBlockTypes = [
   {type: 'contact_block'},
   {type: 'featured_quotes'},
   {type: 'footer_cta'},
+  {type: 'writing_list'},
 ]
 
 export const allDocumentTypes = [{type: 'page'}, {type: 'project'}, {type: 'episode'}]

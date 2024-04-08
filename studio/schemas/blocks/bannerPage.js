@@ -13,6 +13,11 @@ export default {
       name: 'text',
       title: 'Text',
     },
+    {
+      type: 'string',
+      name: 'eyebrow',
+      title: 'Eyebrow',
+    },
   ],
   preview: {
     select: {
