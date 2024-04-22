@@ -191,7 +191,17 @@ export const pageQuery = `
   "blocks": blocks[]{
     ${blocksQuery},
     ${sectionQuery}
+  },
+  meta{
+    title,
+    description,
+    image,
+    "canonical": {
+      "_type": ^._type,
+      "slug": ^.slug,
+    },
   }
+
 `;
 
 export const projectQuery = `

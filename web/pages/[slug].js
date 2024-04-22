@@ -2,10 +2,13 @@ import client from "../utils/client";
 import Layout from "../components/Layout";
 import { globalConfigQuery, pageQuery } from "../utils/queries";
 import Blocks from "../components/Blocks";
+import HeadMeta from "../components/HeadMeta";
 
 const Page = ({ page, globalConfig }) => {
+  console.log(page);
   return (
     <Layout header={globalConfig.header} footer={globalConfig.footer}>
+      <HeadMeta meta={page.meta} />
       <article>
         <Blocks blocks={page.blocks} />
       </article>
