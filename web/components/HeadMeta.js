@@ -14,15 +14,8 @@ export default function HeadMeta({ meta }) {
 
       {meta?.description && (
         <>
-          <meta
-            name="description"
-            content="The Design and Frontend Development work of Nate van der Vis"
-            key="description"
-          />
-          <meta
-            property="og:description"
-            content="The Design and Frontend Development work of Nate van der Vis"
-          />
+          <meta name="description" content={meta.description} key="description" />
+          <meta property="og:description" content={meta.description} />
         </>
       )}
 
