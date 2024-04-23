@@ -4,7 +4,7 @@ import Container from "./Container";
 import OptimizedImage from "./OptimizedImage";
 export default function ImageSlideshow({ slideshow }) {
   let [active, setActive] = useState(1);
-  let [preppedImages, setPreppedImages] = useState();
+  let [activeDot, setActiveDot] = useState(0);
 
   let images = [];
   let cycles = 2;
@@ -16,16 +16,14 @@ export default function ImageSlideshow({ slideshow }) {
   }
 
   function nextImage(slides) {
-    console.log("next image");
-
     var slides = document.querySelectorAll('[data-component="slide"]');
 
     slides.forEach((slide) => {
       var index = slide.getAttribute("data-order");
-      if (index == 5) {
+      if (index == slides.length - 1) {
         slide.setAttribute("data-order", 0);
       } else {
-        slide.setAttribute("data-order", index * 1 + 1);
+        slide.setAttribute("data-order", parseInt(index) + 1);
       }
     });
 
@@ -34,26 +32,36 @@ export default function ImageSlideshow({ slideshow }) {
     } else {
       setActive(active + 1);
     }
+
+    if (activeDot == 0) {
+      setActiveDot(slideshow.images.length - 1);
+    } else {
+      setActiveDot(activeDot - 1);
+    }
   }
 
   function prevImage() {
-    console.log("prev image");
-
     var slides = document.querySelectorAll('[data-component="slide"]');
 
     slides.forEach((slide) => {
       var index = slide.getAttribute("data-order");
       if (index == 0) {
-        slide.setAttribute("data-order", 5);
+        slide.setAttribute("data-order", parseInt(slides.length) - 1);
       } else {
-        slide.setAttribute("data-order", index * 1 - 1);
+        slide.setAttribute("data-order", parseInt(index) - 1);
       }
     });
 
     if (active == 0) {
-      setActive(5);
+      setActive(slides.length - 1);
     } else {
       setActive(active - 1);
+    }
+
+    if (activeDot == slideshow.images.length - 1) {
+      setActiveDot(0);
+    } else {
+      setActiveDot(activeDot + 1);
     }
   }
 
@@ -71,6 +79,7 @@ export default function ImageSlideshow({ slideshow }) {
                     data-order={i}
                     data-active={i == active}
                     data-component="slide"
+                    onClick={prevImage}
                   >
                     <OptimizedImage image={image} blurHash={image.blurHash} />
                   </div>
@@ -80,8 +89,25 @@ export default function ImageSlideshow({ slideshow }) {
           )}
 
           <div className={styles.controls}>
-            <button onClick={prevImage}>&lt;</button>
-            <button onClick={nextImage}>&gt;</button>
+            <div className={styles.buttons}>
+              <button onClick={nextImage}>
+                <span className={styles.triangle} data-triangle="left"></span> Prev
+              </button>
+              <button onClick={prevImage}>
+                Next <span className={styles.triangle} data-triangle="right"></span>
+              </button>
+            </div>
+            <div className={styles.dots}>
+              {slideshow.images.map((dot, i) => {
+                return (
+                  <div
+                    key={i + `-dot`}
+                    className={styles.dot}
+                    data-active-dot={i == activeDot}
+                  ></div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </Container>
