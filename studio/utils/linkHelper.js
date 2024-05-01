@@ -13,6 +13,7 @@ export const allBlockTypes = [
   {type: 'featured_quotes'},
   {type: 'footer_cta'},
   {type: 'writing_list'},
+  {type: 'book_list'},
 ]
 
 export const allDocumentTypes = [{type: 'page'}, {type: 'project'}, {type: 'episode'}]

@@ -3,8 +3,9 @@ import client from "../utils/client";
 import Layout from "../components/Layout";
 import { globalConfigQuery, pageQuery } from "../utils/queries";
 import Blocks from "../components/Blocks";
+import { getBooks } from "../lib/getBooks";
 
-const Home = ({ page, globalConfig }) => {
+const Home = ({ page, globalConfig, books }) => {
   return (
     <Layout header={globalConfig.header} footer={globalConfig.footer}>
       <Head>
@@ -14,13 +15,15 @@ const Home = ({ page, globalConfig }) => {
       </Head>
 
       <article>
-        <Blocks blocks={page.blocks} />
+        <Blocks blocks={page.blocks} books={books} />
       </article>
     </Layout>
   );
 };
 
 export async function getStaticProps(context) {
+  const books = await getBooks();
+
   const globalConfig = await client.fetch(globalConfigQuery);
 
   // It's important to default the slug so that it doesn't return "undefined"
@@ -34,6 +37,7 @@ export async function getStaticProps(context) {
 
   return {
     props: {
+      books,
       page,
       globalConfig,
     },

@@ -12,8 +12,8 @@ const Test = ({ hello, blocks }) => {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
+      <h1>{hello}!</h1>
       <Blocks blocks={blocks} />
-
     </Layout>
   );
 };
@@ -22,7 +22,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       hello: "test",
-      blocks:[
+      blocks: [
         {
           _type: "banner",
           title: "Design Engineering",
@@ -32,22 +32,22 @@ export async function getStaticProps(context) {
           title: "This is what I'm about",
           grid: [
             {
-              title: 'Lorem Ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.'
+              title: "Lorem Ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
             },
             {
-              title: 'Lorem Ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.'
+              title: "Lorem Ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
             },
             {
-              title: 'Lorem Ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.'
+              title: "Lorem Ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
             },
             {
-              title: 'Lorem Ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.'
+              title: "Lorem Ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
             },
-          ]
+          ],
         },
         {
           _type: "bento",
@@ -56,30 +56,30 @@ export async function getStaticProps(context) {
             {
               size: 1,
               theme: "light",
-              title: 'Lorem ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+              title: "Lorem ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             },
             {
               size: 2,
               theme: "dark",
-              title: 'Lorem ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+              title: "Lorem ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             },
             {
               size: 2,
               theme: "colorful-1",
-              title: 'Lorem ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+              title: "Lorem ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             },
             {
               size: 1,
               theme: "colorful-2",
-              title: 'Lorem ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+              title: "Lorem ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             },
-          ]
+          ],
         },
-      ]
+      ],
     },
   };
 }

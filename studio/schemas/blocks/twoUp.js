@@ -34,6 +34,11 @@ export default {
       ],
     },
     {
+      type: 'cta',
+      name: 'cta',
+      title: 'CTA',
+    },
+    {
       type: 'boolean',
       name: 'reverse',
       title: 'Reverse layout?',

@@ -1,6 +1,6 @@
 import Blocks from "./Blocks";
 import styles from "./Section.module.scss";
-export default function Section({ section }) {
+export default function Section({ section, books }) {
   return (
     <section
       className={styles.section + (section.theme === "white" ? `` : ` noise`)}
@@ -10,7 +10,7 @@ export default function Section({ section }) {
       data-pad-top={section.pad_top}
       data-pad-bottom={section.pad_bottom}
     >
-      <Blocks blocks={section.blocks} />
+      <Blocks blocks={section.blocks} books={books} />
     </section>
   );
 }
