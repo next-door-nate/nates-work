@@ -12,7 +12,7 @@ export default function BookList({ block, books }) {
               return (
                 <div
                   className={styles.book}
-                  key={book.id}
+                  key={book.id + `book` + i}
                   style={{
                     "--gradient-stop-0": book.gradientColors[0],
                     "--gradient-stop-1": book.gradientColors[1],
@@ -30,7 +30,7 @@ export default function BookList({ block, books }) {
                     By:&nbsp;
                     {book.authors.map((author, i) => {
                       return (
-                        <span>
+                        <span key={author.name + i}>
                           {author.name}
                           {i < book.authors.length - 1 ? ", " : ""}
                         </span>
