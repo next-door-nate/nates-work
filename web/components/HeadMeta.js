@@ -2,7 +2,6 @@ import Head from "next/head";
 import linkResolver from "../utils/linkResolver";
 
 export default function HeadMeta({ meta }) {
-  console.log(meta);
   return (
     <Head>
       {meta?.title && (

@@ -12,8 +12,9 @@ import ContactBlock from "./ContactBlock";
 import ProjectList from "./ProjectList";
 import FooterCta from "./FooterCta";
 import WritingList from "./WritingList";
+import BookList from "./BookList";
 
-export default function Blocks({ blocks }) {
+export default function Blocks({ blocks, books }) {
   return (
     <>
       {blocks &&
@@ -28,7 +29,7 @@ export default function Blocks({ blocks }) {
             case "bento":
               return <Bento bento={block} key={block._key} />;
             case "section":
-              return <Section section={block} key={block._key} />;
+              return <Section section={block} key={block._key} books={books} />;
             case "two_up":
               return <TwoUp two_up={block} key={block._key} />;
             case "rich_text_block":
@@ -45,6 +46,8 @@ export default function Blocks({ blocks }) {
               return <ProjectList block={block} key={block._key} />;
             case "writing_list":
               return <WritingList list={block} key={block._key} />;
+            case "book_list":
+              return <BookList key={block._key} books={books} />;
             case "footer_cta":
               return (
                 <FooterCta

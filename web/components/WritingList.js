@@ -1,9 +1,12 @@
 import Container from "./Container";
 import RichTextRenderer from "./RichTextRenderer";
 
-export default function WritingList({ list }) {
+export default function WritingList({ list, books }) {
   return (
     <section>
+      {books.map((book, i) => {
+        return <h2>{book.title}</h2>;
+      })}
       <Container>
         {list.posts && (
           <section>

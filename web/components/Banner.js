@@ -5,7 +5,7 @@ import SparklingGrid from "./SparklingGrid";
 import { motion } from "framer-motion";
 import { motionSettings } from "../utils/motionSettings";
 
-export default function Banner({ banner }) {
+export default function Banner({ banner, books }) {
   return (
     <div className="noise">
       <section className={styles.banner} data-block={banner._type}>

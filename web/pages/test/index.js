@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import Head from "next/head";
 import Layout from "../../components/Layout";
 import Blocks from "../../components/Blocks";
+import Container from "../../components/Container";
 
 const Test = ({ hello, blocks }) => {
   return (
@@ -13,18 +14,20 @@ const Test = ({ hello, blocks }) => {
       </Head>
 
       <Blocks blocks={blocks} />
-
     </Layout>
   );
 };
 
 export async function getStaticProps(context) {
+  const books = await getBooks();
+
   return {
     props: {
+      books,
       hello: "test",
-      blocks:[
+      blocks: [
         {
-          _type: "banner",
+          _type: "banner_page",
           title: "Design Engineering",
         },
         {
@@ -32,22 +35,22 @@ export async function getStaticProps(context) {
           title: "This is what I'm about",
           grid: [
             {
-              title: 'Lorem Ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.'
+              title: "Lorem Ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
             },
             {
-              title: 'Lorem Ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.'
+              title: "Lorem Ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
             },
             {
-              title: 'Lorem Ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.'
+              title: "Lorem Ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
             },
             {
-              title: 'Lorem Ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.'
+              title: "Lorem Ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
             },
-          ]
+          ],
         },
         {
           _type: "bento",
@@ -56,30 +59,30 @@ export async function getStaticProps(context) {
             {
               size: 1,
               theme: "light",
-              title: 'Lorem ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+              title: "Lorem ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             },
             {
               size: 2,
               theme: "dark",
-              title: 'Lorem ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+              title: "Lorem ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             },
             {
               size: 2,
               theme: "colorful-1",
-              title: 'Lorem ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+              title: "Lorem ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             },
             {
               size: 1,
               theme: "colorful-2",
-              title: 'Lorem ipsum',
-              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+              title: "Lorem ipsum",
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             },
-          ]
+          ],
         },
-      ]
+      ],
     },
   };
 }

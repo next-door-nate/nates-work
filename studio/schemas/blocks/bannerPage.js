@@ -5,6 +5,11 @@ export default {
   fields: [
     {
       type: 'string',
+      name: 'eyebrow',
+      title: 'Eyebrow',
+    },
+    {
+      type: 'string',
       name: 'title',
       title: 'Title',
     },
@@ -14,9 +19,20 @@ export default {
       title: 'Text',
     },
     {
-      type: 'string',
-      name: 'eyebrow',
-      title: 'Eyebrow',
+      type: 'array',
+      name: 'ctas',
+      title: 'CTAs',
+      of: [{type: 'cta'}],
+    },
+    {
+      type: 'array',
+      name: 'featured_area',
+      title: 'Featured Area',
+      of: [
+        {
+          type: 'banner_image',
+        },
+      ],
     },
   ],
   preview: {
