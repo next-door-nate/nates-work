@@ -32,7 +32,7 @@ function ShaderPlane() {
   );
 }
 
-export default function BannerHome({ block, books }) {
+export default function BannerHome({ block }) {
   const ref = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);

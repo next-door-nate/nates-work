@@ -1,5 +1,6 @@
 import styles from "./BookList.module.scss";
 import Container from "./Container";
+import Image from "next/image";
 
 export default function BookList({ block, books }) {
   return (
@@ -20,7 +21,7 @@ export default function BookList({ block, books }) {
                 >
                   <div className={styles.image}>
                     <div className={styles.cover}>
-                      <img src={book.cover} />
+                      <img src={book.cover} alt={book.title} />
                     </div>
                   </div>
                   <h4>{book.title}</h4>
