@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import Head from "next/head";
 import Layout from "../../components/Layout";
 import Blocks from "../../components/Blocks";
-import Container from "../../components/Container";
 
 const Test = ({ hello, blocks }) => {
   return (
@@ -13,21 +12,19 @@ const Test = ({ hello, blocks }) => {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
+      <h1>{hello}!</h1>
       <Blocks blocks={blocks} />
     </Layout>
   );
 };
 
 export async function getStaticProps(context) {
-  const books = await getBooks();
-
   return {
     props: {
-      books,
       hello: "test",
       blocks: [
         {
-          _type: "banner_page",
+          _type: "banner",
           title: "Design Engineering",
         },
         {
