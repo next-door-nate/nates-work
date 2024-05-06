@@ -25,7 +25,7 @@ export default function TwoUp({ two_up }) {
           </div>
           {two_up.image && (
             <div className={styles.image} data-intrinsic-height={two_up.intrinsic_height}>
-              <OptimizedImage image={two_up.image} blurHash={two_up.blurHash} />
+              <OptimizedImage image={two_up.image} blurHash={two_up.blurHash} width="1000" />
             </div>
           )}
         </motion.div>

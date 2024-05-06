@@ -91,4 +91,8 @@ ul {
     background-color: rgb(230, 230, 230);
     transform: scale(1) !important;
   }
+
+  [data-button="outline-dark"] {
+    color: var(--color-button);
+  }
 }

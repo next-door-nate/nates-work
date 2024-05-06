@@ -90,10 +90,10 @@ export default function ImageSlideshow({ slideshow }) {
 
           <div className={styles.controls}>
             <div className={styles.buttons}>
-              <button onClick={nextImage}>
+              <button className="button" data-button="outline-dark" onClick={nextImage}>
                 <span className={styles.triangle} data-triangle="left"></span> Prev
               </button>
-              <button onClick={prevImage}>
+              <button className="button" data-button="outline-dark" onClick={prevImage}>
                 Next <span className={styles.triangle} data-triangle="right"></span>
               </button>
             </div>
