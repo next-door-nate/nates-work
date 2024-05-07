@@ -9,7 +9,11 @@ body {
 }
 
 h1 {
-  font-size: 8rem;
+  font-size: 6.4rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 4rem;
+  }
 }
 
 h2 {
@@ -90,5 +94,9 @@ ul {
   &:active {
     background-color: rgb(230, 230, 230);
     transform: scale(1) !important;
+  }
+
+  [data-button="outline-dark"] {
+    color: var(--color-button);
   }
 }

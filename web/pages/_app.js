@@ -17,22 +17,38 @@ function MyApp({ Component, pageProps }) {
           key="description"
         />
 
-        <meta property="og:title" content="Design 🤝 Engineering | Nate's Work" key="og-title" />
+        <meta
+          property="og:title"
+          content="Design 🤝 Engineering | Nate's Work"
+          key="og-title"
+        />
         <meta
           property="og:description"
           content="The Design and Frontend Development work of Nate van der Vis"
         />
         <meta property="og:type" content="website" key="og-type" />
         <meta property="og:url" content="https://nates.work" key="og-url" />
-        <meta property="og:image" content="/default-og-image.png" key="og-image" />
-        <meta property="og:site_name" content="Nate's Work" key="og-site-name" />
+        <meta
+          property="og:image"
+          content="/default-og-image.png"
+          key="og-image"
+        />
+        <meta
+          property="og:site_name"
+          content="Nate's Work"
+          key="og-site-name"
+        />
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="icon" href="/favicon.png" />
 
         {process.env.NODE_ENV == "production" && (
-          <script defer data-domain="nates.work" src="https://plausible.io/js/script.js"></script>
+          <script
+            defer
+            data-domain="nates.work"
+            src="https://plausible.io/js/script.js"
+          ></script>
         )}
       </Head>
       {/* <div onMouseMove={mouseEffect}> */}
@@ -63,6 +79,24 @@ function MyApp({ Component, pageProps }) {
               operator="atop"
             ></feComposite>
           </filter>
+
+          <filter id="noise">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="19.5"
+              numOctaves="10"
+              result="turbulence"
+            />
+            <feComposite
+              operator="in"
+              in="turbulence"
+              in2="SourceAlpha"
+              result="composite"
+            />
+            <feColorMatrix in="composite" type="luminanceToAlpha" />
+            <feBlend in="SourceGraphic" in2="composite" mode="color-burn" />
+          </filter>
+
         </defs>
       </svg>
     </>

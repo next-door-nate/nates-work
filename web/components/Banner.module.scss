@@ -30,50 +30,10 @@
     pointer-events: none;
   }
 
-  // &::before {
-  //   content: "";
-  //   display: block;
-  //   width: 80vw;
-  //   height: 25vw;
-  //   filter: blur(20rem);
-  //   border-radius: 100%;
-  //   background-image: linear-gradient(
-  //     180deg,
-  //     rgba(255, 119, 89, 1) 60%,
-  //     rgba(255, 217, 208, 1),
-  //     rgba(255, 217, 208, 0)
-  //   );
-  //   position: absolute;
-  //   top: -35%;
-  //   left: -25%;
-  //   transform: skew(30deg);
-  //   z-index: 1;
-  // }
-
-  // &::after {
-  //   background-color: #d9a6e5;
-  //   // background-color: blue;
-  //   content: "";
-  //   display: block;
-  //   width: 80vw;
-  //   height: 25vw;
-  //   filter: blur(20rem);
-  //   border-radius: 100%;
-  //   position: absolute;
-  //   right: -10%;
-  //   bottom: 10%;
-  //   transform: skew(30deg);
-  //   z-index: -1;
-  // }
-
   h1 {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-
-    @media screen and (max-width: 768px) {
-      font-size: 5.6rem;
-    }
   }
 
   h5 {

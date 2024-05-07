@@ -10,7 +10,6 @@ export default function OptimizedImage({ image, blurHash }) {
   useEffect(() => {
     if (blurHash) {
       const canvas = document.createElement("canvas");
-      const { width, height } = decode(blurHash, 32, 32);
       canvas.width = 32;
       canvas.height = 32;
       const ctx = canvas.getContext("2d");
