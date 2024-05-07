@@ -138,18 +138,21 @@ _type == "contact_block" => {
 
 _type == "project_list" => {
   title,
-  projects[]->{
-    title,
-    slug,
-    featured_image,
-    "blurHash": featured_image.asset->metadata.blurHash,
-    _type,
-    company->,
-    tools[]->{
-      title,
+  projects[]{
+    _key,
+    "title": @->title,
+    "slug": @->slug,
+    "featured_image": @->featured_image,
+    "blurHash": @->featured_image.asset->metadata.blurHash,
+    "_type": @->_type,
+    "company": @->company->,
+    "tools": @->tools[]{
+      _key,
+      "title": @->title,
     },
-    roles[]->{
-      title,
+    "roles": @->roles[]{
+      _key,
+      "title": @->title,
     },
   },
 },
