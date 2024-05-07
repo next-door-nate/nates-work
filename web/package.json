@@ -31,6 +31,7 @@
   "devDependencies": {
     "@types/node": "20.1.0",
     "next-transpile-modules": "^10.0.0",
+    "prettier": "3.2.5",
     "turbo": "^1.6.3",
     "typescript": "5.0.4"
   }
