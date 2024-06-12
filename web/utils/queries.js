@@ -171,6 +171,21 @@ _type == "writing_list" => {
     content,
     meta,
   }
+},
+
+_type == "featured_quotes" => {
+  title,
+  "quotes": quotes[]{
+    _key,
+    "quote": @->{
+      quote,
+      name,
+      title,
+      company->{
+        name
+      }
+    },
+  }
 }
 
 `;
@@ -215,8 +230,16 @@ export const projectQuery = `
   "blurHash": featured_image.asset->metadata.blurHash,
   link,
   link_text,
-  roles[]->{title, _key},
-  tools[]->{title,link, _key},
+  "tools": tools[]{
+    _key,
+    "title": @->title,
+    "link": @->link,
+  },
+  "roles": roles[]{
+    _key,
+    "title": @->title,
+    "link": @->link,
+  },
   "content": content[]{
     ${blocksQuery},
     ${sectionQuery}

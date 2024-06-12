@@ -1,0 +1,12 @@
+.quotes {
+  padding: 8rem 0;
+  // background: var(--color-black);
+  color: var(--color-white);
+  color: var(--color-black);
+
+  blockquote {
+    margin: 0 auto;
+    max-width: 88rem;
+    text-align: center;
+  }
+}
