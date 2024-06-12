@@ -1,14 +1,14 @@
-import client from "../../utils/client";
-import Layout from "../../components/Layout";
-import Blocks from "../../components/Blocks";
-import Container from "../../components/Container";
-import styles from "./Project.module.scss";
-import { globalConfigQuery, pageQuery, projectQuery } from "../../utils/queries";
-import Head from "next/head";
-import RichTextRenderer from "../../components/RichTextRenderer";
-import Link from "next/link";
-import linkResolver from "../../utils/linkResolver";
-import OptimizedImage from "../../components/OptimizedImage";
+import client from '../../utils/client';
+import Layout from '../../components/Layout';
+import Blocks from '../../components/Blocks';
+import Container from '../../components/Container';
+import styles from './Project.module.scss';
+import { globalConfigQuery, pageQuery, projectQuery } from '../../utils/queries';
+import Head from 'next/head';
+import RichTextRenderer from '../../components/RichTextRenderer';
+import Link from 'next/link';
+import linkResolver from '../../utils/linkResolver';
+import OptimizedImage from '../../components/OptimizedImage';
 
 const Project = ({ project, globalConfig }) => {
   return (
@@ -57,12 +57,7 @@ const Project = ({ project, globalConfig }) => {
               </div>
 
               {project.link && (
-                <Link
-                  className="button"
-                  href={linkResolver(project.link)}
-                  title="View Project"
-                  target="_blank"
-                >
+                <Link className="button" href={linkResolver(project.link)} title="View Project" target="_blank">
                   {project.link_text}
                 </Link>
               )}
@@ -96,7 +91,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
-  const { slug = "" } = context.params;
+  const { slug = '' } = context.params;
   const globalConfig = await client.fetch(globalConfigQuery);
   const project = await client.fetch(
     `
@@ -105,7 +100,7 @@ export async function getStaticProps(context) {
       ${pageQuery},
     }
   `,
-    { slug }
+    { slug },
   );
 
   return {

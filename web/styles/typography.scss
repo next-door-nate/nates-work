@@ -1,6 +1,6 @@
 html {
   font-size: 62.5%;
-  font-family: "Instrument Sans", sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
 }
 
 body {
@@ -42,11 +42,11 @@ h4 {
 
 h5 {
   font-size: 1.6rem;
-  font-family: "Noto Sans Mono", monospace;
+  font-family: 'Noto Sans Mono', monospace;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-  font-variation-settings: "wdth" 87.5;
+  font-variation-settings: 'wdth' 87.5;
 }
 
 p {
@@ -96,7 +96,7 @@ ul {
     transform: scale(1) !important;
   }
 
-  [data-button="outline-dark"] {
+  [data-button='outline-dark'] {
     color: var(--color-button);
   }
 }

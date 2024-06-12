@@ -1,9 +1,9 @@
-import Container from "./Container";
-import linkResolver from "../utils/linkResolver";
-import Link from "next/link";
+import Container from './Container';
+import linkResolver from '../utils/linkResolver';
+import Link from 'next/link';
 
-import styles from "./Footer.module.scss";
-import InlineSVG from "./InlineSvg";
+import styles from './Footer.module.scss';
+import InlineSVG from './InlineSvg';
 
 export default function Footer({ footer }) {
   if (footer == false) {
@@ -16,15 +16,9 @@ export default function Footer({ footer }) {
   return (
     <footer className={styles.footer} data-noise="true">
       <Container>
-        <Link href="/">
+        <Link href="/" title="Home">
           <span className={styles.logo}>
-            <svg
-              width="40"
-              height="20"
-              viewBox="0 0 40 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg width="40" height="20" viewBox="0 0 40 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M25.277 0L22.4199 19.9999H14.0817L8.97962 11.1142H8.863L7.5802 19.9999H0L2.85715 0H11.1662L16.2974 8.88565H16.414L17.6677 0H25.277Z"
                 fill="black"
@@ -44,9 +38,8 @@ export default function Footer({ footer }) {
               return (
                 <div key={item._key}>
                   <Link
-                    href={
-                      item.link.external_link ? item.link.external_link : linkResolver(item.link)
-                    }
+                    href={item.link.external_link ? item.link.external_link : linkResolver(item.link)}
+                    title={item.link.title}
                   >
                     {item.link.title}
                   </Link>
@@ -62,11 +55,7 @@ export default function Footer({ footer }) {
               {footer.social.map((platform) => {
                 return (
                   <div key={platform._key}>
-                    <Link
-                      href={platform.link}
-                      title={`Follow me on ` + platform.name}
-                      target="_blank"
-                    >
+                    <Link href={platform.link} title={`Follow me on ` + platform.name} target="_blank">
                       <InlineSVG url={platform.icon} />
                       {/* <div className={styles.tooltip}>{platform.name}</div> */}
                     </Link>
@@ -79,9 +68,9 @@ export default function Footer({ footer }) {
 
         {footer.copyright && (
           <p className={styles.copyright}>
-            This site is built with Sanity, Next.js, and Cloudflare Pages/Workers. It was built on
-            Treaty One territory, the original lands of the Anishinaabeg, Cree, Anisininew, Dakota,
-            and Dene peoples, and on the homeland of the Red River Métis Nation.
+            This site is built with Sanity, Next.js, and Cloudflare Pages/Workers. It was built on Treaty One territory,
+            the original lands of the Anishinaabeg, Cree, Anisininew, Dakota, and Dene peoples, and on the homeland of
+            the Red River Métis Nation.
             <br />
             <br />
             &copy; {year} {footer.copyright}
