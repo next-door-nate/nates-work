@@ -1,11 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-import { PostHogProvider } from 'posthog-js/react';
-
-const posthogOptions = {
-  api_host: process.env.REACT_APP_PUBLIC_POSTHOG_HOST,
-};
-
 class MyDocument extends Document {
   render() {
     return (
@@ -29,13 +23,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
-          {process.env.NODE_ENV == 'production' ? (
-            <PostHogProvider apiKey={process.env.REACT_APP_PUBLIC_POSTHOG_KEY} options={posthogOptions}>
-              <Main />
-            </PostHogProvider>
-          ) : (
-            <Main />
-          )}
+          <Main />
 
           <NextScript />
         </body>
