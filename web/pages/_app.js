@@ -12,24 +12,26 @@ import { useRouter } from 'next/router';
 import posthog from 'posthog-js';
 import { PostHogProvider } from 'posthog-js/react';
 
-if (process.env.NODE_ENV === 'production') {
-  if (typeof window !== 'undefined' && window.location.host === 'nates.work') {
-    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
-      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com',
-      // person_profiles: 'identified_only',
-      // Enable debug mode in development
-      loaded: (posthog) => {
-        console.log('the hog has landed.');
-        if (process.env.NODE_ENV === 'development') posthog.debug();
-      },
-    });
-  }
+if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production' && window.location.host === 'nates.work') {
+  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+    api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com',
+    // person_profiles: 'identified_only',
+    // Enable debug mode in development
+    loaded: (posthog) => {
+      if (process.env.NODE_ENV === 'development') posthog.debug();
+    },
+  });
 }
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  if (process.env.NODE_ENV === 'production' && typeof window !== 'undefined') {
-    useEffect(() => {
+
+  useEffect(() => {
+    if (
+      typeof window !== 'undefined' &&
+      process.env.NODE_ENV === 'production' &&
+      window.location.host === 'nates.work'
+    ) {
       // Track page views
       const handleRouteChange = () => {
         posthog?.capture('$pageview');
@@ -40,8 +42,8 @@ function MyApp({ Component, pageProps }) {
       return () => {
         router.events.off('routeChangeComplete', handleRouteChange);
       };
-    }, []);
-  }
+    }
+  }, []);
 
   return (
     <>
