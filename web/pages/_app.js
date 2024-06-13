@@ -35,7 +35,6 @@ function MyApp({ Component, pageProps }) {
       // Track page views
       const handleRouteChange = () => {
         posthog?.capture('$pageview');
-        console.log('page event fired');
       };
       router.events.on('routeChangeComplete', handleRouteChange);
 
