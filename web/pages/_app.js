@@ -15,7 +15,7 @@ import { PostHogProvider } from 'posthog-js/react';
 if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production' && window.location.host === 'nates.work') {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
     api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com',
-    // person_profiles: 'identified_only',
+    person_profiles: 'identified_only',
     // Enable debug mode in development
     loaded: (posthog) => {
       if (process.env.NODE_ENV === 'development') posthog.debug();
