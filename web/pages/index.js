@@ -8,7 +8,7 @@ import usePartySocket from 'partysocket/react';
 import { useState, useEffect } from 'react';
 
 const Home = ({ page, globalConfig, books }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(null);
   // connect to our server
   const ws = usePartySocket({
     // usePartySocket takes the same arguments as PartySocket.
@@ -19,10 +19,11 @@ const Home = ({ page, globalConfig, books }) => {
     // (equivalent to using ws.addEventListener in an effect hook)
     onOpen() {
       console.log('connected');
-      console.log(`${this.count}`);
+      setCount(this.count);
     },
     onMessage(e) {
       console.log('message', e.data);
+      setCount(this.count);
     },
     onClose() {
       console.log('closed');
@@ -32,9 +33,13 @@ const Home = ({ page, globalConfig, books }) => {
     },
   });
 
+  // ws.addEventListener('DOMContentLoaded', (event) => {
+  //   console.log('loaded', event.data);
+  //   setCount(event.data);
+  // });
+
   ws.addEventListener('message', (event) => {
     setCount(event.data);
-    console.log(event.data);
   });
 
   function increment() {
