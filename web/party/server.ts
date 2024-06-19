@@ -11,6 +11,7 @@ export default class Server implements Party.Server {
 
   async onStart() {
     console.log('started');
+    this.room.broadcast(`${this.counter}`);
   }
 
   async onMessage(message: string, sender: Party.Connection) {
@@ -32,12 +33,12 @@ export default class Server implements Party.Server {
     // }
   }
 
-  async onConnect(connection: Party.Connection<unknown>, ctx: Party.ConnectionContext): void | Promise<void> {
+  async onConnect(connection: Party.Connection<unknown>, ctx: Party.ConnectionContext): Promise<void> {
     console.log('hello');
+    this.room.broadcast(`${this.counter}`);
   }
 
   async onRequest(req: Party.Request) {
-    this.counter++;
     return new Response(`${this.counter}`);
   }
 }
