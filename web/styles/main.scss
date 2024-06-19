@@ -1,13 +1,12 @@
 body {
   position: relative;
   // filter: url(#noise);
-
 }
 
 // Utilities
 
 .noise,
-[data-noise="true"] {
+[data-noise='true'] {
   position: relative;
 
   * {
@@ -16,11 +15,11 @@ body {
   }
 
   &::after {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url("/noise.png");
+    background-image: url('/noise.png');
     background-repeat: repeat;
     background-size: 100px;
     background-size: auto;
@@ -50,15 +49,15 @@ body {
   }
 }
 
-[data-center-text="true"] {
+[data-center-text='true'] {
   text-align: center;
 }
 
-[data-all-caps="true"] {
+[data-all-caps='true'] {
   text-transform: uppercase;
 }
 
-[data-reverse-layout="true"] {
+[data-reverse-layout='true'] {
   flex-direction: row;
 
   @media screen and (min-width: 768px) {
@@ -67,7 +66,7 @@ body {
 }
 
 .dots {
-  content: "";
+  content: '';
   display: block;
   width: 100%;
   height: 100%;
@@ -83,7 +82,7 @@ body {
   pointer-events: none;
   z-index: 2;
 
-  &[data-dot-size="small"] {
+  &[data-dot-size='small'] {
     background-image: radial-gradient(hsla(0, 0%, 100%, 0.51) 1px, transparent 0);
     background-size: 3px 3px;
     background-position: -1px -1px;
@@ -136,4 +135,13 @@ body {
   bottom: 0;
   left: 0;
   z-index: -1;
+}
+
+.party {
+  position: absolute;
+  z-index: 1000;
+
+  button:active {
+    background-color: rgb(63, 63, 227);
+  }
 }

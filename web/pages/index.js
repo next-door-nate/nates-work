@@ -53,13 +53,15 @@ const Home = ({ page, globalConfig, books }) => {
       </Head>
 
       <article>
-        <h1>{count}</h1>
-        <button onClick={increment} className="increment">
-          Increment
-        </button>
-        <button onClick={decrement} className="decrement">
-          Decrement
-        </button>
+        <div className="party">
+          <h1>{count}</h1>
+          <button onClick={increment} className="increment">
+            Increment
+          </button>
+          <button onClick={decrement} className="decrement">
+            Decrement
+          </button>
+        </div>
         <Blocks blocks={page.blocks} books={books} />
       </article>
     </Layout>
