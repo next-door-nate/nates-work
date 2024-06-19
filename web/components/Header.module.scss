@@ -8,6 +8,7 @@
   width: 100%;
   margin-top: 2.4rem;
   // border-bottom: 0.1rem solid rgba(0, 0, 0, 0.08);
+  pointer-events: none;
 
   @media screen and (max-width: 768px) {
     margin-top: 1.6rem;
@@ -43,7 +44,7 @@
   font-style: italic;
   letter-spacing: -1rem;
   width: 4.2rem;
-  font-family: "Pathway Extreme", sans-serif !important;
+  font-family: 'Pathway Extreme', sans-serif !important;
   display: block;
   // margin-left: 4rem;
 
