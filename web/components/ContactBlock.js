@@ -1,15 +1,14 @@
-import ContactForm from "./ContactForm";
-import Container from "./Container";
-import styles from "./ContactBlock.module.scss";
-import RichTextRenderer from "./RichTextRenderer";
-import Head from "next/head";
-import { motion } from "framer-motion";
-import { motionSettings } from "../utils/motionSettings";
+import ContactForm from './ContactForm';
+import Container from './Container';
+import styles from './ContactBlock.module.scss';
+import RichTextRenderer from './RichTextRenderer';
+import Head from 'next/head';
+import { motion } from 'framer-motion';
+import { motionSettings } from '../utils/motionSettings';
 
 export default function ContactBlock({ block }) {
   return (
     <section className={styles.block}>
-      {/* <div className={styles.beam + ` noise`}></div> */}
       <Head>
         <title>{block.title + ` | Nate's Work`}</title>
         <meta property="og:title" content={block.title + ` | Nate's Work`} key="title" />
@@ -22,8 +21,8 @@ export default function ContactBlock({ block }) {
       <Container>
         <section className={styles.content}>
           <motion.div
-            initial={"hidden"}
-            whileInView={"visible"}
+            initial={'hidden'}
+            whileInView={'visible'}
             viewport={{ once: true }}
             variants={motionSettings}
             transition={{ duration: motionSettings.transitionDuration }}
@@ -33,8 +32,8 @@ export default function ContactBlock({ block }) {
             {block.text && <RichTextRenderer blocks={block.text} />}
           </motion.div>
           <motion.div
-            initial={"hidden"}
-            whileInView={"visible"}
+            initial={'hidden'}
+            whileInView={'visible'}
             viewport={{ once: true }}
             variants={motionSettings}
             transition={{ duration: motionSettings.transitionDuration, delay: 0.3 }}

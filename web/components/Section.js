@@ -1,9 +1,9 @@
-import Blocks from "./Blocks";
-import styles from "./Section.module.scss";
+import Blocks from './Blocks';
+import styles from './Section.module.scss';
 export default function Section({ section, books }) {
   return (
     <section
-      className={styles.section + (section.theme === "white" ? `` : ` noise`)}
+      className={styles.section + (section.theme === 'white' ? `` : ` `)}
       data-section={true}
       data-section-theme={section.theme}
       data-block="section"
