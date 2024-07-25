@@ -34,6 +34,7 @@ import footerCta from './blocks/footerCta'
 import writingList from './blocks/writingList'
 import bannerImage from './blocks/bannerImage'
 import bookList from './blocks/bookList'
+import lede from './lede'
 
 export const schemaTypes = [
   // document types
@@ -58,6 +59,7 @@ export const schemaTypes = [
   cta,
   richText,
   navItem,
+  lede,
 
   // page builders
   blocks,
