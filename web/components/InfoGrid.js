@@ -1,21 +1,31 @@
-import styles from "./InfoGrid.module.scss";
-import Container from "./Container";
-import RichTextRenderer from "./RichTextRenderer";
-import OptimizedImage from "./OptimizedImage";
-import { motion } from "framer-motion";
-import { motionSettings } from "../utils/motionSettings";
+import styles from './InfoGrid.module.scss';
+import Container from './Container';
+import RichTextRenderer from './RichTextRenderer';
+import OptimizedImage from './OptimizedImage';
+import { motion } from 'framer-motion';
+import { motionSettings } from '../utils/motionSettings';
 
 export default function InfoGrid({ infogrid }) {
   return (
     <section className={styles.infogrid} data-block="info-grid">
       <Container>
-        {infogrid.title && <h2>{infogrid.title}</h2>}
-        {infogrid.text && <RichTextRenderer blocks={infogrid.text} />}
+        <motion.div
+          initial={'hidden'}
+          whileInView={'visible'}
+          viewport={{ once: true }}
+          variants={motionSettings}
+          transition={{ duration: motionSettings.transitionDuration }}
+          className={styles.lede}
+        >
+          {infogrid.eyebrow && <h5 className={`eyebrow`}>{infogrid.eyebrow}</h5>}
+          {infogrid.title && <h2>{infogrid.title}</h2>}
+          {infogrid.subtitle && <RichTextRenderer blocks={infogrid.subtitle} />}
+        </motion.div>
 
         {infogrid.items && (
           <motion.div
-            initial={"hidden"}
-            whileInView={"visible"}
+            initial={'hidden'}
+            whileInView={'visible'}
             viewport={{ once: true }}
             variants={motionSettings}
             transition={{ duration: motionSettings.transitionDuration }}

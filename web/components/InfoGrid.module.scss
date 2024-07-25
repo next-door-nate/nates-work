@@ -2,6 +2,15 @@
   // padding: 8rem 0;
 }
 
+.lede {
+  margin-bottom: 8rem;
+  max-width: 47.5%;
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
 .grid {
   --gap: 3.2rem;
   display: flex;
@@ -29,8 +38,8 @@
   height: 3.2rem;
 }
 
-[data-section-theme="black"],
-[data-section-theme="dark"] {
+[data-section-theme='black'],
+[data-section-theme='dark'] {
   .item img {
     filter: invert(1);
   }
