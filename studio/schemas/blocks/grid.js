@@ -4,6 +4,21 @@ export default {
   title: 'Grid',
   fields: [
     {
+      type: 'string',
+      name: 'title',
+      title: 'Title',
+    },
+    {
+      type: 'rich_text',
+      name: 'subtitle',
+      title: 'Subtitle',
+    },
+    {
+      type: 'string',
+      name: 'eyebrow',
+      title: 'Eyebrow',
+    },
+    {
       type: 'array',
       name: 'items',
       title: 'Items',
@@ -66,6 +81,7 @@ export default {
   preview: {
     select: {
       count: 'column_count',
+      title: 'title',
     },
     prepare({title, count}) {
       return {
