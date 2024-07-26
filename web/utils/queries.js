@@ -85,7 +85,7 @@ _type == "two_up" => {
 _type == "grid" => {
   title,
   eyebrow,
-  text,
+  subtitle,
   items[]{
     _key,
     title,
