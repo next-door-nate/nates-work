@@ -152,8 +152,11 @@ export default function Page() {
     }
 
     e.target.reset();
-    var list = document.querySelector('ol');
-    window.scrollTo(list);
+
+    const item = document.querySelector('ol li:last-of-type') as HTMLElement | null;
+    if (item !== null) {
+      window.scrollTo(item.offsetTop, 0);
+    }
   }
 
   function handleKeyPress(e) {
