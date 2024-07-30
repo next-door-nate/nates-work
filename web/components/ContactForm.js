@@ -1,28 +1,28 @@
-import React, { useState, useEffect } from "react";
-import styles from "./ContactForm.module.scss";
+import React, { useState, useEffect } from 'react';
+import styles from './ContactForm.module.scss';
 
 function ContactForm() {
   const [formData, setFormData] = useState({
-    email: "",
-    location: "",
-    message: "",
+    email: '',
+    location: '',
+    message: '',
   });
 
   const [formState, setFormState] = useState(null);
 
   const [location, setLocation] = useState({
-    city: "Pensicola",
-    country: "USA",
-    region: "Florida",
+    city: 'Pensicola',
+    country: 'USA',
+    region: 'Florida',
   });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://666.n8.workers.dev/", {
-          method: "GET",
+        const response = await fetch('https://666.n8.workers.dev/', {
+          method: 'GET',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         });
         const data = await response.json();
@@ -32,7 +32,7 @@ function ContactForm() {
           region: data.region,
         });
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
 
@@ -47,35 +47,35 @@ function ContactForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://form-submissions.n8.workers.dev/", {
-        method: "POST",
+      const response = await fetch('https://form-submissions.n8.workers.dev/', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        console.log("Form submission successful");
-        setFormState("success");
+        console.log('Form submission successful');
+        setFormState('success');
 
         setFormData({
-          email: "",
-          location: "",
-          message: "",
+          email: '',
+          location: '',
+          message: '',
         });
 
         setTimeout(() => {
           setFormState(false);
         }, 4200);
       } else {
-        console.error("Form submission failed");
-        setFormState("error");
+        console.error('Form submission failed');
+        setFormState('error');
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error('Error submitting form:', error);
       // Handle error
-      setFormState("error");
+      setFormState('error');
     }
   };
 
@@ -87,28 +87,12 @@ function ContactForm() {
             <div>
               <div className={styles.icon}>
                 <div className={styles.check}>
-                  <svg
-                    width="36"
-                    height="25"
-                    viewBox="0 0 36 25"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1.68896 9.5711L13.6163 21.4984L33.689 1.42578"
-                      stroke="white"
-                      strokeWidth="4"
-                    />
+                  <svg width="36" height="25" viewBox="0 0 36 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.68896 9.5711L13.6163 21.4984L33.689 1.42578" stroke="white" strokeWidth="4" />
                   </svg>
                 </div>
                 <div className={styles.x}>
-                  <svg
-                    width="36"
-                    height="36"
-                    viewBox="0 0 36 36"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M2.07812 2L18.0781 18M34.0781 34L18.0781 18M18.0781 18L34.0781 2M18.0781 18L2.07813 34"
                       stroke="white"
@@ -119,7 +103,7 @@ function ContactForm() {
               </div>
               <h3>{formState}!</h3>
               <p>
-                {formState == "success"
+                {formState == 'success'
                   ? `Your message has been sent.`
                   : `There was an issue with sending, please try again.`}
               </p>
@@ -139,27 +123,12 @@ function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="location">Location:</label>
-
-          <input
-            id="location"
-            type="text"
-            name="location"
-            value={formData.location}
-            onChange={handleChange}
-            placeholder={
-              `Example: ` + location.city + `, ` + location.region + `, ` + location.country
-            }
-            required={true}
-          />
-        </div>
-        <div>
           <label htmlFor="message">Message:</label>
           <textarea
             name="message"
             value={formData.message}
             onChange={handleChange}
-            placeholder="Message"
+            placeholder={`Sending good vibes from ` + location.city + `, ` + location.region + `. Take care!`}
             required={true}
           />
         </div>
