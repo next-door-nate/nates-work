@@ -172,7 +172,7 @@ export default function Page() {
         {gameState === 'idle' ? (
           <div className={styles.start}>
             <h1>HTML Tag Guessing Game</h1>
-            <p>There are 111 html tags. How many can you name from memory?</p>
+            <p>There are {htmlTags.length + 1} html tags. How many can you name from memory?</p>
 
             <button
               onClick={() => {
