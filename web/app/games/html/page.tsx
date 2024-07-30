@@ -120,8 +120,8 @@ const htmlTags = [
 
 export default function Page() {
   const [tags, setTags] = useState(htmlTags);
-  const [guesses, setGuesses] = useState([]);
-  const [correct, setCorrect] = useState([]);
+  const [guesses, setGuesses] = useState<string[]>([]);
+  const [correct, setCorrect] = useState<string[]>([]);
   const [keypress, setKeypress] = useState(false);
   const [gameState, setGameState] = useState('idle');
 
