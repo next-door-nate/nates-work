@@ -65,6 +65,7 @@ const htmlTags = [
   'main',
   'map',
   'mark',
+  'menu',
   'meta',
   'meter',
   'nav',
@@ -135,15 +136,23 @@ export default function Page() {
 
     setGuesses((guesses) => [...guesses, guess]);
 
+    if (htmlTags.length === 0) {
+      setGameState('win');
+    }
+
     if (htmlTags.includes(guess)) {
       setCorrect((correct) => [...correct, guess]);
       htmlTags.splice(htmlTags.indexOf(guess), 1);
 
-      setGameState('correct');
+      if (htmlTags.length === 0) {
+        setGameState('win');
+      } else {
+        setGameState('correct');
 
-      setTimeout(() => {
-        setGameState('playing');
-      }, 800);
+        setTimeout(() => {
+          setGameState('playing');
+        }, 800);
+      }
     } else {
       setGameState('error');
 
@@ -158,7 +167,6 @@ export default function Page() {
 
     if (item !== null) {
       item.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-      // window.scrollTo(0, document.body.scrollHeight);
     }
   }
 
@@ -172,13 +180,17 @@ export default function Page() {
     }
   }
 
+  function refreshPage() {
+    window.location.href = '/games/html';
+  }
+
   return (
     <section className={styles.game} data-game-state={gameState}>
       <div className={styles.wrapper}>
         {gameState === 'idle' ? (
           <div className={styles.start} data-section="start">
             <h1>HTML Tag Guessing Game</h1>
-            <p>There are {htmlTags.length + 1} html tags. How many can you name from memory?</p>
+            <p>There are {htmlTags.length} html tags. How many can you name from memory?</p>
 
             <button
               onClick={() => {
@@ -249,7 +261,7 @@ export default function Page() {
             <div className={styles.meta} data-section="meta">
               <div className={styles.blank}></div>
               <p>
-                <span>{htmlTags.length + 1}</span> tags left to guess
+                <span>{htmlTags.length}</span> tags left to guess
                 {correct.length > 0 && <progress max={111} value={correct.length}></progress>}
               </p>
               <div className={styles.guesses}>{guesses.length}</div>
@@ -257,6 +269,15 @@ export default function Page() {
           </>
         )}
       </div>
+
+      {gameState === 'win' && (
+        <div className={styles.win} data-section="win">
+          <h1>You win!</h1>
+          <button onClick={refreshPage} title="Play again!">
+            Play again!
+          </button>
+        </div>
+      )}
 
       <div className={styles.grid}></div>
       <div className={styles.gridlet}></div>
