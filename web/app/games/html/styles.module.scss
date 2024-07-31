@@ -78,13 +78,17 @@
     input {
       flex: 1 1 14rem;
       padding: 0.8rem;
-      border: 0.1rem solid black;
+      border: 0.1rem solid rgba(0, 0, 0, 0.32);
       font-size: 2rem;
       border-radius: 0.6rem;
       height: 4.8rem;
       text-indent: 0.8rem;
       transition: all 0.3s ease-in-out;
-      outline: black;
+      outline: none;
+
+      &:focus {
+        border-color: rgba(0, 0, 0, 0.75);
+      }
     }
   }
 
@@ -113,8 +117,6 @@
 
     &::-webkit-progress-bar {
       background: rgba(97, 97, 97, 0);
-      backdrop-filter: blur(2px);
-      box-shadow: inset 0 0 0 0.1rem rgba(0, 0, 0, 0);
     }
     &::-webkit-progress-value {
       background: rgb(58, 204, 92);
@@ -128,7 +130,6 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 0.4rem;
-    // max-height: 60vh;
     overflow-y: scroll;
 
     li {
@@ -142,6 +143,7 @@
       border: 0.1rem solid rgba(0, 0, 0, 0.24);
       font-family: 'Noto Sans Mono', monospace;
       color: rgb(86, 86, 110);
+      animation: 0.3s animateIn ease-in-out;
     }
   }
 }
@@ -154,7 +156,6 @@
 .search {
   position: sticky;
   top: 2.4rem;
-  // top: 6.4rem;
   margin: 0 -2.4rem 4rem;
   z-index: 4;
   backdrop-filter: blur(2px);
@@ -163,6 +164,7 @@
   backdrop-filter: blur(1.2rem);
   border: 0.1rem solid rgba(0, 0, 0, 0.24);
   border-radius: 1.6rem;
+
   h1 {
     margin: 0 0 2.4rem;
 
@@ -195,16 +197,13 @@
 
 .guesses,
 .meta p {
-  //   position: fixed;
-  //   bottom: 0rem;
-  //   right: 0rem;
   width: 4rem;
   height: 4rem;
   border-radius: 4rem;
   display: grid;
   place-content: center;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(0.3rem);
+  background: rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(0.6rem);
   font-family: 'Noto Sans Mono', monospace;
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
   font-size: 1.4rem;
@@ -219,7 +218,9 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  animation: 0.6s animateIn ease-in-out 0.2s;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0.2s;
+  transform: translateY(1.6rem);
 
   h1 {
     font-size: 8rem;
@@ -281,7 +282,7 @@
 .sort {
   background: rgba(255, 255, 255, 0.24) !important;
   backdrop-filter: blur(2px);
-  border: 0.1rem solid rgba(0, 0, 0, 0.16) !important;
+  border: 0.1rem solid rgba(0, 0, 0, 0.24) !important;
   box-shadow: none;
   padding: 0 1.2rem !important;
   display: flex;
@@ -292,6 +293,12 @@
   font-weight: 600;
   height: 3.2rem !important;
   font-family: 'Noto Sans Mono', monospace;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(255, 255, 255, 1) !important;
+  }
 
   svg {
     opacity: 0.8;
@@ -311,7 +318,6 @@
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(0, 0, 0, 0.16) 50%, #000 100%);
   mix-blend-mode: multiply;
   pointer-events: none;
-  //   opacity: 0.5;
 }
 
 .gridlet {
