@@ -2,7 +2,6 @@
 
 import styles from './styles.module.scss';
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 
 const htmlTags = [
   'a',
@@ -124,6 +123,10 @@ export default function Page() {
   const [keypress, setKeypress] = useState(false);
   const [gameState, setGameState] = useState('idle');
 
+  useEffect(() => {
+    document.querySelector('body')?.classList.add('loaded');
+  }, []);
+
   function guessTag(e) {
     e.preventDefault();
 
@@ -133,7 +136,6 @@ export default function Page() {
     setGuesses((guesses) => [...guesses, guess]);
 
     if (htmlTags.includes(guess)) {
-      // Correct
       setCorrect((correct) => [...correct, guess]);
       htmlTags.splice(htmlTags.indexOf(guess), 1);
 
@@ -143,7 +145,6 @@ export default function Page() {
         setGameState('playing');
       }, 800);
     } else {
-      // Not a tag
       setGameState('error');
 
       setTimeout(() => {
@@ -154,8 +155,10 @@ export default function Page() {
     e.target.reset();
 
     const item = document.querySelector('ol li:last-of-type') as HTMLElement | null;
+
     if (item !== null) {
-      window.scrollTo(item.offsetTop, 0);
+      item.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+      // window.scrollTo(0, document.body.scrollHeight);
     }
   }
 
@@ -173,7 +176,7 @@ export default function Page() {
     <section className={styles.game} data-game-state={gameState}>
       <div className={styles.wrapper}>
         {gameState === 'idle' ? (
-          <div className={styles.start}>
+          <div className={styles.start} data-section="start">
             <h1>HTML Tag Guessing Game</h1>
             <p>There are {htmlTags.length + 1} html tags. How many can you name from memory?</p>
 
@@ -187,7 +190,7 @@ export default function Page() {
           </div>
         ) : (
           <>
-            <div className={styles.search}>
+            <div className={styles.search} data-section="guess">
               <h1>HTML Tag Guessing Game</h1>
 
               <form autoComplete="off" onSubmit={guessTag} data-keypress={keypress}>
@@ -235,15 +238,15 @@ export default function Page() {
                       </svg>
                     </button>
                   </div>
-                  <motion.ol>
+                  <ol>
                     {correct.map((item, i) => {
-                      return <motion.li key={item + i}>{i + 1 + `: <` + item + `>`}</motion.li>;
+                      return <li key={item + i}>{i + 1 + `: <` + item + `>`}</li>;
                     })}
-                  </motion.ol>
+                  </ol>
                 </>
               )}
             </div>
-            <div className={styles.meta}>
+            <div className={styles.meta} data-section="meta">
               <div className={styles.blank}></div>
               <p>
                 <span>{htmlTags.length + 1}</span> tags left to guess

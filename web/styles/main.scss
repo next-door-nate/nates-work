@@ -162,3 +162,10 @@ html.lenis body {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
+
+.loaded {
+  [data-section='start'] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
