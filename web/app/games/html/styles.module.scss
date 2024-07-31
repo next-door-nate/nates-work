@@ -100,7 +100,12 @@
     font-size: 1.8rem;
     border-radius: 0.6rem;
     height: 4.8rem;
-    transition: all 0.15s ease-in-out;
+    transition: all 0.45s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background: rgb(66, 66, 66);
+    }
   }
 
   progress {
@@ -303,6 +308,19 @@
   svg {
     opacity: 0.8;
   }
+}
+
+.win {
+  --green: rgb(58, 204, 92);
+  position: fixed;
+  z-index: 3;
+  background: var(--green);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .grid {
