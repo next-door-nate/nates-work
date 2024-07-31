@@ -119,7 +119,6 @@ const htmlTags = [
 ];
 
 export default function Page() {
-  const [tags, setTags] = useState(htmlTags);
   const [guesses, setGuesses] = useState<string[]>([]);
   const [correct, setCorrect] = useState<string[]>([]);
   const [keypress, setKeypress] = useState(false);
@@ -127,27 +126,37 @@ export default function Page() {
 
   function guessTag(e) {
     e.preventDefault();
+
     let guess = e.target.guess.value;
     guess = guess.toLowerCase();
 
+    setGuesses((guesses) => [...guesses, guess]);
+
     if (htmlTags.includes(guess)) {
+      // Correct
       setCorrect((correct) => [...correct, guess]);
       htmlTags.splice(htmlTags.indexOf(guess), 1);
 
       setGameState('correct');
+
       setTimeout(() => {
         setGameState('playing');
       }, 800);
     } else {
+      // Not a tag
       setGameState('error');
+
       setTimeout(() => {
         setGameState('playing');
       }, 800);
     }
 
-    setGuesses((guesses) => [...guesses, guess]);
-
     e.target.reset();
+
+    const item = document.querySelector('ol li:last-of-type') as HTMLElement | null;
+    if (item !== null) {
+      window.scrollTo(item.offsetTop, 0);
+    }
   }
 
   function handleKeyPress(e) {
@@ -158,7 +167,6 @@ export default function Page() {
         setKeypress(false);
       }, 300);
     }
-    console.log(e);
   }
 
   return (
@@ -167,27 +175,34 @@ export default function Page() {
         {gameState === 'idle' ? (
           <div className={styles.start}>
             <h1>HTML Tag Guessing Game</h1>
-            <p>There are 111 html tags. How many can you name from memory?</p>
+            <p>There are {htmlTags.length + 1} html tags. How many can you name from memory?</p>
 
             <button
               onClick={() => {
                 setGameState('playing');
               }}
             >
-              Start Game
+              I am ready!
             </button>
           </div>
         ) : (
           <>
             <div className={styles.search}>
               <h1>HTML Tag Guessing Game</h1>
-              <search>
-                <form onSubmit={guessTag} data-keypress={keypress}>
-                  <input id="guess" type="text" placeholder="Tag" autoFocus onKeyDown={handleKeyPress} />
-                  <kbd>Enter</kbd>
-                  {/* <button type="submit">Guess</button> */}
-                </form>
-              </search>
+
+              <form autoComplete="off" onSubmit={guessTag} data-keypress={keypress}>
+                <input type="hidden" autoComplete="false" />
+                <input
+                  id="guess"
+                  type="text"
+                  name="guess"
+                  autoComplete="off"
+                  placeholder="Tag"
+                  autoFocus
+                  onKeyDown={handleKeyPress}
+                />
+                <kbd>{gameState === 'playing' ? `Enter` : gameState === 'correct' ? `Correct!` : `Nooo!`}</kbd>
+              </form>
             </div>
 
             <div className={styles.list}>
@@ -227,28 +242,19 @@ export default function Page() {
                   </motion.ol>
                 </>
               )}
-
-              <div className={styles.meta}>
-                <div></div>
-                <p>
-                  <span>{htmlTags.length + 1}</span> tags left to guess
-                  {correct.length > 0 && <progress max={111} value={correct.length}></progress>}
-                </p>
-                <div className={styles.guesses}>{guesses.length}</div>
-              </div>
-              {/* <h3>Guesses</h3>
-              {guesses &&
-                guesses.map((guess, i) => {
-                  return (
-                    <div key={guess + i}>
-                      <span>{guess}</span>
-                    </div>
-                  );
-                })} */}
+            </div>
+            <div className={styles.meta}>
+              <div className={styles.blank}></div>
+              <p>
+                <span>{htmlTags.length + 1}</span> tags left to guess
+                {correct.length > 0 && <progress max={111} value={correct.length}></progress>}
+              </p>
+              <div className={styles.guesses}>{guesses.length}</div>
             </div>
           </>
         )}
       </div>
+
       <div className={styles.grid}></div>
       <div className={styles.gridlet}></div>
     </section>
