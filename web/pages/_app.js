@@ -12,13 +12,12 @@ import { useRouter } from 'next/router';
 import posthog from 'posthog-js';
 import { PostHogProvider } from 'posthog-js/react';
 
-if (typeof window !== 'undefined') {
+if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production' && window.location.host === 'nates.work') {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
     api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com',
-    // person_profiles: 'identified_only',
+    person_profiles: 'identified_only',
     // Enable debug mode in development
     loaded: (posthog) => {
-      console.log('the hog has landed.');
       if (process.env.NODE_ENV === 'development') posthog.debug();
     },
   });
@@ -28,16 +27,21 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
-    // Track page views
-    const handleRouteChange = () => {
-      posthog?.capture('$pageview');
-      console.log('page event fired');
-    };
-    router.events.on('routeChangeComplete', handleRouteChange);
+    if (
+      typeof window !== 'undefined' &&
+      process.env.NODE_ENV === 'production' &&
+      window.location.host === 'nates.work'
+    ) {
+      // Track page views
+      const handleRouteChange = () => {
+        posthog?.capture('$pageview');
+      };
+      router.events.on('routeChangeComplete', handleRouteChange);
 
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
+      return () => {
+        router.events.off('routeChangeComplete', handleRouteChange);
+      };
+    }
   }, []);
 
   return (
@@ -60,10 +64,6 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="icon" href="/favicon.png" />
-
-        {process.env.NODE_ENV == 'production' && (
-          <script defer data-domain="nates.work" src="https://plausible.io/js/script.js"></script>
-        )}
       </Head>
       {/* <div onMouseMove={mouseEffect}> */}
       <div>
