@@ -7,7 +7,7 @@ export default function Layout({ children, header, footer }) {
   return (
     <main>
       <Header header={header} />
-      <ReactLenis root>{children}</ReactLenis>
+      {children}
       <Footer footer={footer} />
     </main>
   );

@@ -1,8 +1,8 @@
-import Link from "next/link";
-import linkResolver from "../utils/linkResolver";
-import Container from "./Container";
-import styles from "./ProjectList.module.scss";
-import OptimizedImage from "./OptimizedImage";
+import Link from 'next/link';
+import linkResolver from '../utils/linkResolver';
+import Container from './Container';
+import styles from './ProjectList.module.scss';
+import OptimizedImage from './OptimizedImage';
 
 export default function ProjectList({ block }) {
   return (
@@ -21,10 +21,7 @@ export default function ProjectList({ block }) {
                   <div className={styles.card}>
                     <div className={styles.image}>
                       <div className={styles.background}>
-                        <OptimizedImage
-                          image={project.featured_image}
-                          blurHash={project.blurHash}
-                        />
+                        <OptimizedImage image={project.featured_image} blurHash={project.blurHash} />
                       </div>
                       <div className={styles.logo}>
                         <OptimizedImage image={project.company.logo} />
@@ -34,11 +31,7 @@ export default function ProjectList({ block }) {
 
                   <div className={styles.contents}>
                     <div className={styles.copy}>
-                      {project.company && (
-                        <h5 className={styles.company}>
-                          {project.company.name}
-                        </h5>
-                      )}
+                      {project.company && <h5 className={styles.company}>{project.company.name}</h5>}
                       {project.title && <h2>{project.title}</h2>}
                       {project.tools.length > 0 && (
                         <div className={styles.meta}>

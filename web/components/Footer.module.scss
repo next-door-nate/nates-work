@@ -35,7 +35,7 @@
   font-style: italic;
   letter-spacing: -1rem;
   width: 4.2rem;
-  font-family: "Pathway Extreme", sans-serif !important;
+  font-family: 'Pathway Extreme', sans-serif !important;
   display: block;
   margin-bottom: 4rem;
 
@@ -131,7 +131,7 @@
   height: 100%;
   display: block;
   pointer-events: none;
-  filter: blur(0.1rem);
+  // filter: blur(0.1rem);
 }
 
 .copyright {
