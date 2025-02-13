@@ -6,6 +6,7 @@ function ContactForm() {
     email: '',
     location: '',
     message: '',
+    website: 'https://nates.work',
   });
 
   const [formState, setFormState] = useState(null);
@@ -63,6 +64,7 @@ function ContactForm() {
           email: '',
           location: '',
           message: '',
+          website: 'https://nates.work',
         });
 
         setTimeout(() => {
@@ -128,7 +130,7 @@ function ContactForm() {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            placeholder={`Sending good vibes from ` + location.city + `, ` + location.region + `. Take care!`}
+            placeholder={`Example: Sending good vibes from ` + location.city + `, ` + location.region + `. Take care!`}
             required={true}
           />
         </div>
