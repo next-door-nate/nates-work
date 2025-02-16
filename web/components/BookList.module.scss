@@ -13,12 +13,27 @@
   &:hover {
     .cover {
       transform: scale(1.05) rotate(1.5deg);
-      box-shadow: 0rem -1.2rem 2.4rem var(--gradient-stop-1), 0rem 2rem 4rem rgba(0, 0, 0, 0.32);
+      box-shadow:
+        0rem -1.2rem 2.4rem var(--gradient-stop-1),
+        0rem 2rem 4rem rgba(0, 0, 0, 0.32);
     }
 
     .image {
       background-size: 130%;
     }
+  }
+
+  h4 {
+    margin-bottom: 0;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 150%;
   }
 }
 
@@ -28,12 +43,7 @@
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.03);
-  background: linear-gradient(
-    69deg,
-    var(--gradient-stop-0),
-    var(--gradient-stop-1),
-    var(--gradient-stop-2)
-  );
+  background: linear-gradient(69deg, var(--gradient-stop-0), var(--gradient-stop-1), var(--gradient-stop-2));
   border-radius: 0.8rem;
   overflow: clip;
   transition: var(--transition);
@@ -46,7 +56,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 100%;
@@ -65,7 +75,9 @@
   object-fit: contain;
   width: auto;
   height: 100%;
-  box-shadow: 0rem -1.2rem 2.4rem var(--gradient-stop-1), 0rem 1.2rem 2.4rem rgba(0, 0, 0, 0.32);
+  box-shadow:
+    0rem -1.2rem 2.4rem var(--gradient-stop-1),
+    0rem 1.2rem 2.4rem rgba(0, 0, 0, 0.32);
 
   border-radius: 0.6rem;
   overflow: clip;
@@ -73,7 +85,7 @@
   position: relative;
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 100%;

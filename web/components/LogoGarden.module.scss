@@ -35,53 +35,57 @@
   }
 
   @media screen and (max-width: 768px) {
-    flex: 0 0 calc(50% - ((var(--gap) * 1) / 2));
+    flex: 0 0 calc(30% - ((var(--gap) * 1) / 3));
   }
 
   img {
-    width: 50%;
+    width: 80%;
     max-height: 8rem;
   }
 
-  &[data-company="NPR"] {
+  &[data-company='NPR'] {
     img {
       max-width: 10rem;
     }
   }
 
-  &[data-company="Bold Commerce"] {
+  &[data-company='Bold Commerce'] {
     img {
       max-width: 11rem;
     }
   }
 
-  &[data-company="Proctor & Gamble"] {
+  &[data-company='Proctor & Gamble'] {
     img {
       max-width: 8rem;
     }
   }
 
-  &[data-company="Obama Foundation"] {
+  &[data-company='Obama Foundation'] {
     img {
       width: 60%;
+
+      @media screen and (max-width: 768px) {
+        width: 80%;
+      }
     }
   }
 
-  &[data-company="Stones Throw"] {
+  &[data-company='Stones Throw'] {
     img {
       max-width: 6.4rem;
     }
   }
 
-  &[data-company="Zippo"] {
+  &[data-company='Zippo'] {
     img {
       max-width: 12rem;
     }
   }
 }
 
-[data-section-theme="black"],
-[data-section-theme="dark"] {
+[data-section-theme='black'],
+[data-section-theme='dark'] {
   .logo {
     //https://stackoverflow.com/questions/42966641/how-to-transform-black-into-any-given-color-using-only-css-filters/43960991#43960991
     filter: invert(100%) sepia() saturate(100000%) hue-rotate(200deg) brightness(0.75);

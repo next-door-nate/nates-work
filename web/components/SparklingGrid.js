@@ -1,7 +1,7 @@
 // canvas.width = document.querySelector(selector).offsetWidth;
 //     canvas.height = document.querySelector(selector).offsetHeight;
 // selector = ".BannerHome_banner__xaXBX",
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from 'react';
 
 const SparklingGrid = ({
   gridSpacing = 50,
@@ -15,7 +15,7 @@ const SparklingGrid = ({
     const canvas = canvasRef.current;
     canvas.width = document.querySelector(selector).offsetWidth;
     canvas.height = document.querySelector(selector).offsetHeight;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
 
     let pixels = [];
     const createPixel = (x, y) => ({
@@ -39,7 +39,7 @@ const SparklingGrid = ({
       canvas.height = document.querySelector(selector).offsetHeight;
       createPixels();
     };
-    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener('resize', resizeCanvas);
 
     const updatePixels = () => {
       pixels.forEach((pixel) => {
@@ -68,7 +68,7 @@ const SparklingGrid = ({
     requestAnimationFrame(animate);
 
     return () => {
-      window.removeEventListener("resize", resizeCanvas);
+      window.removeEventListener('resize', resizeCanvas);
     };
   }, [gridSpacing, maxIntensity, flickerSpeed, selector]);
 

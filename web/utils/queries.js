@@ -76,6 +76,7 @@ _type == "two_up" => {
   text,
   eyebrow,
   image,
+  _type,
   reverse,
   intrinsic_height,
   "blurHash": image.asset->metadata.blurHash,

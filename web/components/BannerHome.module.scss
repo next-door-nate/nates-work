@@ -10,6 +10,12 @@
   overflow: clip;
   // margin-top: 2.4rem;
 
+  @media screen and (max-width: 768px) {
+    min-height: 56rem;
+    height: auto;
+    padding: 18rem 0 2rem;
+  }
+
   canvas {
     position: absolute;
     top: 0;
@@ -340,7 +346,7 @@
   height: 100%;
   display: grid;
   place-items: center;
-  font-family: "Pathway Extreme", sans-serif;
+  font-family: 'Pathway Extreme', sans-serif;
   font-weight: 800;
   font-size: 6.4rem;
   perspective: 100rem;
@@ -510,7 +516,7 @@
   }
 }
 
-[data-loading="true"] {
+[data-loading='true'] {
   .name {
     span {
       transform: translate(-50%, -50%) rotate3d(0, 0, 0, 0deg) scale(1) !important;

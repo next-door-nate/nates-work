@@ -21,10 +21,10 @@ export async function getBooks() {
       },
     };
 
-    const response = await fetch("https://literal.club/graphql", {
-      method: "POST",
+    const response = await fetch('https://literal.club/graphql', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(loginQuery),
     });
@@ -33,7 +33,7 @@ export async function getBooks() {
     if (response.ok && data.data && data.data.login) {
       return data.data.login.token;
     } else {
-      throw new Error(data.errors ? data.errors[0].message : "Failed to fetch token");
+      throw new Error(data.errors ? data.errors[0].message : 'Failed to fetch token');
     }
   }
 
@@ -101,10 +101,10 @@ export async function getBooks() {
       `,
     };
 
-    const response = await fetch("https://literal.club/graphql", {
-      method: "POST",
+    const response = await fetch('https://literal.club/graphql', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(booksQuery),
@@ -114,7 +114,7 @@ export async function getBooks() {
     if (response.ok && data.data) {
       return data.data.myBooks;
     } else {
-      throw new Error(data.errors ? data.errors[0].message : "Failed to fetch books");
+      throw new Error(data.errors ? data.errors[0].message : 'Failed to fetch books');
     }
   }
 
@@ -123,7 +123,7 @@ export async function getBooks() {
     const books = await fetchBooks(token);
     return books;
   } catch (error) {
-    console.error("Error:", error);
+    console.error('Error:', error);
     return { message: error.message };
   }
 }

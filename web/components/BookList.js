@@ -1,6 +1,6 @@
-import styles from "./BookList.module.scss";
-import Container from "./Container";
-import Image from "next/image";
+import styles from './BookList.module.scss';
+import Container from './Container';
+import Image from 'next/image';
 
 export default function BookList({ block, books }) {
   return (
@@ -14,9 +14,9 @@ export default function BookList({ block, books }) {
                   className={styles.book}
                   key={book.id + `book` + i}
                   style={{
-                    "--gradient-stop-0": book.gradientColors[0],
-                    "--gradient-stop-1": book.gradientColors[1],
-                    "--gradient-stop-2": book.gradientColors[2],
+                    '--gradient-stop-0': book.gradientColors[0],
+                    '--gradient-stop-1': book.gradientColors[1],
+                    '--gradient-stop-2': book.gradientColors[2],
                   }}
                 >
                   <div className={styles.image}>
@@ -32,11 +32,11 @@ export default function BookList({ block, books }) {
                       return (
                         <span key={author.name + i}>
                           {author.name}
-                          {i < book.authors.length - 1 ? ", " : ""}
+                          {i < book.authors.length - 1 ? ', ' : ''}
                         </span>
                       );
                     })}
-                    {book.authors.length == 0 && "Various Authors"}
+                    {book.authors.length == 0 && 'Various Authors'}
                   </h5>
                   <p>{book.description}</p>
                 </div>

@@ -5,7 +5,7 @@
     object-fit: cover;
   }
 
-  [data-container="bleed"] {
+  [data-container='bleed'] {
     img {
       @media screen and (max-width: 768px) {
         aspect-ratio: 4 / 3;
@@ -13,7 +13,7 @@
     }
   }
 
-  [data-container]:not([data-container="bleed"]) {
+  [data-container]:not([data-container='bleed']) {
     .image {
       border-radius: 1.6rem;
       position: relative;
@@ -24,7 +24,7 @@
       }
 
       &::before {
-        content: "";
+        content: '';
         display: block;
         width: 100%;
         height: 100%;
@@ -34,11 +34,15 @@
         z-index: 3;
         border-radius: 1.6rem;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px inset;
+
+        @media screen and (max-width: 768px) {
+          border-radius: 0.8rem;
+        }
       }
     }
   }
 
-  &[data-intrinsic-aspect="true"] {
+  &[data-intrinsic-aspect='true'] {
     img {
       aspect-ratio: auto !important;
     }

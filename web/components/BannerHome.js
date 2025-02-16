@@ -1,13 +1,13 @@
-import { useEffect, useRef } from "react";
-import Container from "./Container";
-import styles from "./BannerHome.module.scss";
-import RichTextRenderer from "./RichTextRenderer";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { WaveMaterial } from "../shaders/bannerShader.js";
-import { easing } from "maath";
-import { motion, useScroll, useSpring, useTransform, MotionValue } from "framer-motion";
-import SparklingGrid from "./SparklingGrid.js";
-import { motionSettings } from "../utils/motionSettings.js";
+import { useEffect, useRef } from 'react';
+import Container from './Container';
+import styles from './BannerHome.module.scss';
+import RichTextRenderer from './RichTextRenderer';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { WaveMaterial } from '../shaders/bannerShader.js';
+import { easing } from 'maath';
+import { motion, useScroll, useSpring, useTransform, MotionValue } from 'framer-motion';
+import SparklingGrid from './SparklingGrid.js';
+import { motionSettings } from '../utils/motionSettings.js';
 
 function useParallax(value, distance) {
   return useTransform(value, [0, 1], [0, distance]);
@@ -48,23 +48,18 @@ export default function BannerHome({ block }) {
     //   loading.setAttribute("data-loading", false);
     // }, 0);
 
-    var loading = document.querySelector("[data-loading]");
+    var loading = document.querySelector('[data-loading]');
     loading.offsetWidth;
-    loading.setAttribute("data-loading", false);
+    loading.setAttribute('data-loading', false);
   }, []);
 
   return (
-    <section
-      className={styles.banner + ` noise`}
-      ref={ref}
-      data-loading={true}
-      data-block={block._type}
-    >
-      <SparklingGrid gridSpacing={24} maxIntensity={50} flickerSpeed={10} />
+    <section className={styles.banner + ` noise`} ref={ref} data-loading={true} data-block={block._type}>
+      {/* <SparklingGrid gridSpacing={24} maxIntensity={50} flickerSpeed={10} /> */}
       <Container>
         <motion.div
-          initial={"hidden"}
-          whileInView={"visible"}
+          initial={'hidden'}
+          whileInView={'visible'}
           viewport={{ once: true }}
           variants={motionSettings}
           transition={{ duration: motionSettings.transitionDuration }}

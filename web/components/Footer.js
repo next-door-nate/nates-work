@@ -68,9 +68,9 @@ export default function Footer({ footer }) {
 
         {footer.copyright && (
           <p className={styles.copyright}>
-            This site is built with Sanity, Next.js, and Cloudflare Pages/Workers. It was built on Treaty One territory,
-            the original lands of the Anishinaabeg, Cree, Anisininew, Dakota, and Dene peoples, and on the homeland of
-            the Red River Métis Nation.
+            This site is built with Sanity, Next.js, and Cloudflare Workers. It was built on Treaty One territory, the
+            original lands of the Anishinaabeg, Cree, Anisininew, Dakota, and Dene peoples, and on the homeland of the
+            Red River Métis Nation.
             <br />
             <br />
             &copy; {year} {footer.copyright}

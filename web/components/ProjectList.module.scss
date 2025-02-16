@@ -12,7 +12,7 @@
   }
 }
 
-.project{
+.project {
   flex: 0 0 calc(50% - (var(--gap) / 2));
   color: var(--color-black);
 
@@ -28,7 +28,7 @@
       filter: invert(1) blur(0.8rem);
       top: 30%;
     }
-  
+
     .background {
       &::before {
         background-color: rgba(0, 0, 0, 0.1);
@@ -40,8 +40,8 @@
       }
     }
 
-    .contents{
-      *{
+    .contents {
+      * {
         color: var(--color-orange);
       }
     }
@@ -49,7 +49,6 @@
 }
 
 .card {
-  
   display: flex;
   position: relative;
   // aspect-ratio: 1/1;
@@ -68,8 +67,6 @@
   //   margin-top: 8rem;
   // }
 
-  
-
   h2 {
     margin: 2.4rem 0;
   }
@@ -79,8 +76,7 @@
   margin: 0;
 }
 
-
-.image{
+.image {
   position: relative;
   aspect-ratio: 4/3;
   aspect-ratio: 16/9;
@@ -88,7 +84,7 @@
   width: 100%;
   overflow: clip;
   margin-bottom: 4rem;
-  border-radius: .8rem;
+  border-radius: 0.8rem;
 }
 
 .meta {
@@ -107,14 +103,13 @@
   }
 }
 
-
 .logo {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 16rem;
-  transition: var(--transition);
+  transition: var(--transition-medium);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -122,15 +117,14 @@
   z-index: 5;
   filter: invert(1) blur(0);
 
-  img[alt="Flocker logo"]{
+  img[alt='Flocker logo'] {
     max-width: 10rem;
   }
 
-  img[alt="Bold Commerce Logo"]{
+  img[alt='Bold Commerce Logo'] {
     max-width: 14rem;
   }
 }
-
 
 .background {
   position: absolute;
@@ -141,7 +135,7 @@
   z-index: 1;
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     top: 0;
@@ -172,8 +166,17 @@
   position: relative;
   z-index: 3;
 
-
-  h2{
+  h2 {
     font-size: 3.2rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 2.4rem;
+    }
+  }
+
+  h5 {
+    @media screen and (max-width: 768px) {
+      font-size: 1.4rem;
+    }
   }
 }

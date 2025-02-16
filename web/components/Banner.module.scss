@@ -17,22 +17,32 @@
     z-index: 5;
   }
 
+  @media screen and (max-width: 767px) {
+    min-height: auto;
+    padding: 18rem 0 8rem;
+  }
+
   canvas {
     position: absolute !important;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 10;
     height: 100%;
     width: 100%;
-    opacity: 0.9;
-    filter: invert(0.15);
-    mix-blend-mode: multiply;
-    pointer-events: none;
+    opacity: 1;
+    // filter: invert(0.15);
+    // mix-blend-mode: multiply;
+    // pointer-events: none;
+  }
+
+  hgroup {
+    width: 80%;
+    max-width: 56rem;
+    margin: 0 auto;
   }
 
   h1 {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 1.6rem;
     text-align: center;
   }
 
@@ -41,6 +51,7 @@
   }
 
   p {
+    margin-top: 0;
     @media screen and (max-width: 768px) {
       font-size: 1.6rem;
     }

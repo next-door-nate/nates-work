@@ -4,7 +4,11 @@
   gap: var(--gap);
   flex-wrap: wrap;
 
-  &[data-stack="true"] {
+  @media screen and (max-width: 768px) {
+    gap: 1.6rem;
+  }
+
+  &[data-stack='true'] {
     flex-direction: column;
     max-width: 80ch;
     // justify-content: center;
@@ -15,6 +19,10 @@
     .title {
       h2 {
         margin-top: 0;
+        @media screen and (max-width: 768px) {
+          margin-top: 0.8rem;
+          margin-bottom: 1.6rem;
+        }
       }
     }
   }
@@ -24,11 +32,17 @@
   color: var(--section-title);
   flex: 0 0 calc(50% - (var(--gap) / 2));
 
+  h2 {
+    margin-bottom: 0;
+    margin-top: 1.6rem;
+  }
+
   @media screen and (max-width: 768px) {
     flex: 0 0 100%;
 
     h2 {
       margin-bottom: 0;
+      margin-top: 1.2rem;
     }
   }
 }
